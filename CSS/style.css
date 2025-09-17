@@ -28,6 +28,7 @@ body {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
+/* Mantén tu color para links de texto normal */
 .navbar .nav-link {
   color: #fff !important;
   transition: color 0.3s ease;
@@ -45,13 +46,12 @@ body {
   overflow: hidden;
 }
 
-/* Fondo en pseudo-elemento para zoom sin bordes */
+/* Fondo animado */
 .hero-img-bg {
   position: absolute;
   inset: 0;
   z-index: 0;
 }
-
 .hero-img-bg::before {
   content: "";
   position: absolute;
@@ -68,7 +68,7 @@ body {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(40, 0, 60, 0.45));
+  background: linear-gradient(rgba(0,0,0,0.45), rgba(40,0,60,0.45));
   z-index: 1;
   pointer-events: none;
 }
@@ -97,11 +97,10 @@ body {
   font-size: 3rem;
   line-height: 1.2;
   text-shadow:
-    2px 2px 6px rgba(0, 0, 0, 0.7),
-    -1px -1px 4px rgba(255, 255, 255, 0.1);
+    2px 2px 6px rgba(0,0,0,0.7),
+    -1px -1px 4px rgba(255,255,255,0.1);
   transition: transform 0.3s ease, color 0.3s ease;
 }
-
 .hero-header h1:hover {
   transform: scale(1.05);
   color: #f0e68c;
@@ -111,14 +110,13 @@ body {
   font-family: "Macondo", cursive;
   font-size: 25px;
   line-height: 1.6;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
   margin-bottom: 1rem;
   transition: font-weight 0.3s ease, text-shadow 0.3s ease;
 }
-
 .hero-header p:hover {
   font-weight: 500;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
 }
 
 /* Separador */
@@ -134,15 +132,85 @@ body {
   to   { transform: scale(1.2); }
 }
 
-/* Responsive */
+/* Responsive Hero */
 @media (max-width: 768px) {
   .hero-header { height: 100vh; }
   .hero-header h1 { font-size: 2.5rem; }
   .hero-header p  { font-size: 20px; }
 }
-
 @media (max-width: 480px) {
   .hero-header { height: 80vh; }
   .hero-header h1 { font-size: 2rem; }
   .hero-header p  { font-size: 18px; }
+}
+
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+  transition: background-color 0.3s ease;
+  height: 60px;            /* Altura fija del navbar */
+  padding: 0 !important;   /* Evita que Bootstrap infle la barra */
+}
+
+.navbar.scrolled {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Links navbar */
+.navbar .nav-link {
+  height: 60px; /* mismo alto que la navbar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 !important;
+  margin: 0 0.4rem;
+  color: #fff !important;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Íconos dentro del nav */
+.navbar .nav-link img {
+  width: 100px;   /* Tamaño grande sin agrandar el navbar */
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+/* Efecto hover */
+.navbar .nav-link:hover img {
+  transform: scale(1.2);
+  filter: brightness(1.2);
+}
+
+/* Responsive en móviles */
+@media (max-width: 768px) {
+  .navbar {
+    height: 55px; /* navbar un poco más baja */
+  }
+
+  .navbar .nav-link {
+    height: 55px;
+    margin: 0 0.3rem;
+  }
+
+  .navbar .nav-link img {
+    width: 30px; /* íconos más pequeños en móvil */
+  }
+}
+
+
+
+
+p1 {
+  font-size: 2rem;   /* hace el texto más grande */
+  font-weight: bold; /* lo pone en negrita */
+  color: #fff;       /* opcional: cambia el color, ej. blanco */
+  text-align: center; /* opcional: centrar el texto */
+  display: block;    /* asegura que se comporte como un párrafo */
+  margin: 1rem 0;    /* espacio arriba y abajo */
 }
