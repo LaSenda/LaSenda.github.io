@@ -1,77 +1,67 @@
-/* Estilos generales del cuerpo de la página */
-body {
-    font-family: 'Georgia', serif; /* Tipo de letra similar al del blog */
-    line-height: 1.6;
-    background-color: #f0f0f0; /* Fondo gris claro */
-    margin: 0;
-    padding: 0;
+/* Importar fuente Macondo */
+@import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
+
+.hero-header {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
 }
 
-/* Contenedor principal para centrar el contenido */
-.container {
-    max-width: 700px; /* Ancho del blog, más angosto para lectura */
-    margin: auto;
-    background-color: #fff;
-    padding: 2em;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.hero-img {
+  width: 100%;
+  height: auto; /* mantiene proporciones y se ve completa */
+  display: block;
+  z-index: 0;
 }
 
-/* Estilos del encabezado */
-header {
-    text-align: center;
-    padding: 20px 0 40px; /* Espaciado interno */
-    border-bottom: 2px solid #ccc;
-    margin-bottom: 20px;
+.hero-overlay {
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.45);
+  z-index: 1;
+  pointer-events: none;
 }
 
-header h1 {
-    font-family: 'Helvetica Neue', sans-serif;
-    font-size: 3em;
-    margin: 0;
-    color: #333;
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  color: #fff;
+  max-width: 900px;
+  padding: 2rem 1rem;
+  text-shadow: 0 3px 10px rgba(0,0,0,0.8);
+  font-family: "Macondo", cursive; /* Aplicada a hero-text */
 }
 
-header p {
-    font-size: 1.2em;
-    color: #666;
-    margin-top: 5px;
+/* Gradiente separador */
+.header-separator {
+  height: 5px; /* altura del gradiente */
+  background: linear-gradient(to bottom, #212529, #0c3762); /* negro arriba, azul abajo */
 }
 
-/* Estilos de los artículos */
-.article-entry {
-    margin-bottom: 30px;
-    padding-bottom: 30px;
-    border-bottom: 1px solid #eee;
+.macondo-regular {
+  font-family: "Macondo", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 
-.article-entry:last-child {
-    border-bottom: none;
+/* Aplicar Macondo solo a elementos dentro del hero header */
+.hero-header h1, 
+.hero-header h2, 
+.hero-header h3, 
+.hero-header h4, 
+.hero-header h5, 
+.hero-header h6 {
+  font-family: "Macondo", cursive;
 }
 
-.article-entry h2 {
-    font-family: 'Georgia', serif;
-    font-size: 2em;
-    margin: 0;
-}
-
-.article-entry h2 a {
-    text-decoration: none;
-    color: #007BFF;
-}
-
-.article-entry .date {
-    font-size: 0.9em;
-    color: #888;
-    margin-top: 5px;
-    display: block;
-}
-
-/* Estilos del pie de página */
-footer {
-    text-align: center;
-    padding-top: 20px;
-    border-top: 1px solid #ccc;
-    color: #888;
-    font-size: 0.9em;
-    margin-top: 40px;
+.hero-header p {
+  font-family: "Macondo", cursive;
+  font-size: 25px;
+  line-height: 1.6;
 }
