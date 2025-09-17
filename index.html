@@ -16,25 +16,51 @@
 </head>
 <body>
     <!-- Responsive menu-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-            <div class="container">
-                <a class="navbar-brand" href="#!">
-    <img src="Assets/img/logo/logo-removebg-preview.png" alt="Logo La Senda" width="30" height="30" class="d-inline-block align-text-top">
-    La senda
-</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Página principal</a></li>
-    <li class="nav-item"><a class="nav-link" href="Sobremi.html">Sobre nosotros</a></li>
-    <li class="nav-item"><a class="nav-link" href="Contacto.html">Contacto</a></li>
-    <li class="nav-item"><a class="nav-link" href="articulos.html">Artículos</a></li>
-</ul>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top"
+     style="backdrop-filter: blur(8px);">
+  <div class="container">
 
+    <!-- Logo -->
+    <a class="navbar-brand" href="index.html">
+      <img src="Assets/img/logo/logo-removebg-preview.png"
+           alt="Logo La Senda"
+           width="30" height="30"
+           class="d-inline-block align-text-top">
+      La Senda
+    </a>
+
+    <!-- Toggler MDB -->
+    <button class="navbar-toggler" type="button"
+            data-mdb-collapse-init
+            data-mdb-target="#mainNav"
+            aria-controls="mainNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Links colapsables -->
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.html">
+            Página principal
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Sobremi.html">Sobre nosotros</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Contacto.html">Contacto</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="articulos.html">Artículos</a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</nav>
       
 
 <!-- Page header with logo and tagline-->
