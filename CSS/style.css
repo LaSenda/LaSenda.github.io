@@ -4,13 +4,17 @@
 .hero-header {
   position: relative;
   width: 100%;
+  height: 90vh; /* Aumentado de 60vh a 80vh para que se vea más imagen */
   overflow: hidden;
 }
 
-.hero-img {
+.hero-img-bg {
   width: 100%;
-  height: auto; /* mantiene proporciones y se ve completa */
-  display: block;
+  height: 100%;
+  background-image: url('/Assets/img/fondos/fondo3.png');
+  background-size: cover;
+  background-position: center 80%; /* Muestra la parte de abajo completa y recorta arriba */
+  background-repeat: no-repeat;
   z-index: 0;
 }
 
@@ -27,7 +31,7 @@
 
 .hero-text {
   position: absolute;
-  top: 50%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
@@ -41,7 +45,7 @@
 /* Gradiente separador */
 .header-separator {
   height: 5px; /* altura del gradiente */
-  background: linear-gradient(to bottom, #212529, #0c3762); /* negro arriba, azul abajo */
+  background: linear-gradient(to bottom, #212529, #421313); /* negro arriba, rojo abajo */
 }
 
 .macondo-regular {
@@ -64,4 +68,15 @@
   font-family: "Macondo", cursive;
   font-size: 25px;
   line-height: 1.6;
+}
+
+/* Responsive - en móviles más pequeño */
+@media (max-width: 768px) {
+  .hero-header {
+    height: 70vh; /* También más grande en móvil */
+  }
+  
+  .hero-header p {
+    font-size: 18px;
+  }
 }
