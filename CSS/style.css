@@ -289,8 +289,30 @@ body {
   .hero-header p  { font-size: 18px; }
 }
 
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background-color: rgba(0,0,0,0.85); /* fondo oscuro semitransparente */
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+}
+
 
 .section-separator {
   height: 40px;
   background: linear-gradient(to bottom, rgba(0,0,0,0.8), #f8f9fa);
+}
+/* ============================= */
+/* NAVBAR ICONOS EN MÓVIL        */
+/* ============================= */
+@media (max-width: 991px) {
+  .navbar-nav img {
+    width: 75px;   /* tamaño uniforme de los iconos */
+    height: auto;
+  }
+
+  .navbar-nav .nav-item {
+    margin: 0.5rem 0;   /* espacio vertical entre iconos */
+    text-align: center; /* centrado en el menú desplegado */
+  }
 }
