@@ -30,16 +30,15 @@
       
     </a>
 
-    <!-- Toggler MDB -->
+    <!-- Toggler bootsrapt-->
     <button class="navbar-toggler" type="button"
-            data-mdb-collapse-init
-            data-mdb-target="#mainNav"
-            aria-controls="mainNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation">
-      <i class="fas fa-bars"></i>
-    </button>
-
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNav"
+        aria-controls="mainNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
     <!-- Links colapsables -->
    <div class="collapse navbar-collapse" id="mainNav">
 <ul class="navbar-nav ms-auto me-0 mb-2 mb-lg-0">
@@ -109,8 +108,22 @@
     <p><label for="sendfox_form_last_name">Apellido:</label>
     <input type="text" id="sendfox_form_last_name" name="last_name" placeholder="Tu apellido" /></p>
 
+
+
+<p><label for="sendfox_form_birthday">Birthday: </label><input type="date" id="sendfox_form_birthday" name="contact_fields[birthday]" placeholder="Birthday" /></p>
+
+			
+
+
+
+    
+
     <p><label for="sendfox_form_email">Email:</label>
     <input type="email" id="sendfox_form_email" name="email" placeholder="Tu correo" required /></p>
+    
+
+
+    
 
     <p><label><input type="checkbox" name="gdpr" value="1" required /> Acepto recibir novedades por correo.</label></p>
 
