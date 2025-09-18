@@ -218,8 +218,8 @@ p1 {
 }
 .navbar-brand img {
   max-height: 100%;           /* nunca sobresale del contenedor */
-  height: auto;               /* respeta proporción vertical */
-  width: 200px;               /* coincide con tu HTML */
+  height: 100px;               /* respeta proporción vertical */
+  width: 150px;               /* coincide con tu HTML */
   object-fit: contain;        /* evita deformaciones */
   vertical-align: middle;     /* alinea con el texto si lo hay */
   margin-top: 5px;            /* ajuste fino si parece desalineado */
