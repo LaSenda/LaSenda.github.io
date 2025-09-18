@@ -288,8 +288,30 @@ body {
   }
 }
 
-/* Móviles (≤768px) */
+/* ============================= */
+/* MEDIA QUERY: Tablets y Móviles */
+/* ============================= */
+
+@media (max-width: 991px) {
+  /* Estilos para tablets y móviles */
+  .navbar-collapse {
+    background-color: rgba(0,0,0,0.85); /* fondo oscuro al abrir menú */
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+
+  .navbar .nav-link img {
+    width: 100px; /* tamaño de iconos en menú colapsado */
+  }
+
+  .navbar-nav .nav-item {
+    margin: 0.5rem 0;
+    text-align: center;
+  }
+}
+
 @media (max-width: 768px) {
+  /* Estilos específicos para móviles */
   .navbar {
     height: 55px;
   }
@@ -300,29 +322,33 @@ body {
   }
 
   .navbar .nav-link img {
-    width: 100px; /* sigue en 100px, cámbialo aquí si quieres más pequeño */
+    width: 80px; /* más pequeño en móvil */
   }
 
-  .hero-header { height: 100vh; }
-  .hero-header h1 { font-size: 2.5rem; }
-  .hero-header p  { font-size: 20px; }
-}
-
-/* Móviles muy pequeños (≤480px) */
-@media (max-width: 480px) {
-  .hero-header { height: 80vh; }
-  .hero-header h1 { font-size: 2rem; }
-  .hero-header p  { font-size: 18px; }
-
-  .navbar .nav-link img {
-    width: 100px; /* base 100px, aquí puedes bajarlo si no cabe */
-  }
-}
-@media (max-width: 768px) {
   .hero-header {
-    overflow: visible !important;
-    height: auto !important;
-    min-height: unset !important;
+    min-height: 150vh; /* más alto para cubrir contenido */
+    height: auto;
+    overflow: visible;
+    padding-bottom: 1rem;
+  }
+
+  .hero-img-bg::before {
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.1); /* menos zoom en móvil */
+  }
+
+  .hero-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-header p {
+    font-size: 18px;
+  }
+
+  .sendfox-form {
+    width: 90%;
+    margin: 1rem auto;
   }
 
   #formSuscripcion.collapse.show {
@@ -330,9 +356,23 @@ body {
     height: auto !important;
     overflow: visible !important;
   }
+}
 
-  .sendfox-form {
-    width: 90%;
-    margin: 1rem auto;
+@media (max-width: 480px) {
+  /* Estilos para móviles muy pequeños */
+  .hero-header {
+    min-height: 130vh;
+  }
+
+  .hero-header h1 {
+    font-size: 2rem;
+  }
+
+  .hero-header p {
+    font-size: 16px;
+  }
+
+  .navbar .nav-link img {
+    width: 70px; /* más pequeño aún si no cabe */
   }
 }
