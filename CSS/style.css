@@ -318,3 +318,21 @@ body {
     width: 100px; /* base 100px, aquí puedes bajarlo si no cabe */
   }
 }
+@media (max-width: 768px) {
+  .hero-header {
+    overflow: visible !important;
+    height: auto !important;
+    min-height: unset !important;
+  }
+
+  #formSuscripcion.collapse.show {
+    display: block !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .sendfox-form {
+    width: 90%;
+    margin: 1rem auto;
+  }
+}
