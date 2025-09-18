@@ -16,12 +16,15 @@ body {
 /* Navbar */
 .navbar {
   position: fixed;
-  top: 0;
+  top: 0;                     /* punto inicial */
   width: 100%;
   z-index: 999;
   background-color: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(8px);
-  transition: background-color 0.3s ease;
+  transition: top 0.4s ease,  /* transición para ocultar/mostrar */
+              background-color 0.3s ease;
+  height: 60px;               /* altura fija */
+  padding: 0 !important;
 }
 
 .navbar.scrolled {
@@ -217,11 +220,19 @@ p1 {
   margin: 1rem 0;    /* espacio arriba y abajo */
 }
 .navbar-brand img {
-  max-height: 100%;           /* nunca sobresale del contenedor */
-  height: 100px;               /* respeta proporción vertical */
-  width: 150px;               /* coincide con tu HTML */
-  object-fit: contain;        /* evita deformaciones */
-  vertical-align: middle;     /* alinea con el texto si lo hay */
-  margin-top: 5px;            /* ajuste fino si parece desalineado */
-  display: inline-block;      /* asegura que se comporte correctamente */
+  height: auto;                  /* mantiene proporción */
+  max-height: 93px;              /* ajusta según la altura del navbar */
+  width: auto;                   /* evita deformaciones */
+  object-fit: contain;           /* asegura que encaje bien */
+  vertical-align: middle;        /* alinea con el texto */
+  display: inline-block;         /* comportamiento correcto */
+  margin: 0;                     /* elimina márgenes innecesarios */
+  transition: transform 0.3s ease, 
+              filter 0.3s ease;  /* suaviza animaciones */
+}
+
+/* Hover con efecto místico */
+.navbar-brand img:hover {
+  transform: scale(1.08) rotate(-1deg); /* zoom ligero + inclinación */
+  filter: drop-shadow(0 0 8px rgb(0, 0, 0));    /* resplandor dorado */
 }
