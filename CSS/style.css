@@ -171,12 +171,13 @@ body {
   margin: 0 0.4rem;
   color: #fff !important;
   transition: transform 0.3s ease, filter 0.3s ease;
+    width: 120px; /* 👈 Aquí lo añades */
 }
 
 /* Íconos dentro del nav */
 .navbar .nav-link img {
   width: 100px;   /* Tamaño grande sin agrandar el navbar */
-  height: auto;
+   height: 80px;
   display: block;
   transition: transform 0.3s ease;
 }
