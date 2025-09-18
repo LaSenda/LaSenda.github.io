@@ -269,110 +269,56 @@ body {
   background: linear-gradient(to bottom, rgba(0,0,0,0.8), #f8f9fa);
 }
 
-/* Tablets y móviles (≤991px) */
-@media (max-width: 991px) {
-  .navbar-collapse {
-    background-color: rgba(0,0,0,0.85); /* fondo oscuro al abrir menú */
-    padding: 1rem;
-    border-radius: 0.5rem;
-  }
-
-  /* Iconos en colapsado */
-  .navbar .nav-link img {
-    width: 100px; /* base 100px, puedes tocar aquí si quieres */
-  }
-
-  .navbar-nav .nav-item {
-    margin: 0.5rem 0;
-    text-align: center;
-  }
-}
-
-/* ============================= */
-/* MEDIA QUERY: Tablets y Móviles */
-/* ============================= */
-
-@media (max-width: 991px) {
-  /* Estilos para tablets y móviles */
-  .navbar-collapse {
-    background-color: rgba(0,0,0,0.85); /* fondo oscuro al abrir menú */
-    padding: 1rem;
-    border-radius: 0.5rem;
-  }
-
-  .navbar .nav-link img {
-    width: 100px; /* tamaño de iconos en menú colapsado */
-  }
-
-  .navbar-nav .nav-item {
-    margin: 0.5rem 0;
-    text-align: center;
-  }
-}
-
-@media (max-width: 768px) {
-  /* Estilos específicos para móviles */
-  .navbar {
-    height: 55px;
-  }
-
-  .navbar .nav-link {
-    height: 55px;
-    margin: 0 0.3rem;
-  }
-
-  .navbar .nav-link img {
-    width: 80px; /* más pequeño en móvil */
-  }
-
+/* SOLO móviles y tablets */
+@media (max-width: 1024px) {
   .hero-header {
-    min-height: 150vh; /* más alto para cubrir contenido */
-    height: auto;
-    overflow: visible;
-    padding-bottom: 1rem;
+    position: relative;
+    height: auto;        /* que crezca con el contenido */
+    min-height: 100vh;   /* asegura altura mínima pantalla completa */
+    overflow: hidden;
+    display: flex;
+    padding-bottom: 2rem;
+    background-color: #000;
+  }
+
+  .hero-img-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
   }
 
   .hero-img-bg::before {
-    background-size: cover;
-    background-position: center;
-    transform: scale(1.1); /* menos zoom en móvil */
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../Assets/img/fondos/fondo3.png') center/cover no-repeat;
+    filter: brightness(1.1) contrast(1.1) saturate(1.2);
+    transform-origin: center center;
+    transform: scale(1.2);
+    animation: heroZoom 20s ease-in-out infinite alternate;
+    z-index: 0;
   }
 
-  .hero-header h1 {
-    font-size: 2.2rem;
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%; /* SIEMPRE rellena todo el header */
+    background: linear-gradient(rgba(0,0,0,0.45), rgba(40,0,60,0.45));
+    z-index: 1;
+    pointer-events: none;
   }
 
-  .hero-header p {
-    font-size: 18px;
-  }
-
-  .sendfox-form {
-    width: 90%;
-    margin: 1rem auto;
-  }
-
-  #formSuscripcion.collapse.show {
-    display: block !important;
-    height: auto !important;
-    overflow: visible !important;
-  }
-}
-
-@media (max-width: 480px) {
-  /* Estilos para móviles muy pequeños */
-  .hero-header {
-    min-height: 130vh;
-  }
-
-  .hero-header h1 {
-    font-size: 2rem;
-  }
-
-  .hero-header p {
-    font-size: 16px;
-  }
-
-  .navbar .nav-link img {
-    width: 70px; /* más pequeño aún si no cabe */
+  .hero-text {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+    padding-top: 5rem;
+    text-align: center;
+    font-family: "Macondo", cursive;
+    color: #fff;
   }
 }
