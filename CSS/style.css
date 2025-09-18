@@ -344,3 +344,217 @@ body {
     opacity: 1;
   }
 }
+
+/* ============================= */
+/* GRID RESPONSIVO PARA .band    */
+/* ============================= */
+.band {
+  width: 90%;
+  max-width: 1240px;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+}
+
+@media (min-width: 30em) {
+  .band {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 60em) {
+  .band {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ============================= */
+/* FLEXBOX PARA .cards-flex      */
+/* ============================= */
+.cards-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.cards-flex .card-item {
+  flex: 1 1 calc(33.333% - 20px);
+  max-width: calc(33.333% - 20px);
+}
+
+@media (max-width: 992px) {
+  .cards-flex .card-item {
+    flex: 1 1 calc(50% - 20px);
+    max-width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 576px) {
+  .cards-flex .card-item {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+/* ============================= */
+/* BLOG-CARD BASE                */
+/* ============================= */
+.blog-card {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Fondo personalizado por tarjeta */
+.blog-card.spring-fever {
+  background-image: url('../Assets/img/articulos/fondo-card.jpg');
+}
+
+/* ============================= */
+/* OVERLAYS                      */
+/* ============================= */
+.gradient-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 60%);
+  z-index: 15;
+}
+
+.color-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(30,30,30,0.4);
+  z-index: 10;
+  transition: background .3s ease;
+}
+
+.blog-card:hover .color-overlay {
+  background: rgba(30,30,30,0.8);
+}
+
+/* ============================= */
+/* TITLE CONTENT                 */
+/* ============================= */
+.title-content {
+  position: relative;
+  z-index: 20;
+  padding: 20px;
+}
+
+.title-content h3 {
+  font-family: 'Macondo', cursive;
+  color: #f0e68c;
+  margin-bottom: 0.5rem;
+}
+
+.title-content hr {
+  width: 50px;
+  height: 3px;
+  background: #c4b5fd;
+  border: none;
+  margin: 0.5rem auto;
+}
+
+.title-content .intro {
+  font-family: 'Droid Serif', serif;
+  color: #dcdcdc;
+  font-size: 1rem;
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+/* ============================= */
+/* CARD INFO (APARECE AL HOVER)  */
+/* ============================= */
+.card-info {
+  position: relative;
+  padding: 0 20px 20px;
+  font-family: 'Droid Serif', serif;
+  color: #dcdcdc;
+  line-height: 1.5;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity .3s ease, transform .3s ease;
+}
+
+.blog-card:hover .card-info {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================= */
+/* UTILITY INFO                  */
+/* ============================= */
+.utility-info {
+  position: relative;
+  z-index: 20;
+  padding: 0 20px 20px;
+}
+
+.utility-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1rem;
+}
+
+.utility-list .comments::before {
+  content: '💬 ';
+}
+
+.utility-list .date::before {
+  content: '📅 ';
+}
+
+
+/* ============ */
+/* FLEX CONTAINER */
+/* ============ */
+.cards-flex {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 1.5rem; 
+  column-gap: 1.5rem; 
+  justify-content: center;
+  margin: 0 auto;
+}
+
+/* Cada tarjeta ocupa 1/3 del contenedor menos el gap */
+.cards-flex .card-item {
+  flex: 1 1 calc(33.333% - 20px);
+  max-width: calc(33.333% - 20px);
+}
+
+/* RESPONSI VE: 2 columnas */
+@media (max-width: 992px) {
+  .cards-flex .card-item {
+    flex: 1 1 calc(50% - 20px);
+    max-width: calc(50% - 20px);
+  }
+}
+
+/* MÓVIL: 1 columna */
+@media (max-width: 576px) {
+  .cards-flex .card-item {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+/* ===== */
+/* CARDS */
+/* ===== */
+/* Asegúrate de incluir aquí tu CSS de .blog-card, .title-content, .card-info, .utility-info, overlays, etc. */
