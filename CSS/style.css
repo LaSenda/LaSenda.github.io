@@ -83,14 +83,13 @@ body {
 /* ============================= */
 .hero-header {
   position: relative;
-   min-height: 130vh;
+  min-height: 130vh;
   height: auto;
   overflow: hidden;
   display: flex;
   padding-bottom: 2rem; /* margen inferior controlado */
   background-color: #000; /* o un degradado oscuro */
 }
-
 
 /* Fondo animado */
 .hero-img-bg {
@@ -125,7 +124,6 @@ body {
   z-index: 1;
   pointer-events: none;
 }
-
 
 /* Texto hero */
 .hero-text {
@@ -269,12 +267,15 @@ body {
   background: linear-gradient(to bottom, rgba(0,0,0,0.8), #f8f9fa);
 }
 
-/* SOLO móviles y tablets */
+/* ============================= */
+/* SOLO móviles y tablets con fondo más suave */
+/* ============================= */
 @media (max-width: 1024px) {
+  /* Hero Header */
   .hero-header {
     position: relative;
-    height: auto;        /* que crezca con el contenido */
-    min-height: 100vh;   /* asegura altura mínima pantalla completa */
+    height: auto;        
+    min-height: 100vh;   
     overflow: hidden;
     display: flex;
     padding-bottom: 2rem;
@@ -295,7 +296,7 @@ body {
     height: 100%;
     background: url('../Assets/img/fondos/fondo3.png') center/cover no-repeat;
     filter: brightness(1.1) contrast(1.1) saturate(1.2);
-    transform-origin: center center;
+    transform-origin: center;
     transform: scale(1.2);
     animation: heroZoom 20s ease-in-out infinite alternate;
     z-index: 0;
@@ -305,7 +306,7 @@ body {
     position: absolute;
     inset: 0;
     width: 100%;
-    height: 100%; /* SIEMPRE rellena todo el header */
+    height: 100%;
     background: linear-gradient(rgba(0,0,0,0.45), rgba(40,0,60,0.45));
     z-index: 1;
     pointer-events: none;
@@ -320,5 +321,26 @@ body {
     text-align: center;
     font-family: "Macondo", cursive;
     color: #fff;
+  }
+
+  /* Menú colapsable compacto con fade + slide y fondo suave */
+  .navbar-collapse {
+    background-color: rgba(0, 0, 0, 0.65); /* fondo más suave */
+    padding: 1rem;
+    border-radius: 0.5rem;
+    max-width: 300px;
+    margin-top: 0.5rem;
+    z-index: 998;
+
+    /* Animación inicial: cerrado */
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+  }
+
+  .navbar-collapse.show {
+    max-height: 500px; /* suficiente para mostrar todo el contenido */
+    opacity: 1;
   }
 }
