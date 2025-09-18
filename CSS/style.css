@@ -216,3 +216,12 @@ p1 {
   display: block;    /* asegura que se comporte como un párrafo */
   margin: 1rem 0;    /* espacio arriba y abajo */
 }
+.navbar-brand img {
+  max-height: 100%;           /* nunca sobresale del contenedor */
+  height: auto;               /* respeta proporción vertical */
+  width: 200px;               /* coincide con tu HTML */
+  object-fit: contain;        /* evita deformaciones */
+  vertical-align: middle;     /* alinea con el texto si lo hay */
+  margin-top: 5px;            /* ajuste fino si parece desalineado */
+  display: inline-block;      /* asegura que se comporte correctamente */
+}
