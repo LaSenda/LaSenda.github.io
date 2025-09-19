@@ -1,33 +1,27 @@
 /* ============================= */
 /* FUENTES Y RESET               */
 /* ============================= */
+/* Solo importa la fuente que se va a usar (Macondo y Cormorant Garamond) */
 @import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
 
+/* Reset básico */
 *, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* ============================= */
+/* BODY Y TIPOGRAFÍA GLOBAL      */
+/* ============================= */
 body {
-  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  /* Aplica solo una vez la fuente principal. Si quieres otra de respaldo, sepáralas con coma */
+  font-family: 'Cormorant Garamond', system-ui, -apple-system, "Segoe UI", sans-serif, serif;
   color: #eaeaea;
-   background:
-    linear-gradient(
-      to bottom,
-      rgba(10,  25,  45,  0.6),  /* sombra azulada-violeta */
-      rgba(35,  55,  30,  0.6)   /* verde bosque profundo */
-    ),
-    url('/Assets/img/fondos/fondobody3.png') no-repeat center center fixed;
+  background: url(/Assets/img/fondos/fondobody3.png) no-repeat center center fixed;
   background-size: cover;
   background-attachment: fixed;
-  background-blend-mode: overlay;
-  color: #eaeaea;
-  font-family: 'Cormorant Garamond', serif;
 }
-
-
-
 
 /* ============================= */
 /* NAVBAR                        */
@@ -36,7 +30,7 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 999;
+  z-index: 10; /* Valor suficiente, era 999 */
   background-color: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(8px);
   transition: top 1s ease, background-color 0.7s ease;
@@ -102,8 +96,8 @@ body {
   height: auto;
   overflow: hidden;
   display: flex;
-  padding-bottom: 2rem; /* margen inferior controlado */
-  background-color: #000; /* o un degradado oscuro */
+  padding-bottom: 2rem;
+  background-color: #000;
 }
 
 /* Fondo animado */
@@ -118,12 +112,12 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%; /* ocupa solo el alto del header */
+  height: 100%;
   background: url('../Assets/img/fondos/fondo3.png') center/cover no-repeat;
   filter: brightness(1.1) contrast(1.1) saturate(1.2);
   transform-origin: center center;
   transform: scale(1.2);
-  animation: heroZoom 20s ease-in-out infinite alternate;
+  animation: sectionZoom 20s ease-in-out infinite alternate;
   will-change: transform;
   z-index: 0;
 }
@@ -134,7 +128,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%; /* igual que el header */
+  height: 100%;
   background: linear-gradient(rgba(0,0,0,0.45), rgba(40,0,60,0.45));
   z-index: 1;
   pointer-events: none;
@@ -152,13 +146,8 @@ body {
   color: #fff;
 }
 
-/* Tipografía hero */
-.hero-header h1,
-.hero-header h2,
-.hero-header h3,
-.hero-header h4,
-.hero-header h5,
-.hero-header h6 {
+/* Tipografía hero optimizada usando :is */
+.hero-header :is(h1, h2, h3, h4, h5, h6) {
   font-family: "Macondo", cursive;
   margin-bottom: 1rem;
   font-size: 3rem;
@@ -192,14 +181,24 @@ body {
   margin: 1rem auto 0;
 }
 
-/* Animación */
-@keyframes heroZoom {
-  from { transform: scale(1.2); }
-  to   { transform: scale(1.3); }
+/* Animación reutilizable para hero y cards */
+@keyframes sectionZoom {
+  0% { transform: scale(1.1); filter: brightness(0.9) contrast(1.1); }
+  50% { transform: scale(1.15); filter: brightness(0.8) contrast(1.2); }
+  100% { transform: scale(1.1); filter: brightness(0.9) contrast(1.1); }
+}
+
+/* Accesibilidad: motion reducido */
+@media (prefers-reduced-motion: reduce) {
+  .hero-img-bg::before,
+  .cards-flex-section::before {
+    animation: none !important;
+    transform: scale(1.1) !important;
+  }
 }
 
 /* ============================= */
-/* TEXTO ESPECIAL                 */
+/* TEXTO ESPECIAL                */
 /* ============================= */
 .p1 {
   font-size: 2rem;
@@ -211,7 +210,7 @@ body {
 }
 
 /* ============================= */
-/* FORMULARIO SENDFOX             */
+/* FORMULARIO SENDFOX            */
 /* ============================= */
 .sendfox-form {
   font-family: 'Roboto', sans-serif;
@@ -231,7 +230,6 @@ body {
   margin-bottom: 0.3rem;
   font-weight: 500;
 }
-
 .sendfox-form input,
 .sendfox-form button {
   font-family: 'Roboto', sans-serif;
@@ -243,16 +241,13 @@ body {
   border: none;
   box-sizing: border-box;
 }
-
 .sendfox-form input {
   background-color: #fff;
   color: #000;
 }
-
 .sendfox-form input::placeholder {
   color: #666;
 }
-
 .sendfox-form button {
   background-color: #f0e68c;
   color: #000;
@@ -260,49 +255,40 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-
 .sendfox-form button:hover {
   background-color: #ffeaa7;
 }
-
-/* Caja de suscripción */
 .subscribe-box {
   max-width: 500px;
   margin: 0 auto;
   text-align: center;
 }
-
-/* Centrado del colapsable */
 #formSuscripcion form {
   margin: 0 auto;
 }
-
 .section-separator {
   height: 40px;
   background: linear-gradient(to bottom, rgba(0,0,0,0.8), #f8f9fa);
 }
 
 /* ============================= */
-/* SOLO móviles y tablets con fondo más suave */
+/* RESPONSIVE - SOLO DISPOSITIVOS */
 /* ============================= */
 @media (max-width: 1024px) {
-  /* Hero Header */
   .hero-header {
     position: relative;
-    height: auto;        
-    min-height: 100vh;   
+    height: auto;
+    min-height: 100vh;
     overflow: hidden;
     display: flex;
     padding-bottom: 2rem;
     background-color: #000;
   }
-
   .hero-img-bg {
     position: absolute;
     inset: 0;
     z-index: 0;
   }
-
   .hero-img-bg::before {
     content: "";
     position: absolute;
@@ -313,10 +299,9 @@ body {
     filter: brightness(1.1) contrast(1.1) saturate(1.2);
     transform-origin: center;
     transform: scale(1.2);
-    animation: heroZoom 20s ease-in-out infinite alternate;
+    animation: sectionZoom 20s ease-in-out infinite alternate;
     z-index: 0;
   }
-
   .hero-overlay {
     position: absolute;
     inset: 0;
@@ -326,7 +311,6 @@ body {
     z-index: 1;
     pointer-events: none;
   }
-
   .hero-text {
     position: relative;
     z-index: 2;
@@ -337,31 +321,26 @@ body {
     font-family: "Macondo", cursive;
     color: #fff;
   }
-
-  /* Menú colapsable compacto con fade + slide y fondo suave */
   .navbar-collapse {
-    background-color: rgba(0, 0, 0, 0.65); /* fondo más suave */
+    background-color: rgba(0, 0, 0, 0.65);
     padding: 1rem;
     border-radius: 0.5rem;
     max-width: 300px;
     margin-top: 0.5rem;
-    z-index: 998;
-
-    /* Animación inicial: cerrado */
+    z-index: 9;
     max-height: 0;
     overflow: hidden;
     opacity: 0;
     transition: max-height 0.4s ease, opacity 0.4s ease;
   }
-
   .navbar-collapse.show {
-    max-height: 500px; /* suficiente para mostrar todo el contenido */
+    max-height: 500px;
     opacity: 1;
   }
 }
 
 /* ============================= */
-/* GRID RESPONSIVO PARA .band    */
+/* GRID PARA .band (RESPONSIVE)  */
 /* ============================= */
 .band {
   width: 90%;
@@ -369,15 +348,13 @@ body {
   margin: 20px auto;
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 20px;
+  grid-gap: 20px; /* Puedes cambiar a gap: 1.5rem para más coherencia */
 }
-
 @media (min-width: 30em) {
   .band {
     grid-template-columns: 1fr 1fr;
   }
 }
-
 @media (min-width: 60em) {
   .band {
     grid-template-columns: repeat(4, 1fr);
@@ -390,23 +367,20 @@ body {
 .cards-flex {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 1.5rem; /* Unificado, elimina duplicados de gap */
   justify-content: center;
   margin: 0 auto;
 }
-
 .cards-flex .card-item {
-  flex: 1 1 calc(33.333% - 20px);
-  max-width: calc(33.333% - 20px);
+  flex: 1 1 calc(33.333% - 1.5rem);
+  max-width: calc(33.333% - 1.5rem);
 }
-
 @media (max-width: 992px) {
   .cards-flex .card-item {
-    flex: 1 1 calc(50% - 20px);
-    max-width: calc(50% - 20px);
+    flex: 1 1 calc(50% - 1.5rem);
+    max-width: calc(50% - 1.5rem);
   }
 }
-
 @media (max-width: 576px) {
   .cards-flex .card-item {
     flex: 1 1 100%;
@@ -430,7 +404,7 @@ body {
   background-repeat: no-repeat;
 }
 
-/* Fondo personalizado por tarjeta */
+/* Fondo personalizado de cada tarjeta */
 .blog-card.spring-fever {
   background-image: url('../Assets/img/articulos/fondo-card.jpg');
 }
@@ -445,7 +419,6 @@ body {
   background: linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 60%);
   z-index: 15;
 }
-
 .color-overlay {
   position: absolute;
   top: 0; left: 0;
@@ -454,26 +427,23 @@ body {
   z-index: 10;
   transition: background .3s ease;
 }
-
 .blog-card:hover .color-overlay {
   background: rgba(30,30,30,0.8);
 }
 
 /* ============================= */
-/* TITLE CONTENT                 */
+/* TITLE CONTENT                  */
 /* ============================= */
 .title-content {
   position: relative;
   z-index: 20;
   padding: 20px;
 }
-
 .title-content h3 {
   font-family: 'Macondo', cursive;
   color: #f0e68c;
   margin-bottom: 0.5rem;
 }
-
 .title-content hr {
   width: 50px;
   height: 3px;
@@ -481,7 +451,6 @@ body {
   border: none;
   margin: 0.5rem auto;
 }
-
 .title-content .intro {
   font-family: 'Droid Serif', serif;
   color: #dcdcdc;
@@ -503,7 +472,6 @@ body {
   transform: translateY(10px);
   transition: opacity .3s ease, transform .3s ease;
 }
-
 .blog-card:hover .card-info {
   opacity: 1;
   transform: translateY(0);
@@ -517,7 +485,6 @@ body {
   z-index: 20;
   padding: 0 20px 20px;
 }
-
 .utility-list {
   list-style: none;
   padding: 0;
@@ -525,51 +492,54 @@ body {
   display: flex;
   gap: 1rem;
 }
-
 .utility-list .comments::before {
   content: '💬 ';
 }
-
 .utility-list .date::before {
   content: '📅 ';
 }
 
-
-/* ============ */
-/* FLEX CONTAINER */
-/* ============ */
-.cards-flex {
-  display: flex;
-  flex-wrap: wrap;
-  row-gap: 1.5rem; 
-  column-gap: 1.5rem; 
-  justify-content: center;
-  margin: 0 auto;
+/* ============================= */
+/* FONDO PARA SECCIÓN DE CARDS   */
+/* ============================= */
+.cards-flex-section {
+  position: relative;
+  padding: 4rem 0;
+  overflow: hidden;
+  background-color: #000; /* Base negra */
 }
 
-/* Cada tarjeta ocupa 1/3 del contenedor menos el gap */
-.cards-flex .card-item {
-  flex: 1 1 calc(33.333% - 20px);
-  max-width: calc(33.333% - 20px);
+.cards-flex-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: url('../Assets/img/fondos/fondo4.png') center/cover no-repeat;
+  filter: brightness(1.1) contrast(1.1) saturate(1.2);
+  transform-origin: center center;
+  transform: scale(1.2);
+  animation: sectionZoom 25s ease-in-out infinite alternate;
+  z-index: 0;
 }
 
-/* RESPONSI VE: 2 columnas */
-@media (max-width: 992px) {
-  .cards-flex .card-item {
-    flex: 1 1 calc(50% - 20px);
-    max-width: calc(50% - 20px);
-  }
+.cards-flex-section::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(rgba(0,0,0,0.45), rgba(40,0,60,0.45));
+  z-index: 1;
+  pointer-events: none;
 }
 
-/* MÓVIL: 1 columna */
-@media (max-width: 576px) {
-  .cards-flex .card-item {
-    flex: 1 1 100%;
-    max-width: 100%;
-  }
+.cards-flex-section > * {
+  position: relative;
+  z-index: 2;
 }
 
-/* ===== */
-/* CARDS */
-/* ===== */
-/* Asegúrate de incluir aquí tu CSS de .blog-card, .title-content, .card-info, .utility-info, overlays, etc. */
+/* Animación para zoom suave */
+@keyframes sectionZoom {
+  0%   { transform: scale(1.2); filter: brightness(1.1) contrast(1.1) saturate(1.2); }
+  50%  { transform: scale(1.25); filter: brightness(1.0) contrast(1.2) saturate(1.3); }
+  100% { transform: scale(1.2); filter: brightness(1.1) contrast(1.1) saturate(1.2); }
+}
