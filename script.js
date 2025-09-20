@@ -65,4 +65,34 @@ window.addEventListener('load', () => {
 
     const randomIndex = Math.floor(Math.random() * loveTexts.length);
     document.getElementById('love-text').textContent = loveTexts[randomIndex];
+
+    document.addEventListener('DOMContentLoaded', () => {
+  const vid = document.getElementById('fog-video');
+  if (!vid) return;
+
+  vid.addEventListener('canplay', () => {
+    // Arranca la reproducción y ajusta velocidad y estilo
+    vid.play();
+    vid.playbackRate = 0.1;     
+    vid.style.filter = 'blur(1px) opacity(0.3)';
+    vid.style.transition = 'opacity 3s ease-in-out';
+
+    // Efecto de respiración: alterna opacidad cada 10 segundos
+    let aumentando = true;
+    setInterval(() => {
+      vid.style.opacity = aumentando ? '0.8' : '0.5';
+      aumentando = !aumentando;
+    }, 10000);
+  });
 });
+});
+
+
+
+    // Selecciona el elemento de video por su ID
+    const video = document.getElementById('fog-video');
+
+    // Cambia la velocidad de reproducción.
+    // 0.5 = 50% de la velocidad normal (la mitad de lento).
+    // 0.25 = 25% de la velocidad normal (muy lento).
+    video.playbackRate = 0.5; // Cambia este valor para ajustar la velocidad
