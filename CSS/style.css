@@ -643,6 +643,6 @@ body {
 .video-flex-section .transition,
 .video-flex-section .cards-flex-section {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
