@@ -152,4 +152,17 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('Sistema de niebla iniciado - esperando...');
     }
 });
+function updateForestClock() {
+    const now = new Date();
+    const timeString = now.toLocaleTimeString('es-ES', {
+        hour: '2-digit',
+        minute: '2-digit'
+    });
+    const element = document.getElementById('forestTime');
+    if (element) {
+        element.textContent = timeString;
+    }
+}
 
+setInterval(updateForestClock, 1000);
+updateForestClock();

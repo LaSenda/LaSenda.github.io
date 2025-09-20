@@ -87,57 +87,16 @@
     <!-- Texto hero -->
     <div class="hero-text text-center">
       <h1 class="fw-bolder">Bienvenidos a La Senda</h1>
-      <p class="lead mb-0">Un espacio de curiosidades y reflexiones.</p>
+      
       <p>
         Este blog es mi camino personal para compartir lo que me inspira y apasiona. A través de estas páginas, busco mejorar mis habilidades mientras exploro temas que despiertan mi curiosidad. Espero que al acompañarme en este recorrido, encuentres inspiración para tu propio viaje de descubrimiento.
       </p>
-      <p id="love-message">
+      <p id="love-message"  class="p1">
   <span id="lover-name">Carla</span>, <span id="love-text">Te quiero</span>
 </p>
         <br>
       
-       <!-- Título y botón -->
-<div class="subscribe-box text-center mt-4">
-  <h2 class="fw-bolder" style="font-size: 1.6rem;">
-    ¡Suscríbete para recibir las últimas novedades!
-  </h2>
-  <button class="btn btn-warning mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#formSuscripcion" aria-expanded="false" aria-controls="formSuscripcion">
-    Mostrar formulario
-  </button>
-</div>
-
-<!-- Formulario colapsable -->
-<div class="collapse" id="formSuscripcion">
-  <form method="post" action="https://sendfox.com/form/1j0xrq/1kzvp9" class="sendfox-form" id="1kzvp9" data-async="true" data-recaptcha="true">
-    <p><label for="sendfox_form_name">Nombre:</label>
-    <input type="text" id="sendfox_form_name" name="first_name" placeholder="Tu nombre" /></p>
-
-    <p><label for="sendfox_form_last_name">Apellido:</label>
-    <input type="text" id="sendfox_form_last_name" name="last_name" placeholder="Tu apellido" /></p>
-
-
-
-<p><label for="sendfox_form_birthday">Birthday: </label><input type="date" id="sendfox_form_birthday" name="contact_fields[birthday]" placeholder="Birthday" /></p>
-
-			
-
-
-
-    
-
-    <p><label for="sendfox_form_email">Email:</label>
-    <input type="email" id="sendfox_form_email" name="email" placeholder="Tu correo" required /></p>
-    
-
-
-    
-
-    <p><label><input type="checkbox" name="gdpr" value="1" required /> Acepto recibir novedades por correo.</label></p>
-
-    <p><button type="submit" class="btn btn-warning w-100">Suscribirme</button></p>
-  </form>
-</div>
-
+      
       
     </div>
   </div>
@@ -158,19 +117,21 @@
   <div class="cards-flex">
     <!-- Item 1 -->
     <div class="card-item">
-      <a href="articulos/como-empece.html">
-        <div class="blog-card spring-fever">
+      <a href="articulos/Caravaggio.html">
+        <div class="blog-card caravaggio">
           <div class="title-content">
-            <h3>Cómo empecé mi blog</h3>
+            <h3>Michelangelo Merisi da Caravaggio</h3>
             <hr />
-            <div class="intro">El origen de este viaje místico en La Senda.</div>
+            <div class="intro">El don divino que salvó al hombre caído</div>
           </div>
           <div class="card-info">
-            Compartiré cómo surgió la idea de este espacio, mis primeras dudas y cómo superarlas.
+            Un hombre que huyó de la justicia, que luchó en las calles, 
+            y que transformaba a prostitutas en vírgenes, 
+            a mendigos en santos, y a trabajadores en apóstoles.
           </div>
           <div class="utility-info">
             <ul class="utility-list">
-              <li class="comments">3 comentarios</li>
+             
               <li class="date">19.09.2025</li>
             </ul>
           </div>
@@ -309,13 +270,43 @@
     <a href="articulos.html" class="btn btn-outline-warning">Ver todos los artículos</a>
   </div>
 </section>
+
 </section>
 
 <!-- FIN ARTÍCULOS DESTACADOS EN FLEXBOX -->
  </main>
 
+<!-- Título y botón -->
+        <div class="subscribe-box text-center mt-4">
+          <h2 class="fw-bolder" style="font-size: 1.6rem;">
+            ¡Suscríbete para recibir las últimas novedades!
+          </h2>
+          <button class="btn btn-warning mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#formSuscripcion" aria-expanded="false" aria-controls="formSuscripcion">
+            Mostrar formulario
+          </button>
+        </div>
+        
+        <!-- Formulario colapsable -->
+        <div class="collapse" id="formSuscripcion">
+          <form method="post" action="https://sendfox.com/form/1j0xrq/1kzvp9" class="sendfox-form" id="1kzvp9" data-async="true" data-recaptcha="true">
+            <p><label for="sendfox_form_name">Nombre:</label>
+            <input type="text" id="sendfox_form_name" name="first_name" placeholder="Tu nombre" /></p>
 
+            <p><label for="sendfox_form_last_name">Apellido:</label>
+            <input type="text" id="sendfox_form_last_name" name="last_name" placeholder="Tu apellido" /></p>
 
+            <p><label for="sendfox_form_birthday">Cumpleaños: </label><input type="date" id="sendfox_form_birthday" name="contact_fields[birthday]" placeholder="Birthday" /></p>
+
+            <p><label for="sendfox_form_email">Email:</label>
+            <input type="email" id="sendfox_form_email" name="email" placeholder="Tu correo" required /></p>
+
+            <p><label><input type="checkbox" name="gdpr" value="1" required /> Acepto recibir novedades por correo.</label></p>
+
+            <p><button type="submit" class="btn btn-warning w-100">Suscribirme</button></p>
+          </form>
+        </div>
+<br>
+<br>
     <!-- Bootstrap JS Bundle with Popper-->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
@@ -323,4 +314,94 @@
     <script src="/script.js"></script>
 
 </body>
+<footer class="footer-waves">
+  <div class="wave-top">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M0,60 C150,120 350,0 600,60 C850,120 1050,0 1200,60 L1200,120 L0,120 Z" fill="rgba(139, 115, 85, 0.3)"></path>
+    </svg>
+  </div>
+  
+  <div class="footer-content-waves">
+    
+    
+  <div class="leaf leaf-1">🍂</div>
+  <div class="leaf leaf-2">🍃</div>
+  <div class="leaf leaf-3">🍂</div>
+  <div class="leaf leaf-4">🍃</div>
+  <div class="leaf leaf-5">🍂</div>
+  <div class="leaf leaf-6">🍃</div>
+  <div class="leaf leaf-7">🍂</div>
+  <div class="leaf leaf-8">🍃</div>
+  <div class="leaf leaf-9">🍂</div>
+  <div class="leaf leaf-10">🍃</div>
+  <div class="leaf leaf-11">🍂</div>
+  <div class="leaf leaf-12">🍃</div>
+</div>
+    <!-- ✨ AQUÍ VAN LAS LUCIÉRNAGAS (encima de todo) -->
+    <div class="fireflies">
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+    </div>
+    
+    <div class="container">
+      <!-- Grid de 3 columnas -->
+      <div class="footer-visual-grid">
+        
+        <!-- COLUMNA 1: Tu contenido principal -->
+        <div class="footer-main-content">
+          <div class="text-center">
+            <h3>La Senda</h3>
+            <p>Un espacio personal de curiosidades y reflexiones</p>
+          </div>
+        </div>
+        
+        <!-- COLUMNA 2: Reloj del bosque -->
+        <div class="footer-widget">
+          <div class="forest-clock">
+            <div class="time-display" id="forestTime"></div>
+            <div class="clock-decoration">🌲⏰🌲</div>
+          </div>
+        </div>
+        
+        <!-- COLUMNA 3: Estadísticas visuales -->
+        <div class="footer-widget">
+          <div class="nature-stats">
+            <div class="stat-item">
+              <span class="stat-icon">🌱</span>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 75%"></div>
+              </div>
+              <span class="stat-label">Crecimiento</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-icon">📚</span>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 30%"></div>
+              </div>
+              <span class="stat-label">Artículos</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-icon">☕</span>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 90%"></div>
+              </div>
+              <span class="stat-label">Café</span>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      
+      <!-- Fila inferior con copyright -->
+      <div class="footer-signature">
+        <p>© 2025 La Senda</p>
+      </div>
+    </div>
+    
+   
+  </div>
+</footer>
+
 </html>
