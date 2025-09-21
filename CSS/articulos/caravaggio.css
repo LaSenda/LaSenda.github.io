@@ -283,8 +283,8 @@ body {
 
 /* Popover: contenedor principal */
 .popover {
-  max-width: 300px;        /* ancho máximo del cuadro */
-  font-size: 0.95rem;      /* tamaño base del texto */
+  max-width: 500px;        /* ancho máximo del cuadro */
+  font-size: 0.75rem;      /* tamaño base del texto */
   background-color: #fff;  /* color de fondo */
   border: 1px solid #ccc;  /* borde gris claro */
   border-radius: 0.5rem;   /* esquinas redondeadas */
@@ -310,7 +310,7 @@ body {
 
 /* Párrafos dentro del popover */
 .popover-body p {
-  margin-bottom: 0.75rem;  /* espacio entre párrafos */
+  margin-bottom: 0.65rem;  /* espacio entre párrafos */
 }
 
 /* Imagen dentro del popover */
