@@ -280,3 +280,65 @@ body {
         gap: 1rem;
     }
 }
+
+/* Popover: contenedor principal */
+.popover {
+  max-width: 300px;        /* ancho máximo del cuadro */
+  font-size: 0.95rem;      /* tamaño base del texto */
+  background-color: #fff;  /* color de fondo */
+  border: 1px solid #ccc;  /* borde gris claro */
+  border-radius: 0.5rem;   /* esquinas redondeadas */
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15); /* sombra suave */
+}
+
+/* Popover header: título */
+.popover-header {
+  font-weight: 700;        /* negrita */
+  font-size: 1rem;         /* tamaño del título */
+  color: #333;             /* color del texto del título */
+  background-color: #f7f7f7; /* fondo ligeramente gris */
+  border-bottom: 1px solid #ddd; /* línea separadora */
+  padding: 0.5rem 1rem;    /* espacio interno */
+}
+
+/* Popover body: contenido de párrafos e imagen */
+.popover-body {
+  padding: 0.75rem 1rem;   /* espacio interno */
+  color: #444;             /* color del texto */
+  line-height: 1.4;        /* interlineado */
+}
+
+/* Párrafos dentro del popover */
+.popover-body p {
+  margin-bottom: 0.75rem;  /* espacio entre párrafos */
+}
+
+/* Imagen dentro del popover */
+.popover-body img {
+  max-width: 100%;         /* ocupa el ancho completo del cuadro */
+  border-radius: 0.25rem;  /* esquinas redondeadas */
+  margin-top: 0.5rem;      /* espacio superior */
+}
+
+/* Badges (etiquetas) debajo del popover: puedes ajustarlos aquí */
+.badge-tema {
+  display: inline-block;
+  margin-right: 0.5rem;
+  background-color: #e9ecef; /* fondo gris claro */
+  color: #495057;            /* texto oscuro */
+  font-size: 0.85rem;        /* tamaño del texto */
+  padding: 0.3rem 0.6rem;     /* espacio interno */
+  border-radius: 0.25rem;    /* esquinas redondeadas */
+}
+
+/* Ejemplo de variante: popover más grande */
+.popover.popover-lg {
+  max-width: 400px;         /* ancho aumentado */
+  font-size: 1rem;          /* texto un poco más grande */
+}
+
+/* Ejemplo de variante: texto destacado */
+.popover-body p.highlight {
+  color: #0056b3;           /* color azul para destacar */
+  font-weight: 600;         /* negrita ligera */
+}
