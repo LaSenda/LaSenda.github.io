@@ -20,6 +20,13 @@
     .popover-header {
       font-weight: 700;
     }
+
+    /* Pequeño helper para que las "cards" flexibles tengan una min-width y se comporten bien */
+    .flex-card {
+      min-width: 260px;
+    }
+
+    /* Si usas las clases .articulo-container/.card-tema en tu CSS, se mantienen. */
   </style>
 </head>
 <body>
@@ -30,7 +37,7 @@
       <a class="navbar-brand" href="../index.html">
         <img src="../Assets/img/navbar/intento 3.png" alt="Logo La Senda" width="120" class="d-inline-block align-text-top">
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="mainNav">
@@ -49,162 +56,150 @@
 
   <!-- Contenido del artículo -->
   <div class="container mt-4">
-    <div class="row justify-content-center">
-      <div class="col-lg-10">
-        <div class="articulo-container">
+    <!-- Usamos un contenedor flex para centrar el artículo y permitir que sea responsivo -->
+    <div class="d-flex justify-content-center">
+      <div class="articulo-container" style="max-width: 980px; width: 100%;">
+        <!-- Header del artículo -->
+        <div class="articulo-header">
+          <h1 class="articulo-titulo">Michelangelo Merisi da Caravaggio</h1>
+          <p class="articulo-subtitulo">El don divino que salvó al hombre caído</p>
+          <small class="articulo-fecha">Publicado el 21 de septiembre de 2025</small>
+        </div>
 
-          <!-- Header del artículo -->
-          <div class="articulo-header">
-            <h1 class="articulo-titulo">Michelangelo Merisi da Caravaggio</h1>
-            <p class="articulo-subtitulo">El don divino que salvó al hombre caído</p>
-            <small class="articulo-fecha">Publicado el 21 de septiembre de 2025</small>
+        <!-- Contenido -->
+        <div class="articulo-contenido">
+
+          <!-- Alert de introducción -->
+          <div class="alert-tema mb-4">
+            <h5 class="alert-heading">🎨 Una reflexión sobre genio y contradicción</h5>
+            <p class="mb-0">Adentrémonos en la vida del pintor que revolucionó el arte encontrando lo sagrado en lo mundano.</p>
           </div>
 
-          <!-- Contenido -->
-          <div class="articulo-contenido">
-
-            <!-- Alert de introducción -->
-            <div class="alert-tema mb-4">
-              <h5 class="alert-heading">🎨 Una reflexión sobre genio y contradicción</h5>
-              <p class="mb-0">Adentrémonos en la vida del pintor que revolucionó el arte encontrando lo sagrado en lo mundano.</p>
+          <!-- Introducción -->
+          <div class="card-tema mb-4">
+            <div class="card-tema-header">
+              <h5>Infancia y formación previa a Roma</h5>
             </div>
+            <div class="card-tema-body">
+              <p>
+                <span class="fw-bold">Michelangelo Merisi</span>, más conocido como
+                <span class="fw-bold">Caravaggio</span>, nació en 1571 en Milán, en el seno de una familia que contaba con cierto prestigio y vínculos con la nobleza local. Su padre, <span class="fw-bold">Fermo Merisi</span>, no era un simple obrero, sino un maestro de obras y administrador que trabajaba al servicio de familias nobles relacionadas con Caravaggio(localidad ). Entre ellas se encontraban ramas menores de los <span class="fw-bold">Sforza</span>, herederas de la poderosa casa ducal milanesa, y probablemente también los
+                <span class="fw-bold">Colleoni-Martinego</span>, titulares en ese tiempo del marquesado de Caravaggio. Este puesto proporcionaba a Fermo un estatus respetable y una proximidad a los círculos de poder lombardos que aseguraban a los Merisi cierta estabilidad económica.
+              </p>
+              <p>
+                La madre, <span class="fw-bold">Lucía Aratori</span>, procedía de una familia acomodada de la localidad de Caravaggio, propietaria de tierras y con una notable presencia en la vida social y religiosa del lugar, hasta el punto de encargarse de la administración de un santuario local. De esta unión nacieron cuatro hijos: <span class="fw-bold">Caterina</span>, <span class="fw-bold">Giovan Pietro</span>, <span class="fw-bold">Giovan Battista</span> y <span class="fw-bold">Michelangelo</span>, que creció en un entorno donde se entrelazaban el trabajo artesanal cualificado, la religiosidad cotidiana y la cercanía con los notables de la región.
+              </p>
+              <p>
+                Sin embargo, la estabilidad duró poco. En <span class="fw-bold">1576</span>, la peste bubónica, un azote constante en la Europa del siglo XVI, golpeó con fuerza a Milán. Como tantas familias, los Merisi huyeron a <span class="fw-bold">Caravaggio</span>, el pueblo de origen de Lucía y que acabaría dando su nombre artístico al pintor. Pero la enfermedad los alcanzó. En <span class="fw-bold">1577</span>, cuando Michelangelo tenía apenas seis años, perdió a su padre y a su abuelo a causa de la epidemia. La viuda quedó sola al frente de cuatro hijos y de la administración de las propiedades familiares. La infancia de Caravaggio quedó así marcada por la experiencia temprana de la muerte y la fragilidad de la vida, habituándolo desde niño al duelo, la precariedad y la conciencia de lo efímero. Ese trasfondo vital nutriría más tarde la intensidad emocional, el <span class="fw-bold">realismo descarnado</span> y el dramatismo lumínico de su pintura.
+              </p>
+              <p>
+                El historiador <span class="fw-bold">Andrew Graham-Dixon</span> lo sintetiza con claridad: “A los seis años, Caravaggio había perdido a casi todos los varones adultos de su familia. Su temperamento revoltoso y fogoso y su profundo sentimiento de abandono bien pueden tener su origen en aquellos traumáticos acontecimientos”.
+              </p>
+            </div>
+          </div>
 
-            <!-- Introducción -->
-            <div class="card-tema mb-4">
+          <!-- Cards en fila convertidas a flex -->
+          <div class="d-flex flex-column flex-md-row gap-4 mb-4">
+            <div class="card-tema h-100 flex-fill flex-card">
               <div class="card-tema-header">
-                <h5>Infancia y formación previa a Roma</h5>
+                <h5>🎭 El Arte de lo Cotidiano</h5>
               </div>
               <div class="card-tema-body">
                 <p>
-                  <span class="fw-bold">Michelangelo Merisi</span>, más conocido como
-                  <span class="fw-bold">Caravaggio</span>, nació en 1571 en Milán, en el seno de una familia que contaba con cierto prestigio y vínculos con la nobleza local. Su padre, <span class="fw-bold">Fermo Merisi</span>, no era un simple obrero, sino un maestro de obras y administrador que trabajaba al servicio de familias nobles relacionadas con Caravaggio(localidad ). Entre ellas se encontraban ramas menores de los <span class="fw-bold">Sforza</span>, herederas de la poderosa casa ducal milanesa, y probablemente también los
-                  <span class="fw-bold">Colleoni-Martinego</span>, titulares en ese tiempo del marquesado de Caravaggio. Este puesto proporcionaba a Fermo un estatus respetable y una proximidad a los círculos de poder lombardos que aseguraban a los Merisi cierta estabilidad económica.
+                  A los trece años, en <span class="fw-bold">1584</span>, fue enviado de nuevo a <span class="fw-bold">Milán</span> para aprender el oficio de pintor. Entró como aprendiz en el taller de <span class="fw-bold">Simone Peterzano</span>, discípulo del gran maestro veneciano <span class="fw-bold">Tiziano</span>. Durante cuatro años, aprendió técnicas de dibujo, pintura al óleo y la disciplina de la vida gremial. Allí entró en contacto con dos corrientes que marcarían profundamente su estilo. Por un lado, el <span class="fw-bold">manierismo tardío</span>, con su gusto por la elegancia artificiosa y las composiciones complejas. Por otro, el 
+                  <a href="javascript:void(0)" 
+                     id="naturalismoTrigger" 
+                     tabindex="0"
+                     role="button"
+                     data-bs-toggle="popover" 
+                     data-bs-trigger="focus"
+                     title="Naturalismo Lombardo">
+                    naturalismo lombardo
+                  </a>, una corriente más sobria y directa que rechazaba la idealización y buscaba representar la realidad tal como era, con sus rostros vulgares, sus arrugas y sus imperfecciones. Esa tensión entre lo artificioso y lo realista fue el germen de su lenguaje pictórico personal.
                 </p>
-                <p>
-                  La madre, <span class="fw-bold">Lucía Aratori</span>, procedía de una familia acomodada de la localidad de Caravaggio, propietaria de tierras y con una notable presencia en la vida social y religiosa del lugar, hasta el punto de encargarse de la administración de un santuario local. De esta unión nacieron cuatro hijos: <span class="fw-bold">Caterina</span>, <span class="fw-bold">Giovan Pietro</span>, <span class="fw-bold">Giovan Battista</span> y <span class="fw-bold">Michelangelo</span>, que creció en un entorno donde se entrelazaban el trabajo artesanal cualificado, la religiosidad cotidiana y la cercanía con los notables de la región.
-                </p>
-                <p>
-                  Sin embargo, la estabilidad duró poco. En <span class="fw-bold">1576</span>, la peste bubónica, un azote constante en la Europa del siglo XVI, golpeó con fuerza a Milán. Como tantas familias, los Merisi huyeron a <span class="fw-bold">Caravaggio</span>, el pueblo de origen de Lucía y que acabaría dando su nombre artístico al pintor. Pero la enfermedad los alcanzó. En <span class="fw-bold">1577</span>, cuando Michelangelo tenía apenas seis años, perdió a su padre y a su abuelo a causa de la epidemia. La viuda quedó sola al frente de cuatro hijos y de la administración de las propiedades familiares. La infancia de Caravaggio quedó así marcada por la experiencia temprana de la muerte y la fragilidad de la vida, habituándolo desde niño al duelo, la precariedad y la conciencia de lo efímero. Ese trasfondo vital nutriría más tarde la intensidad emocional, el <span class="fw-bold">realismo descarnado</span> y el dramatismo lumínico de su pintura.
-                </p>
-                <p>
-                  El historiador <span class="fw-bold">Andrew Graham-Dixon</span> lo sintetiza con claridad: “A los seis años, Caravaggio había perdido a casi todos los varones adultos de su familia. Su temperamento revoltoso y fogoso y su profundo sentimiento de abandono bien pueden tener su origen en aquellos traumáticos acontecimientos”.
-                </p>
-              </div>
-            </div>
 
-            <!-- Cards en fila -->
-            <div class="row g-4 mb-4">
-              <div class="col-md-6">
-                <div class="card-tema h-100">
-                  <div class="card-tema-header">
-                    <h5>🎭 El Arte de lo Cotidiano</h5>
-                  </div>
-                  <div class="card-tema-body">
-                    <p>
-                      A los trece años, en <span class="fw-bold">1584</span>, fue enviado de nuevo a <span class="fw-bold">Milán</span> para aprender el oficio de pintor. Entró como aprendiz en el taller de <span class="fw-bold">Simone Peterzano</span>, discípulo del gran maestro veneciano <span class="fw-bold">Tiziano</span>. Durante cuatro años, aprendió técnicas de dibujo, pintura al óleo y la disciplina de la vida gremial. Allí entró en contacto con dos corrientes que marcarían profundamente su estilo. Por un lado, el <span class="fw-bold">manierismo tardío</span>, con su gusto por la elegancia artificiosa y las composiciones complejas. Por otro, el 
-                      <a href="javascript:void(0)" 
-                         id="naturalismoTrigger" 
-                         tabindex="0"
-                         role="button"
-                         data-bs-toggle="popover" 
-                         data-bs-trigger="focus"
-                         title="Naturalismo Lombardo">
-                        naturalismo lombardo
-                      </a>, una corriente más sobria y directa que rechazaba la idealización y buscaba representar la realidad tal como era, con sus rostros vulgares, sus arrugas y sus imperfecciones. Esa tensión entre lo artificioso y lo realista fue el germen de su lenguaje pictórico personal.
-                    </p>
-
-                    <!-- Plantilla oculta para el popover -->
-                    <div class="popover-content-template d-none">
-                      <p>
-                        El naturalismo lombardo no es un movimiento formal, sino una tendencia pictórica del norte de Italia en el siglo XVI. Se caracteriza por la observación directa de la realidad, la atención a los detalles cotidianos y una representación sobria frente a la idealización manierista.
-                      </p>
-                      <p>
-                        Historiadores como Roberto Longhi y Mina Gregori destacan su influencia en Caravaggio: artistas como Savoldo, Moretto da Brescia, Lorenzo Lotto y su maestro Simone Peterzano transmitieron este enfoque realista, que Caravaggio llevó a un nivel completamente nuevo en Roma.
-                      </p>
-                     
-                      <img src="../Assets/img/articulos/niñoconcestadefrutas.jpg" alt="Bodegón de Caravaggio" class="img-fluid rounded shadow mt-2">
-                    </div>
-
-                    <div class="mt-3">
-                      <span class="badge-tema">Claroscuro</span>
-                      <span class="badge-tema">Realismo Barroco</span>
-                      <span class="badge-tema">Arte Sacro</span>
-                    </div>
-                  </div>
+                <!-- Plantilla oculta para el popover -->
+                <div class="popover-content-template d-none">
+                  <p>
+                    El naturalismo lombardo no es un movimiento formal, sino una tendencia pictórica del norte de Italia en el siglo XVI. Se caracteriza por la observación directa de la realidad, la atención a los detalles cotidianos y una representación sobria frente a la idealización manierista.
+                  </p>
+                  <p>
+                    Historiadores como Roberto Longhi y Mina Gregori destacan su influencia en Caravaggio: artistas como Savoldo, Moretto da Brescia, Lorenzo Lotto y su maestro Simone Peterzano transmitieron este enfoque realista, que Caravaggio llevó a un nivel completamente nuevo en Roma.
+                  </p>
+                 
+                  <img src="../Assets/img/articulos/niñoconcestadefrutas.jpg" alt="Bodegón de Caravaggio" class="img-fluid rounded shadow mt-2">
                 </div>
-              </div>
 
-              <div class="col-md-6">
-                <div class="card-tema h-100">
-                  <div class="card-tema-header">
-                    <h5>⚡ Luces y Sombras de una Vida</h5>
-                  </div>
-                  <div class="card-tema-body">
-                    <p>En 1588, tras concluir su formación, Caravaggio regresó a vivir con su madre y hermanos en la localidad de Caravaggio. Aceptaba pequeños encargos para iglesias y particulares, lo que le permitió experimentar con los conocimientos adquiridos y empezar a perfilar su propio estilo. Pero la relativa calma se rompió pronto. En torno a 1590, falleció su madre, Lucía Aratori. Con su muerte, Michelangelo, que todavía no había cumplido los veinte años, quedó huérfano de ambos padres. Como hijo varón mayor, heredó las propiedades agrícolas y el modesto patrimonio familiar, pero también una pesada carga emocional que reforzó su carácter solitario e introspectivo.</p>
-                    <p>Los siguientes años estuvieron marcados por decisiones prácticas. Entre 1590 y 1592, Caravaggio vendió gran parte de las tierras heredadas. No lo hizo por capricho, sino para hacer frente a impuestos de herencia, gastos de mantenimiento de las fincas e incluso deudas derivadas de su formación, como materiales de trabajo o libros. Esta liquidación de bienes le permitió reunir el dinero necesario para preparar un viaje que cambiaría para siempre su destino: Roma, el epicentro artístico y espiritual de la Italia de finales del siglo XVI.</p>
-                    <div class="progress-tema mt-3">
-                      <div class="progress-tema-bar" style="width: 38%">
-                        38 años de vida intensa
-                      </div>
-                    </div>
-                    <p class="mt-2"><small>Murió en 1610, a los 38 años, en circunstancias misteriosas.</small></p>
-                  </div>
+                <div class="mt-3">
+                  <span class="badge-tema">Claroscuro</span>
+                  <span class="badge-tema">Realismo Barroco</span>
+                  <span class="badge-tema">Arte Sacro</span>
                 </div>
               </div>
             </div>
 
-            <!-- Obras destacadas -->
-            <div class="card-tema mb-4">
+            <div class="card-tema h-100 flex-fill flex-card">
               <div class="card-tema-header">
-                <h5>🖼️ Obras que Cambiaron el Arte</h5>
+                <h5>⚡ Luces y Sombras de una Vida</h5>
               </div>
               <div class="card-tema-body">
-                <div class="row g-3">
-                  <div class="col-md-4">
-                    <div class="obra-destaca">
-                      <h6>Virgen de los Peregrinos</h6>
-                      <small>Escándalo por mostrar pies sucios de la Virgen</small>
-                    </div>
+                <p>En 1588, tras concluir su formación, Caravaggio regresó a vivir con su madre y hermanos en la localidad de Caravaggio. Aceptaba pequeños encargos para iglesias y particulares, lo que le permitió experimentar con los conocimientos adquiridos y empezar a perfilar su propio estilo. Pero la relativa calma se rompió pronto. En torno a 1590, falleció su madre, Lucía Aratori. Con su muerte, Michelangelo, que todavía no había cumplido los veinte años, quedó huérfano de ambos padres. Como hijo varón mayor, heredó las propiedades agrícolas y el modesto patrimonio familiar, pero también una pesada carga emocional que reforzó su carácter solitario e introspectivo.</p>
+                <p>Los siguientes años estuvieron marcados por decisiones prácticas. Entre 1590 y 1592, Caravaggio vendió gran parte de las tierras heredadas. No lo hizo por capricho, sino para hacer frente a impuestos de herencia, gastos de mantenimiento de las fincas e incluso deudas derivadas de su formación, como materiales de trabajo o libros. Esta liquidación de bienes le permitió reunir el dinero necesario para preparar un viaje que cambiaría para siempre su destino: Roma, el epicentro artístico y espiritual de la Italia de finales del siglo XVI.</p>
+                <div class="progress-tema mt-3">
+                  <div class="progress-tema-bar" style="width: 38%">
+                    38 años de vida intensa
                   </div>
-                  <div class="col-md-4">
-                    <div class="obra-destaca">
-                      <h6>Muerte de la Virgen</h6>
-                      <small>Rechazada por usar modelo "inapropiada"</small>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="obra-destaca">
-                      <h6>La Vocación de San Mateo</h6>
-                      <small>Revolucionario uso del claroscuro</small>
-                    </div>
-                  </div>
+                </div>
+                <p class="mt-2"><small>Murió en 1610, a los 38 años, en circunstancias misteriosas.</small></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Obras destacadas (flex en lugar de row/cols) -->
+          <div class="card-tema mb-4">
+            <div class="card-tema-header">
+              <h5>🖼️ Obras que Cambiaron el Arte</h5>
+            </div>
+            <div class="card-tema-body">
+              <div class="d-flex flex-column flex-md-row gap-3">
+                <div class="obra-destaca flex-fill">
+                  <h6>Virgen de los Peregrinos</h6>
+                  <small>Escándalo por mostrar pies sucios de la Virgen</small>
+                </div>
+                <div class="obra-destaca flex-fill">
+                  <h6>Muerte de la Virgen</h6>
+                  <small>Rechazada por usar modelo "inapropiada"</small>
+                </div>
+                <div class="obra-destaca flex-fill">
+                  <h6>La Vocación de San Mateo</h6>
+                  <small>Revolucionario uso del claroscuro</small>
                 </div>
               </div>
             </div>
-
-            <!-- Separador decorativo -->
-            <div class="separador-tema"></div>
-
-            <!-- Reflexión final -->
-            <h2>El Legado Eterno</h2>
-            <p>Cuatro siglos después, Caravaggio sigue enseñándonos que la belleza no está en la perfección, sino en la verdad. Que lo sagrado puede encontrarse en los lugares más inesperados. Y que a veces, los artistas más quebrados son los que crean la luz más brillante.</p>
-            <p>En un mundo obsesionado con las apariencias, Caravaggio nos recuerda que la autenticidad es revolucionaria. Su don divino no fue solo técnico, sino moral: nos enseñó a mirar más allá de las máscaras y encontrar la humanidad en todos nosotros.</p>
-
-            <!-- Cita final -->
-            <blockquote class="cita-especial">
-              La luz que busco no está en los cielos, sino en los rostros de quienes caminan conmigo por las sombras.
-            </blockquote>
-
-            <!-- Navegación -->
-            <div class="navegacion-articulos">
-              <div class="d-flex justify-content-between flex-wrap">
-                <a href="#" class="btn-tema mb-2">← Artículo anterior</a>
-                <a href="../articulos.html" class="btn btn-outline-secondary mb-2">Volver a artículos</a>
-                <a href="#" class="btn-tema mb-2">Siguiente artículo →</a>
-              </div>
-            </div>
-
           </div>
+
+          <!-- Separador decorativo -->
+          <div class="separador-tema"></div>
+
+          <!-- Reflexión final -->
+          <h2>El Legado Eterno</h2>
+          <p>Cuatro siglos después, Caravaggio sigue enseñándonos que la belleza no está en la perfección, sino en la verdad. Que lo sagrado puede encontrarse en los lugares más inesperados. Y que a veces, los artistas más quebrados son los que crean la luz más brillante.</p>
+          <p>En un mundo obsesionado con las apariencias, Caravaggio nos recuerda que la autenticidad es revolucionaria. Su don divino no fue solo técnico, sino moral: nos enseñó a mirar más allá de las máscaras y encontrar la humanidad en todos nosotros.</p>
+
+          <!-- Cita final -->
+          <blockquote class="cita-especial">
+            La luz que busco no está en los cielos, sino en los rostros de quienes caminan conmigo por las sombras.
+          </blockquote>
+
+          <!-- Navegación -->
+          <div class="navegacion-articulos">
+            <div class="d-flex justify-content-between flex-wrap">
+              <a href="#" class="btn-tema mb-2">← Artículo anterior</a>
+              <a href="../articulos.html" class="btn btn-outline-secondary mb-2">Volver a artículos</a>
+              <a href="#" class="btn-tema mb-2">Siguiente artículo →</a>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -222,18 +217,20 @@
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const trigger = document.getElementById('naturalismoTrigger');
-      trigger.addEventListener('click', e => e.preventDefault());
-      new bootstrap.Popover(trigger, {
-        container: 'body',
-        placement: 'right',
-        html: true,
-        sanitize: false,
-        content: () => {
-          return trigger.closest('.card-tema-body')
-                        .querySelector('.popover-content-template')
-                        .innerHTML;
-        }
-      });
+      if (trigger) {
+        trigger.addEventListener('click', e => e.preventDefault());
+        new bootstrap.Popover(trigger, {
+          container: 'body',
+          placement: 'right',
+          html: true,
+          sanitize: false,
+          content: () => {
+            return trigger.closest('.card-tema-body')
+                          .querySelector('.popover-content-template')
+                          .innerHTML;
+          }
+        });
+      }
     });
   </script>
 </body>
