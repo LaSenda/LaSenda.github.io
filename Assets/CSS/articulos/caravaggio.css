@@ -1,0 +1,451 @@
+/* =============================================== */
+/* CSS CARAVAGGIO - TEMÁTICA BOSQUE OTOÑAL        */
+/* Versión adaptada: utilidades FLEX editables     */
+/* =============================================== */
+
+/* ------------------------------
+   Variables temáticas (global)
+   ------------------------------
+   - Para cambiar tema globalmente edita estas variables.
+   - Para cambiar el comportamiento FLEX de un contenedor concreto
+     puedes añadir style="--flex-direction:column; --flex-gap:1rem;" al elemento.
+*/
+:root {
+    --tierra-oscura: #8B7355;
+    --tierra-media: #D4A574; 
+    --tierra-clara: #D4C4A8;
+    --pergamino: #F5F0E8;
+    --crema: #E8D5B7;
+    --dorado: #C9A876;
+    --fuente-titulo: 'Macondo', cursive;
+    --fuente-texto: 'Droid Serif', serif;
+
+    /* FLEX: valores por defecto (puedes sobreescribir por contenedor) */
+    --flex-direction: row;        /* row | column */
+    --flex-gap: 1rem;            /* espacio entre items */
+    --flex-justify: flex-start;  /* flex-start | center | space-between | space-around | flex-end */
+    --flex-align: stretch;       /* stretch | center | flex-start | flex-end | baseline */
+    --flex-wrap: nowrap;         /* nowrap | wrap | wrap-reverse */
+
+    /* FLEX CARD defaults */
+    --card-min-width: 260px;
+    --card-flex-basis: 0;        /* 0 makes flex-grow define size */
+    --card-flex-grow: 1;
+}
+
+/* =========================
+   Estilos generales
+   ========================= */
+body {
+    background: linear-gradient(135deg, var(--pergamino) 0%, var(--crema) 100%);
+    font-family: var(--fuente-texto);
+    color: var(--tierra-oscura);
+    line-height: 1.7;
+}
+
+/* Contenedor principal del artículo */
+.articulo-container {
+    background: rgba(245, 240, 232, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 
+        0 10px 30px rgba(139, 115, 85, 0.2),
+        0 0 20px rgba(212, 165, 116, 0.1);
+    border: 1px solid var(--tierra-clara);
+    overflow: hidden;
+}
+
+/* Header del artículo */
+.articulo-header {
+    background: linear-gradient(135deg, var(--tierra-media), var(--tierra-oscura));
+    color: var(--pergamino);
+    text-align: center;
+    padding: 3rem 2rem;
+    position: relative;
+}
+
+.articulo-titulo {
+    font-family: var(--fuente-titulo);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.articulo-subtitulo {
+    font-size: 1.3rem;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
+.articulo-fecha {
+    font-size: 0.95rem;
+    opacity: 0.7;
+}
+
+/* Contenido del artículo */
+.articulo-contenido {
+    padding: 3rem;
+}
+
+.articulo-contenido h2 {
+    font-family: var(--fuente-titulo);
+    color: var(--tierra-oscura);
+    font-size: 1.8rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--tierra-media);
+    padding-left: 1rem;
+    background: linear-gradient(90deg, rgba(212, 165, 116, 0.1), transparent);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.articulo-contenido p {
+    margin-bottom: 1.5rem;
+    text-align: justify;
+    font-size: 1.1rem;
+}
+
+/* Alert temático */
+.alert-tema {
+    background: linear-gradient(135deg, rgba(212, 165, 116, 0.15), rgba(139, 115, 85, 0.1));
+    border: 2px solid var(--tierra-clara);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.alert-tema .alert-heading {
+    font-family: var(--fuente-titulo);
+    color: var(--tierra-oscura);
+    margin-bottom: 0.8rem;
+}
+
+/* Cards temáticas */
+.card-tema {
+    background: rgba(245, 240, 232, 0.9);
+    border: 2px solid var(--tierra-clara);
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-tema:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(139, 115, 85, 0.3);
+}
+
+.card-tema-header {
+    background: linear-gradient(45deg, var(--tierra-media), var(--dorado));
+    color: var(--pergamino);
+    padding: 1rem 1.5rem;
+    font-family: var(--fuente-titulo);
+    font-weight: 600;
+}
+
+.card-tema-header h5 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.card-tema-body {
+    padding: 1.5rem;
+}
+
+/* Badges temáticos (unificado) */
+.badge-tema {
+    background: linear-gradient(45deg, var(--tierra-media), var(--tierra-oscura));
+    color: var(--pergamino);
+    font-family: var(--fuente-titulo);
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    margin: 0.2rem;
+    display: inline-block;
+    box-shadow: 0 2px 6px rgba(139, 115, 85, 0.3);
+}
+
+/* Progress bar temática */
+.progress-tema {
+    background: rgba(139, 115, 85, 0.2);
+    border-radius: 10px;
+    height: 25px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-tema-bar {
+    background: linear-gradient(45deg, var(--tierra-media), var(--dorado));
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--pergamino);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: width 1s ease;
+}
+
+/* Obras destacadas */
+.obra-destaca {
+    background: rgba(212, 165, 116, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid var(--tierra-clara);
+    height: 100%;
+}
+
+.obra-destaca h6 {
+    font-family: var(--fuente-titulo);
+    color: var(--tierra-oscura);
+    margin-bottom: 0.5rem;
+}
+
+/* Citas especiales */
+.cita-especial {
+    background: linear-gradient(135deg, rgba(212, 165, 116, 0.15), rgba(139, 115, 85, 0.05));
+    border-left: 5px solid var(--tierra-media);
+    padding: 2rem;
+    margin: 2rem 0;
+    font-style: italic;
+    font-size: 1.2rem;
+    border-radius: 0 12px 12px 0;
+    position: relative;
+    text-align: center;
+}
+
+.cita-especial::before {
+    content: '"';
+    font-size: 4rem;
+    color: var(--tierra-media);
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    opacity: 0.3;
+    font-family: serif;
+}
+
+/* Botones temáticos */
+.btn-tema {
+    background: linear-gradient(45deg, var(--tierra-media), var(--tierra-oscura));
+    border: none;
+    color: var(--pergamino) !important;
+    font-family: var(--fuente-titulo);
+    font-weight: 500;
+    padding: 0.7rem 1.5rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-tema:hover {
+    background: linear-gradient(45deg, var(--tierra-oscura), var(--tierra-media));
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(139, 115, 85, 0.4);
+    color: var(--pergamino) !important;
+}
+
+/* Separador decorativo */
+.separador-tema {
+    text-align: center;
+    margin: 3rem 0;
+    position: relative;
+}
+
+.separador-tema::after {
+    content: '🍂';
+    font-size: 2rem;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Navegación de artículos */
+.navegacion-articulos {
+    background: linear-gradient(135deg, rgba(212, 165, 116, 0.1), rgba(139, 115, 85, 0.05));
+    padding: 2rem;
+    border-radius: 12px;
+    margin-top: 3rem;
+    border: 1px solid var(--tierra-clara);
+}
+
+/* Footer temático */
+.footer-tema {
+    background: linear-gradient(135deg, var(--tierra-oscura), var(--tierra-media));
+    color: var(--pergamino);
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+}
+
+/* =========================
+   Popover styling (mejorado)
+   ========================= */
+.popover {
+  max-width: 500px;
+  font-size: 0.95rem;
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 0.6rem;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.12);
+}
+
+.popover-header {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #333;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #eee;
+  padding: 0.5rem 1rem;
+}
+
+.popover-body {
+  padding: 0.75rem 1rem;
+  color: #444;
+  line-height: 1.45;
+}
+
+.popover-body p {
+  margin-bottom: 0.65rem;
+}
+
+.popover-body img {
+  max-width: 100%;
+  border-radius: 0.25rem;
+  margin-top: 0.5rem;
+}
+
+/* =========================
+   FLEX Utilities - Editable
+   =========================
+   Uso:
+     - Para aplicar un contenedor flex con valores por defecto usa .flex-container
+     - Para cambiar en un contenedor concreto:
+         <div class="flex-container" style="--flex-direction:column; --flex-gap:2rem;">
+     - También tienes clases rápidas: .flex-row, .flex-col, .flex-gap-lg, .justify-center, .align-center, etc.
+*/
+
+/* Clase base: usa variables --flex-* definidas en :root o en style inline */
+.flex-container {
+  display: flex;
+  flex-direction: var(--flex-direction, row);
+  gap: var(--flex-gap, 1rem);
+  justify-content: var(--flex-justify, flex-start);
+  align-items: var(--flex-align, stretch);
+  flex-wrap: var(--flex-wrap, nowrap);
+  width: 100%;
+}
+
+/* Modificadores rápidos (aplican valores concretos) */
+.flex-row { --flex-direction: row; }
+.flex-col { --flex-direction: column; }
+.flex-wrap { --flex-wrap: wrap; }
+.flex-nowrap { --flex-wrap: nowrap; }
+
+/* Gaps predefinidos: puedes extender si quieres más variantes */
+.flex-gap-xs { --flex-gap: 0.25rem; }
+.flex-gap-sm { --flex-gap: 0.5rem; }
+.flex-gap-md { --flex-gap: 1rem; }
+.flex-gap-lg { --flex-gap: 1.5rem; }
+.flex-gap-xl { --flex-gap: 2rem; }
+
+/* Justify helpers */
+.justify-start { --flex-justify: flex-start; }
+.justify-center { --flex-justify: center; }
+.justify-between { --flex-justify: space-between; }
+.justify-around { --flex-justify: space-around; }
+.justify-end { --flex-justify: flex-end; }
+
+/* Align helpers */
+.align-stretch { --flex-align: stretch; }
+.align-center { --flex-align: center; }
+.align-start { --flex-align: flex-start; }
+.align-end { --flex-align: flex-end; }
+.align-baseline { --flex-align: baseline; }
+
+/* Responsive variants (basadas en 768px) */
+@media (min-width: 768px) {
+  .flex-md-row { --flex-direction: row; }
+  .flex-md-col { --flex-direction: column; }
+  .flex-md-wrap { --flex-wrap: wrap; }
+  .flex-md-nowrap { --flex-wrap: nowrap; }
+}
+
+/* =========================
+   Flex items helpers (cards/children)
+   ========================= */
+
+/* Clase para cards flexibles con variables editables */
+.flex-card {
+  min-width: var(--card-min-width, 260px);
+  flex-basis: var(--card-flex-basis, 0);
+  flex-grow: var(--card-flex-grow, 1);
+  flex-shrink: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Forzar que un item no crezca o no se reduzca */
+.flex-item-no-grow { flex-grow: 0; }
+.flex-item-no-shrink { flex-shrink: 0; }
+
+/* Control de orden */
+.order-1 { order: 1; }
+.order-2 { order: 2; }
+.order-3 { order: 3; }
+.order-0 { order: 0; }
+
+/* Tamaños rápidos (flex-basis) */
+.flex-basis-25 { flex-basis: 25%; }
+.flex-basis-33 { flex-basis: 33.3333%; }
+.flex-basis-50 { flex-basis: 50%; }
+.flex-basis-auto { flex-basis: auto; }
+
+/* =========================
+   Clean duplicates & small fixes
+   ========================= */
+
+/* Evita que las .card-tema dentro de flex queden con overflow inesperado */
+.flex-container .card-tema {
+  min-width: 0; /* importante para que el elemento pueda encogerse */
+}
+
+/* Ajuste para el .articulo-contenido cuando se aplica flex en mobile */
+@media (max-width: 768px) {
+    .articulo-titulo { font-size: 2rem; }
+    .articulo-contenido { padding: 2rem 1.5rem; }
+    .articulo-contenido h2 { font-size: 1.5rem; }
+
+    /* Variantes para navegación vertical en móvil */
+    .navegacion-articulos .d-flex {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+/* =========================
+   Ejemplos de uso (comentarios)
+   =========================
+   1) Contenedor con columnas en mobile y fila en desktop:
+      <div class="flex-container flex-col flex-md-row flex-gap-lg">...</div>
+
+   2) Contenedor con gap pequeño y items centrados:
+      <div class="flex-container flex-row flex-gap-sm justify-center align-center">...</div>
+
+   3) Sobrescribir sólo en un contenedor desde HTML (inline):
+      <div class="flex-container" style="--flex-direction:column; --flex-gap:2rem; --flex-justify:center;">
+          ...
+      </div>
+
+   4) Forzar min-width distinto para un grupo de cards:
+      <div class="flex-container" style="--card-min-width:200px;">
+         <div class="card-tema flex-card">...</div>
+         <div class="card-tema flex-card">...</div>
+      </div>
+*/
+
+/* FIN del CSS adaptado */
