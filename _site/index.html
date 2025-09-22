@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Senda</title>
+    <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="Assets/img/logo/logo_rombo-removebg-preview.png" />
+    <!-- Bootstrap CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="CSS/style.css">
+    <!-- Google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <!-- Responsive menu-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top"
+     style="backdrop-filter: blur(8px);">
+  <div class="container">
+
+    <!-- Logo -->
+    <a class="navbar-brand" href="index.html">
+      <img src="Assets/img/navbar/intento 3.png"
+           alt="Logo La Senda"
+           width="120" height=auto;
+           class="d-inline-block align-text-top">
+      
+    </a>
+
+    <!-- Toggler bootsrapt-->
+    <button class="navbar-toggler" type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNav"
+        aria-controls="mainNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+    <!-- Links colapsables -->
+   <div class="collapse navbar-collapse" id="mainNav">
+<ul class="navbar-nav ms-auto me-0 mb-2 mb-lg-0">
+    <li class="nav-item">
+      <a class="nav-link nav-pag" href="index.html">
+        <img src="Assets/img/navbar/pagina.png" alt="Página principal">
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link nav-sob" href="Sobremi.html">
+        <img src="Assets/img/navbar/sobre.png" alt="Sobre nosotros">
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link nav-con" href="Contacto.html">
+        <img src="Assets/img/navbar/contacto.png" alt="Contacto">
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link nav-art" href="articulos.html">
+        <img src="Assets/img/navbar/articulos_accento.png" alt="Artículos">
+      </a>
+    </li>
+  </ul>
+</div>
+  </div>
+</nav>
+ <div class="background-fixed"></div>
+        <div class="fullscreen-video-bg">
+    <video id="bg-video" autoplay muted loop playsinline>
+      
+        
+    </video>
+</div>
+
+<!-- Page header with logo and tagline-->
+  <header class="hero-header py-0 mb-0">
+        <div class="header-separator"></div>
+  <div class="container-fluid  p-0">
+    <!-- Imagen hero -->
+    <div class="hero-img-bg"></div>
+
+    <!-- Overlay semitransparente -->
+    <div class="hero-overlay"></div>
+
+    <!-- Texto hero -->
+    <div class="hero-text text-center">
+      <h1 class="fw-bolder">Bienvenidos a La Senda</h1>
+      
+      <p>
+        Este blog es mi camino personal para compartir lo que me inspira y apasiona. A través de estas páginas, busco mejorar mis habilidades mientras exploro temas que despiertan mi curiosidad. Espero que al acompañarme en este recorrido, encuentres inspiración para tu propio viaje de descubrimiento.
+      </p>
+      <p id="love-message"  class="p1">
+  <span id="lover-name">Carla</span>, <span id="love-text">Te quiero</span>
+</p>
+        <br>
+      
+      
+      
+    </div>
+  </div>
+</header>
+<br>
+
+<section class="video-flex-section">
+
+<div class="transition"></div>
+<main>
+
+
+
+<!-- INICIO ARTÍCULOS DESTACADOS EN FLEXBOX -->
+<section class="cards-flex-section container mt-5">
+  <h2 class="text-center mb-4">Últimos artículos en La Senda</h2>
+
+  <div class="cards-flex">
+    <!-- Item 1 -->
+    <div class="card-item">
+      <a href="articulos/Caravaggio.html">
+        <div class="blog-card caravaggio">
+          <div class="title-content">
+            <h3>Michelangelo Merisi da Caravaggio</h3>
+            <hr />
+            <div class="intro">El don divino que salvó al hombre caído</div>
+          </div>
+          <div class="card-info">
+            Un hombre que huyó de la justicia, que luchó en las calles, 
+            y que transformaba a prostitutas en vírgenes, 
+            a mendigos en santos, y a trabajadores en apóstoles.
+          </div>
+          <div class="utility-info">
+            <ul class="utility-list">
+             
+              <li class="date">19.09.2025</li>
+            </ul>
+          </div>
+          <div class="gradient-overlay"></div>
+          <div class="color-overlay"></div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Item 2 -->
+    <div class="card-item">
+      <a href="articulos/flexbox-sin-miedo.html">
+        <div class="blog-card spring-fever">
+          <div class="title-content">
+            <h3>Flexbox sin miedo</h3>
+            <hr />
+            <div class="intro">Domina tu primer layout con magia CSS.</div>
+          </div>
+          <div class="card-info">
+            Aprenderemos a alinear elementos y crear rejillas sencillas con un toque medieval.
+          </div>
+          <div class="utility-info">
+            <ul class="utility-list">
+              <li class="comments">5 comentarios</li>
+              <li class="date">25.09.2025</li>
+            </ul>
+          </div>
+          <div class="gradient-overlay"></div>
+          <div class="color-overlay"></div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Item 3 -->
+    <div class="card-item">
+      <a href="articulos/primer-error.html">
+        <div class="blog-card spring-fever">
+          <div class="title-content">
+            <h3>Mi primer error</h3>
+            <hr />
+            <div class="intro">Lección aprendida tras un bug fatal.</div>
+          </div>
+          <div class="card-info">
+            Te cuento el fallo más épico que sufrí y cómo lo solucioné con artefactos CSS.
+          </div>
+          <div class="utility-info">
+            <ul class="utility-list">
+              <li class="comments">2 comentarios</li>
+              <li class="date">30.09.2025</li>
+            </ul>
+          </div>
+          <div class="gradient-overlay"></div>
+          <div class="color-overlay"></div>
+        </div>
+      </a>
+    </div>
+  
+
+  
+    <!-- Item 1 -->
+    <div class="card-item">
+      <a href="articulos/como-empece.html">
+        <div class="blog-card spring-fever">
+          <div class="title-content">
+            <h3>Cómo empecé mi blog</h3>
+            <hr />
+            <div class="intro">El origen de este viaje místico en La Senda.</div>
+          </div>
+          <div class="card-info">
+            Compartiré cómo surgió la idea de este espacio, mis primeras dudas y cómo superarlas.
+          </div>
+          <div class="utility-info">
+            <ul class="utility-list">
+              <li class="comments">3 comentarios</li>
+              <li class="date">19.09.2025</li>
+            </ul>
+          </div>
+          <div class="gradient-overlay"></div>
+          <div class="color-overlay"></div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Item 2 -->
+    <div class="card-item">
+      <a href="articulos/flexbox-sin-miedo.html">
+        <div class="blog-card spring-fever">
+          <div class="title-content">
+            <h3>Flexbox sin miedo</h3>
+            <hr />
+            <div class="intro">Domina tu primer layout con magia CSS.</div>
+          </div>
+          <div class="card-info">
+            Aprenderemos a alinear elementos y crear rejillas sencillas con un toque medieval.
+          </div>
+          <div class="utility-info">
+            <ul class="utility-list">
+              <li class="comments">5 comentarios</li>
+              <li class="date">25.09.2025</li>
+            </ul>
+          </div>
+          <div class="gradient-overlay"></div>
+          <div class="color-overlay"></div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Item 3 -->
+    <div class="card-item">
+      <a href="articulos/primer-error.html">
+        <div class="blog-card spring-fever">
+          <div class="title-content">
+            <h3>Mi primer error</h3>
+            <hr />
+            <div class="intro">Lección aprendida tras un bug fatal.</div>
+          </div>
+          <div class="card-info">
+            Te cuento el fallo más épico que sufrí y cómo lo solucioné con artefactos CSS.
+          </div>
+          <div class="utility-info">
+            <ul class="utility-list">
+              <li class="comments">2 comentarios</li>
+              <li class="date">30.09.2025</li>
+            </ul>
+          </div>
+          <div class="gradient-overlay"></div>
+          <div class="color-overlay"></div>
+        </div>
+      </a>
+    </div>
+ 
+
+  
+
+  <div class="text-center mt-3">
+    <a href="articulos.html" class="btn btn-outline-warning">Ver todos los artículos</a>
+  </div>
+</section>
+
+</section>
+
+<!-- FIN ARTÍCULOS DESTACADOS EN FLEXBOX -->
+ </main>
+
+<!-- Título y botón -->
+        <div class="subscribe-box text-center mt-4">
+          <h2 class="fw-bolder" style="font-size: 1.6rem;">
+            ¡Suscríbete para recibir las últimas novedades!
+          </h2>
+          <button class="btn btn-warning mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#formSuscripcion" aria-expanded="false" aria-controls="formSuscripcion">
+            Mostrar formulario
+          </button>
+        </div>
+        
+        <!-- Formulario colapsable -->
+        <div class="collapse" id="formSuscripcion">
+          <form method="post" action="https://sendfox.com/form/1j0xrq/1kzvp9" class="sendfox-form" id="1kzvp9" data-async="true" data-recaptcha="true">
+            <p><label for="sendfox_form_name">Nombre:</label>
+            <input type="text" id="sendfox_form_name" name="first_name" placeholder="Tu nombre" /></p>
+
+            <p><label for="sendfox_form_last_name">Apellido:</label>
+            <input type="text" id="sendfox_form_last_name" name="last_name" placeholder="Tu apellido" /></p>
+
+            <p><label for="sendfox_form_birthday">Cumpleaños: </label><input type="date" id="sendfox_form_birthday" name="contact_fields[birthday]" placeholder="Birthday" /></p>
+
+            <p><label for="sendfox_form_email">Email:</label>
+            <input type="email" id="sendfox_form_email" name="email" placeholder="Tu correo" required /></p>
+
+            <p><label><input type="checkbox" name="gdpr" value="1" required /> Acepto recibir novedades por correo.</label></p>
+
+            <p><button type="submit" class="btn btn-warning w-100">Suscribirme</button></p>
+          </form>
+        </div>
+<br>
+<br>
+    <!-- Bootstrap JS Bundle with Popper-->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.sendfox.com/js/form.js" charset="utf-8"></script>
+    <script src="/script.js"></script>
+
+</body>
+<footer class="footer-waves">
+  <div class="wave-top">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M0,60 C150,120 350,0 600,60 C850,120 1050,0 1200,60 L1200,120 L0,120 Z" fill="rgba(139, 115, 85, 0.3)"></path>
+    </svg>
+  </div>
+  
+  <div class="footer-content-waves">
+    
+    
+  <div class="leaf leaf-1">🍂</div>
+  <div class="leaf leaf-2">🍃</div>
+  <div class="leaf leaf-3">🍂</div>
+  <div class="leaf leaf-4">🍃</div>
+  <div class="leaf leaf-5">🍂</div>
+  <div class="leaf leaf-6">🍃</div>
+  <div class="leaf leaf-7">🍂</div>
+  <div class="leaf leaf-8">🍃</div>
+  <div class="leaf leaf-9">🍂</div>
+  <div class="leaf leaf-10">🍃</div>
+  <div class="leaf leaf-11">🍂</div>
+  <div class="leaf leaf-12">🍃</div>
+</div>
+    <!-- ✨ AQUÍ VAN LAS LUCIÉRNAGAS (encima de todo) -->
+    <div class="fireflies">
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+      <div class="firefly"></div>
+    </div>
+    
+    <div class="container">
+      <!-- Grid de 3 columnas -->
+      <div class="footer-visual-grid">
+        
+        <!-- COLUMNA 1: Tu contenido principal -->
+        <div class="footer-main-content">
+          <div class="text-center">
+            <h3>La Senda</h3>
+            <p>Un espacio personal de curiosidades y reflexiones</p>
+          </div>
+        </div>
+        
+        <!-- COLUMNA 2: Reloj del bosque -->
+        <div class="footer-widget">
+          <div class="forest-clock">
+            <div class="time-display" id="forestTime"></div>
+            <div class="clock-decoration">🌲⏰🌲</div>
+          </div>
+        </div>
+        
+        <!-- COLUMNA 3: Estadísticas visuales -->
+        <div class="footer-widget">
+          <div class="nature-stats">
+            <div class="stat-item">
+              <span class="stat-icon">🌱</span>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 75%"></div>
+              </div>
+              <span class="stat-label">Crecimiento</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-icon">📚</span>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 30%"></div>
+              </div>
+              <span class="stat-label">Artículos</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-icon">☕</span>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 90%"></div>
+              </div>
+              <span class="stat-label">Café</span>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      
+      <!-- Fila inferior con copyright -->
+      <div class="footer-signature">
+        <p>© 2025 La Senda</p>
+      </div>
+    </div>
+    
+   
+  </div>
+</footer>
+
+</html>
