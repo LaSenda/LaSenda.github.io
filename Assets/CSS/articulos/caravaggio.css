@@ -425,6 +425,20 @@ body {
         flex-direction: column;
         gap: 1rem;
     }
+
+     .popover {
+      max-width: 300px;
+      font-size: 0.95rem;
+    }
+    .popover-header {
+      font-weight: 700;
+    }
+
+    /* Pequeño helper para que las "cards" flexibles tengan una min-width y se comporten bien */
+    .flex-card {
+      min-width: 260px;
+    }
+
 }
 
 /* =========================
