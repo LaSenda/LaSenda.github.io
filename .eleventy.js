@@ -1,14 +1,16 @@
 module.exports = function(eleventyConfig) {
-  // Le decimos a Eleventy que copie las carpetas de assets desde DENTRO de "src"
-  eleventyConfig.addPassthroughCopy("src/Assets/CSS");
-  eleventyConfig.addPassthroughCopy("src/Assets/img");
-  eleventyConfig.addPassthroughCopy("src/Assets/js");
+  // Copiar Assets tal cual
+  eleventyConfig.addPassthroughCopy("src/Assets");
 
-  // Definimos la nueva estructura del proyecto
+  // Copiar todos los .html de src directamente (sin que 11ty los procese)
+  eleventyConfig.addPassthroughCopy("src/**/*.html");
+
   return {
     dir: {
-      input: "src",      // La carpeta donde está todo tu código
-      output: "_site"    // La carpeta donde Eleventy genera la web
-    }
+      input: "src",
+      output: "_site"
+    },
+    templateFormats: ["md"], // solo procesar Markdown
+    htmlTemplateEngine: false // no tocar los HTML
   };
 };
