@@ -86,7 +86,7 @@ video.playbackRate = 0.5;
 // =============================
 
 const videoSources = [
-    'Assets/img/gif,videos/stockvideo_01055.mp4'
+    '/Assets/img/gif_videos/stockvideo_01055.mp4'
 ];
 
 const minTime = 180000;  // 3 minutos
