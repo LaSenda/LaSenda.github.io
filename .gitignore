@@ -1,18 +1,18 @@
-# Dependencias
+# Node.js dependencies
 node_modules/
 
-# Directorio de salida de Eleventy
+# Carpeta generada por Eleventy
 _site/
 
-# Cache de Eleventy y otros
-.cache/
-
-# Archivos de configuración de VSCode
-.vscode/
-
-# Archivos de log
+# Logs
 npm-debug.log*
-*.log
+yarn-debug.log*
+yarn-error.log*
 
-# Archivos de sistema operativo
+# Archivos del sistema
 .DS_Store
+Thumbs.db
+
+# IDEs / editores
+.vscode/
+.idea/
