@@ -1,21 +1,13 @@
 {
   "name": "lasenda.github.io",
   "version": "1.0.0",
-<<<<<<< HEAD
+  "description": "La Senda no es un destino, es el camino. Es mi rincón personal en la web, donde subo lo que me interesa, cuando me interesa, redactado a mi manera. Tutoriales, ideas, reflexiones... cada artículo es un paso en mi aprendizaje y una huella de mi curiosidad. Te invito a recorrer conmigo este sendero imperfecto.",
+  "main": "script.js",
   "scripts": {
     "build": "eleventy",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d _site",
     "start": "npm run deploy"
-  },
-  "devDependencies": {
-    "@11ty/eleventy": "^1.0.0",
-    "gh-pages": "^4.0.0"
-=======
-  "description": "La Senda no es un destino, es el camino. Es mi rincón personal en la web, donde subo lo que me interesa, cuando me interesa, redactado a mi manera. Tutoriales, ideas, reflexiones... cada artículo es un paso en mi aprendizaje y una huella de mi curiosidad. Te invito a recorrer conmigo este sendero imperfecto .",
-  "main": "script.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -29,7 +21,10 @@
   },
   "homepage": "https://github.com/LaSenda/LaSenda.github.io#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^3.1.2"
->>>>>>> 6a88032e07e0ed78dbbeeeac29e66facb7d4ffa1
+    "@11ty/eleventy": "^3.1.2",
+    "gh-pages": "^4.0.0"
   }
+
+
+  
 }

@@ -1,14 +1,29 @@
-#!/usr/bin/env bash
-set -e
+#!/bin/bash
 
-echo "🔨 Compilando con Eleventy..."
+# 1️⃣ Pedir mensaje de commit
+echo "Introduce el mensaje del commit para gh-pages:"
+read COMMIT_MSG
+
+# 2️⃣ Generar el sitio con Eleventy
 npx eleventy
 
-echo "📦 Añadiendo cambios a Git..."
+# 3️⃣ Cambiar a la rama gh-pages (crear si no existe)
+git checkout gh-pages 2>/dev/null || git checkout -b gh-pages
+
+# 4️⃣ Copiar contenido de _site a la raíz de gh-pages
+cp -r _site/* .
+
+# 5️⃣ Añadir todos los archivos
 git add .
 
-echo "✍️  Haciendo commit..."
-git commit -m "chore: deploy $(date +'%Y-%m-%d %H:%M:%S')"
+# 6️⃣ Hacer commit con el mensaje dado por el usuario
+git commit -m "$COMMIT_MSG"
 
-echo "🚀 Enviando a GitHub Pages..."
-git push origin main
+# 7️⃣ Push a GitHub
+git push origin gh-pages
+
+# 8️⃣ Volver a main
+git checkout main
+
+echo "✅ Deploy completado con el mensaje: $COMMIT_MSG"
+
