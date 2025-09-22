@@ -519,7 +519,7 @@ body {
 
 /* Imagen de fondo */
 .blog-card.caravaggio {
-    background-image: url('../Assets/img/articulos/DSC_7324.JPG');
+    background-image: url('/Assets/img/articulos/DSC_7324.JPG');
 }
 
 /* QUITAR los overlays permanentes */
