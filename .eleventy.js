@@ -2,55 +2,47 @@ const rssPlugin = require("@11ty/eleventy-plugin-rss");
 const { DateTime } = require("luxon");
 
 module.exports = function(eleventyConfig) {
-  // Si quieres usar el plugin RSS más adelante
+  // Plugin RSS (si lo usas)
   eleventyConfig.addPlugin(rssPlugin);
 
-  // Copiar Assets enteros sin procesar
-  eleventyConfig.addPassthroughCopy({ "src/Assets": "Assets" });
+  // CAMBIO #1: La ruta correcta para tus assets
+  // Como tu carpeta "Assets" está en la raíz, esta es la forma correcta.
+  eleventyConfig.addPassthroughCopy("Assets");
 
-  // Colección de posts (si la usas)
+  // Tu colección de posts está bien, solo ajustamos el glob para la raíz.
   eleventyConfig.addCollection("posts", function(collectionApi) {
     return collectionApi
-      .getFilteredByGlob("src/articulos/**/*.{md,html}")
+      .getFilteredByGlob("./articulos/**/*.{md,html}")
       .filter(post => post.data && post.data.title)
       .sort((a, b) => b.date - a.date);
   });
 
-  // Filtro de fecha
+  // Tus filtros y permalinks no necesitan cambios.
   eleventyConfig.addFilter("date", (dateObj, format = "yyyy LLL dd") => {
     return DateTime.fromJSDate(dateObj).toFormat(format);
   });
-
-  // Permalink global (⚠️ ahora ignora Assets y feeds)
+  
   eleventyConfig.addGlobalData("permalink", () => (data) => {
     const input = data.page.inputPath;
-
-    // No tocar feeds
-    if (
-      input.endsWith(".xml.njk") ||
-      input.endsWith(".atom.njk") ||
-      input.endsWith(".json.njk")
-    ) {
+    if (input.endsWith(".xml.njk") || input.endsWith(".atom.njk") || input.endsWith(".json.njk")) {
       return false;
     }
-
-    // No tocar nada dentro de Assets
     if (input.includes("Assets")) {
       return false;
     }
-
-    // Para el resto (md, njk, html) → forzar .html
     return `${data.page.filePathStem}.html`;
   });
 
   return {
+    // CAMBIO #2 Y EL MÁS IMPORTANTE:
+    // Le decimos a Eleventy que tu contenido está en el directorio raíz ("."), no en "src".
     dir: {
-      input: "src",
+      input: ".",
       output: "_site"
     },
+    
     templateFormats: ["md", "njk", "html", "xml"],
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk",
-    pathPrefix: ""
   };
 };
