@@ -1,0 +1,12 @@
+---
+layout: null
+permalink: "/test/"
+---
+<h1>Lista de posts detectados</h1>
+<ul>
+{% for post in collections.posts %}
+  <li>{{ post.data.title }} — <a href="{{ post.url }}">Abrir</a></li>
+{% else %}
+  <li>No hay posts en collections.posts</li>
+{% endfor %}
+</ul>
