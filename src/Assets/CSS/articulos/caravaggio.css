@@ -301,66 +301,66 @@ body {
 	.d-flex.flex-column.flex-md-row.gap-2,
 	.d-flex.flex-column.flex-md-row.gap-1 { gap: .7rem; }
 }
+/* =========================================
+   ESTILOS PARA EL ASIDE DE CITAS (CORREGIDO)
+   ========================================= */
+aside.card-tema.card-citas.subtle-inline {
+  background: transparent;
+  border: none;
+  padding: 0.5rem 0;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #6b6b66;
 
-
-
-/* === ESTILO DEFINITIVO: CAJA DE CITAS === */
-
-.card-citas {
-    /* --- TAMAÑO Y POSICIÓN --- */
-    max-width: 750px;
-    margin: 2.5rem auto;
-
-    /* --- ESTILO INTERNO --- */
-    padding: 1.25rem 1.5rem;
-    background-color: #fcfaf7;
-
-    /* --- BORDES Y SOMBRA --- */
-    border: 1px solid #EAE2D9;
-    border-left: 5px solid #d4bda5;
-    box-shadow: none;
-    border-radius: 3px;
-    
-    /* --- FUENTE --- */
-    font-size: 0.875rem;
-    line-height: 1.6;
-    color: #6c6258;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* separación más razonable entre elementos */
 }
 
-/* Título "Testimonios de la época" */
-.card-citas h6 {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #b0a090;
-    margin-bottom: 1.25rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid #EAE2D9;
+/* Título dentro del aside */
+aside.card-tema.card-citas.subtle-inline h6 {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #9a948d;
+  margin: 0;
+  padding: 0;
 }
 
-/* Cada bloque de cita (párrafo + autor) */
-.card-citas blockquote {
-    border: none;
-    padding: 0;
+/* Cada bloque de cita */
+aside.card-tema.card-citas.subtle-inline blockquote {
+  display: block;
+  margin: 0 0 1rem 0; /* separación entre citas */
+  padding-left: 0.75rem;
+  border-left: 1px solid rgba(0, 0, 0, 0.05); /* borde más sutil */
 }
 
-/* Espacio DEBAJO del primer bloque de cita */
-.card-citas blockquote:first-of-type {
-    margin-bottom: 3rem; 
+/* Texto de la cita */
+aside.card-tema.card-citas.subtle-inline blockquote p {
+  margin: 0 0 0.5rem 0;
+  font-style: italic;
+  font-size: 0.95em;
+  color: #55544f;
+  line-height: 1.45;
 }
 
-/* Quita el espacio DEBAJO del último bloque de cita */
-.card-citas blockquote:last-of-type {
-    margin-bottom: 0; 
+/* Autor de la cita */
+aside.card-tema.card-citas.subtle-inline .blockquote-footer {
+  display: block;
+  text-align: right;
+  font-size: 0.82rem;
+  color: #9a948d;
+  font-style: normal;
+  margin-bottom: 0.5rem; /* corregido: punto en vez de coma */
 }
 
-/* Estilos para los nombres de autor (afecta a los dos) */
-.card-citas .blockquote-footer {
-    font-size: 0.8rem;
-    color: #a09284;
-    text-align: right;
-    font-style: normal;
-    margin-top: 0.5rem; /* Espacio entre el texto y el nombre del autor */
+/* Responsive pequeño ejemplo */
+@media (min-width: 768px) {
+  .flex-md-row { flex-direction: row; }
+  .gap-4 { gap: 1.25rem; }
+  .card-tema { padding: 1.25rem; }
 }
 
 
