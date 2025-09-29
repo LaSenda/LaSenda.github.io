@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>La Senda</title>
+    <description>Blog sobre arte y pensamiento</description>
+    <link>https://lasenda.github.io</link>
+    <atom:link href="https://lasenda.github.io/feed.xml" rel="self" type="application/rss+xml" />
+
+    
+    <item>
+      <title>Caravaggio: El don divino que salvó al hombre caído</title>
+      <link>https://lasenda.github.io/articulos/Caravaggio.html</link>
+      <guid isPermaLink="true">https://lasenda.github.io/articulos/Caravaggio.html</guid>
+      <pubDate>r</pubDate>
+      <description>Adentrémonos en la vida del pintor que revolucionó el arte encontrando lo sagrado en lo mundano.</description>
+    </item>
+    
+
+  </channel>
+</rss>

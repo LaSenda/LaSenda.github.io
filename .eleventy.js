@@ -2,15 +2,13 @@ const rssPlugin = require("@11ty/eleventy-plugin-rss");
 const { DateTime } = require("luxon");
 
 module.exports = function(eleventyConfig) {
-  // Plugin RSS: añade filtros RSS y date para Nunjucks
+  // Si quieres usar el plugin RSS más adelante
   eleventyConfig.addPlugin(rssPlugin);
 
-  // Copiar solo assets (CSS, imágenes, JS)
-  eleventyConfig.addPassthroughCopy("src/Assets/css");
-  eleventyConfig.addPassthroughCopy("src/Assets/img");
-  eleventyConfig.addPassthroughCopy("src/Assets/js");
+  // Copiar Assets enteros sin procesar
+  eleventyConfig.addPassthroughCopy({ "src/Assets": "Assets" });
 
-  // Colección "posts"
+  // Colección de posts (si la usas)
   eleventyConfig.addCollection("posts", function(collectionApi) {
     return collectionApi
       .getFilteredByGlob("src/articulos/**/*.{md,html}")
@@ -18,18 +16,30 @@ module.exports = function(eleventyConfig) {
       .sort((a, b) => b.date - a.date);
   });
 
-  // Filtro "date"
+  // Filtro de fecha
   eleventyConfig.addFilter("date", (dateObj, format = "yyyy LLL dd") => {
     return DateTime.fromJSDate(dateObj).toFormat(format);
   });
 
-  // Permalink global SOLO para páginas HTML/Markdown
+  // Permalink global (⚠️ ahora ignora Assets y feeds)
   eleventyConfig.addGlobalData("permalink", () => (data) => {
-    // Si es XML (feed), no tocar (usa frontmatter)
-    if (data.page.inputPath && data.page.inputPath.endsWith(".xml.njk")) {
-      return data.page.filePathStem + data.page.outputFileExtension;
+    const input = data.page.inputPath;
+
+    // No tocar feeds
+    if (
+      input.endsWith(".xml.njk") ||
+      input.endsWith(".atom.njk") ||
+      input.endsWith(".json.njk")
+    ) {
+      return false;
     }
-    // Para MD, NJK o HTML, forzar .html
+
+    // No tocar nada dentro de Assets
+    if (input.includes("Assets")) {
+      return false;
+    }
+
+    // Para el resto (md, njk, html) → forzar .html
     return `${data.page.filePathStem}.html`;
   });
 
@@ -38,7 +48,6 @@ module.exports = function(eleventyConfig) {
       input: "src",
       output: "_site"
     },
-    // Incluir XML para procesar feed.xml.njk
     templateFormats: ["md", "njk", "html", "xml"],
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk",
