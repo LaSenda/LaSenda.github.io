@@ -23,6 +23,7 @@
   "homepage": "https://lasenda.github.io/",
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
+    "@11ty/eleventy-plugin-rss": "^2.0.4",
     "gh-pages": "^6.3.0",
     "rimraf": "^3.0.2"
   },
