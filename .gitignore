@@ -1,6 +1,6 @@
 # Node.js dependencies
 node_modules/
-
+EOF
 # Carpeta generada por Eleventy
 _site/
 
