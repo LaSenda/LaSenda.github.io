@@ -4,89 +4,120 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre Nosotros - La Senda</title>
-    <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="Assets/img/logo/logo_rombo-removebg-preview.png" />
+
+   <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="/Assets/img/logo/logo_rombo-removebg-preview.png" />
     <!-- Bootstrap CSS-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <style>
-        body {
-            background-color: #f8f9fa;
-        }
-        .navbar-brand img {
-            height: 30px;
-        }
-        .card {
-            border: 1px solid rgba(0, 0, 0, 0.125);
-            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-        }
-    </style>
+    <link rel="stylesheet" href="/Assets/CSS/style.css">
+    <link rel="stylesheet" href="/Assets/CSS/articulos/Sobremi.css">
+    <!-- Google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    <!-- Header -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="Assets/img/logo/logo-removebg-preview.png" alt="Logo La Senda" height="30">
-                La Senda
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Página principal</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="Sobremi.html">Sobre nosotros</a></li>
-                    <li class="nav-item"><a class="nav-link" href="Contacto.html">Contacto</a></li>
-                    <li class="nav-item"><a class="nav-link" href="articulos.html">Artículos</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+ 
+    <!-- Responsive menu-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top"
+     style="backdrop-filter: blur(8px);">
+  <div class="container">
 
-    <!-- Page header -->
-    <header class="py-5 bg-light border-bottom mb-4">
-        <div class="container">
-            <div class="text-center my-5">
-                <h1 class="fw-bolder">Sobre La Senda</h1>
-                <p class="lead mb-0">La senda es el camino que se recorre para lograr un fin.</p>
-                <p>Este blog es mi senda personal, un espacio para compartir lo que me apasiona.</p>
-            </div>
-        </div>
-    </header>
+    <!-- Logo -->
+    <a class="navbar-brand" href="index.html">
+      <img src="/Assets/img/navbar/intento 3.png"
+           alt="Logo La Senda"
+           width="120" height=auto;
+           class="d-inline-block align-text-top">
+      
+    </a>
 
-    <!-- Main Content -->
+    <!-- Toggler bootsrapt-->
+    <button class="navbar-toggler" type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNav"
+        aria-controls="mainNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+    <!-- Links colapsables -->
+   <div class="collapse navbar-collapse" id="mainNav">
+<ul class="navbar-nav ms-auto me-0 mb-2 mb-lg-0">
+    <li class="nav-item">
+      <a class="nav-link nav-pag" href="/index.html">
+        <img src="/Assets/img/navbar/pagina.png" alt="Página principal">
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link nav-sob" href="/Sobremi.html">
+        <img src="/Assets/img/navbar/sobre.png" alt="Sobre nosotros">
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link nav-con" href="/Contacto.html">
+        <img src="/Assets/img/navbar/contacto.png" alt="Contacto">
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link nav-art" href="/articulos.html">
+        <img src="/Assets/img/navbar/articulos_accento.png" alt="Artículos">
+      </a>
+    </li>
+  </ul>
+</div>
+  </div>
+</nav>
+ <!-- Page header -->
+<header class="py-5 bg-light border-bottom mb-5">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-8 mx-auto">
-                <div class="row">
-                    <div class="col-md-6 mb-4">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h2 class="card-title h4">Nuestra Misión</h2>
-                                <p class="card-text">En La Senda, nos dedicamos a explorar temas de interés, reflexionar sobre experiencias y compartir conocimientos que puedan inspirar a otros en su propio camino.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 mb-4">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h2 class="card-title h4">Nuestra Visión</h2>
-                                <p class="card-text">Aspiramos a crear una comunidad de aprendices curiosos que valore el conocimiento, la reflexión y el crecimiento continuo.</p>
-                            </div>
+        <div class="d-flex flex-column align-items-center justify-content-center my-5">
+            <h1 class="fw-bolder">Sobre La Senda</h1>
+            <p class="lead mb-0">La senda es el camino que se recorre para lograr un fin. Este blog es mi senda personal, un espacio para compartir lo que me apasiona.</p>
+            <p>La senda es el camino que se recorre para lograr un fin.</p>
+        </div>
+    </div>
+</header>
+
+
+   <!-- Main Content -->
+<div class="container">
+    <div class="d-flex justify-content-center">
+        <div class="col-lg-8">
+           
+                <div class="flex-fill">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h2 class="card-title h4"> </h2>
+                            <p class="card-text">Una senda no es una autopista ni un camino trazado con mapas. Es un rastro que se abre paso con cada paso, un trayecto que existe porque alguien decidió recorrerlo. Este blog es justamente eso: mi propio sendero, un espacio donde avanzo poco a poco, aprendiendo, equivocándome y descubriendo. </p>
+                            <p class="card-text">No encontrarás aquí grandes certezas ni respuestas definitivas. Lo que hallarás son huellas: reflexiones, experimentos, ideas que me llaman la atención y que quiero explorar con calma. A veces será un apunte técnico, otras una reflexión más personal, y otras simplemente algo que me despierta curiosidad. </p>
                         </div>
                     </div>
                 </div>
-                
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h2 class="h4 mb-3">El Camino Recorrido</h2>
-                        <p>La Senda nació como un proyecto personal con el objetivo de documentar mi proceso de aprendizaje y reflexión sobre diversos temas que despiertan mi curiosidad.</p>
-                        <p class="mb-0">Cada artículo, cada reflexión compartida aquí, es un paso más en este camino de descubrimiento. Espero que encuentres valor en estos contenidos.</p>
+                <div class="flex-fill">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h2 class="card-title h4"> 🌱 Sobre mí</h2>
+                            <p class="card-text">No soy más que alguien que disfruta aprender y crear. La programación y la escritura son mis dos herramientas principales, y este blog es el lugar donde las pongo en práctica. Construirlo me ayuda a mejorar como desarrollador; escribir en él me ayuda a ordenar pensamientos y a profundizar en temas que me interesan.</p>
+                            <p class="card-text">No pretendo enseñar desde la cima de la montaña, sino compartir el recorrido mientras lo hago. Si algo de lo que escribo resuena contigo, si te inspira a pensar o a empezar tu propio proyecto, entonces esta senda habrá cumplido su propósito.</p>
+                        </div>
                     </div>
+                </div>
+           
+            
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="h4 mb-3"></h2>
+                            <p class="card-text">Este blog está en sus primeros pasos, y por ahora el contenido es modesto. Pero como toda senda, se irá ampliando con el tiempo, con cada artículo y cada idea que decida explorar.</p>
+                            <p class="card-text">Si decides caminar un tramo conmigo, bienvenido. Ojalá encuentres aquí no solo palabras, sino también un recordatorio de que todos los caminos empiezan igual: con un primer paso.</p>
+
+                    <p class="mb-0"></p>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
     <!-- Footer -->
     <footer class="py-4 mt-5 bg-dark">

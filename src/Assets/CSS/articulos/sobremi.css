@@ -1,0 +1,157 @@
+/* Contenedor principal flex */
+.d-flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+/* Items flex individuales */
+.flex-fill {
+    flex: 1 1 auto;
+    min-width: 250px;
+}
+
+/* Cards personalizadas */
+.card {
+    background-image: url('/Assets/img/fondos/pruebanumeroouno.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: rgba(0, 0, 0, 0.4) !important;
+    backdrop-filter: blur(5px);
+    /* Se ha quitado el borde rojo */
+    /* border: 3px solid #ff0000 !important; */
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(255, 0, 0, 0.5) !important;
+    transition: box-shadow 0.3s ease;
+    position: relative;
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px rgba(255, 0, 0, 0.5);
+}
+
+.card-body {
+    padding: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    border-radius: 0.3rem;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .card-body {
+    transform: translateY(-5px);
+}
+
+.card-title {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ffffff !important;
+}
+
+.card-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #ffffff !important;
+}
+
+/* Contenedor wrapper */
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    /* Se ha quitado el padding lateral para que ocupe todo el ancho */
+    padding: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                      url('/Assets/img/fondos/CAMINOMI2.1.PNG');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    /* Se ha quitado el borde rojo */
+    /* border: 3px solid #ff0000; */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .flex-fill {
+        min-width: 100%;
+    }
+    
+    .d-flex {
+        flex-direction: column;
+    }
+}
+
+/* Header flex container */
+header {
+    /* Se ha quitado el padding superior e inferior para eliminar espacios */
+    padding: 0;
+    background-color: #0e1013;
+    /* ⭐ CAMBIA LA IMAGEN AQUÍ 👇 */
+    background-image: url('/Assets/img/fondos/NUEVA-IMAGEN-HEADER.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    /* Se quita el borde inferior */
+    /* border-bottom: 1px solid #dee2e6; */
+    
+    position: relative;
+}
+
+header .d-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    /* Aumentamos el padding para que el texto no quede pegado a los bordes */
+    padding: 5rem 1rem; 
+    margin: 0;
+}
+
+header .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Título del header */
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffffff !important;
+    margin-bottom: 1rem;
+}
+
+/* Lead paragraph */
+header .lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: #ffffff !important;
+    margin-bottom: 0;
+}
+
+/* Párrafo normal */
+header p {
+    font-size: 1rem;
+    color: #ffffff !important;
+    margin-top: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    header .lead {
+        font-size: 1.1rem;
+    }
+}
