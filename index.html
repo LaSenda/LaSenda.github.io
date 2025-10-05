@@ -4,39 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Senda</title>
-    <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="/Assets/img/logo/logo_rombo-removebg-preview.png" />
-    <!-- Bootstrap CSS-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="/Assets/CSS/style.css">
-    <!-- Google fonts-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Senda</title>
+
+<!-- Bootstrap primero -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+<!-- Tus CSS globales -->
+<link rel="stylesheet" href="/Assets/CSS/style.css">
+
+<!-- navbar.css AL FINAL para que sus reglas prevalezcan -->
+<link rel="stylesheet" href="/Assets/CSS/articulos/navbar.css">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="/Assets/img/logo/logo_rombo-removebg-preview.png">
+
+<!-- Google fonts (puedes colocarlo antes o después, no altera prioridad CSS) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
 </head>
 <body>
     <!-- Responsive menu-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top"
-     style="backdrop-filter: blur(8px);">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top" style="backdrop-filter: blur(8px);">
   <div class="container">
 
     <!-- Logo -->
     <a class="navbar-brand" href="index.html">
-      <img src="/Assets/img/navbar/intento 3.png"
-           alt="Logo La Senda"
-           width="120" height=auto;
-           class="d-inline-block align-text-top">
+      <img src="/Assets/img/navbar/intento 3.png" alt="Logo La Senda" width="120" height="auto;" class="d-inline-block align-text-top">
       
     </a>
 
     <!-- Toggler bootsrapt-->
-    <button class="navbar-toggler" type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#mainNav"
-        aria-controls="mainNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
 </button>
     <!-- Links colapsables -->
@@ -68,7 +71,7 @@
 </nav>
  <div class="background-fixed"></div>
         <div class="fullscreen-video-bg">
-    <video id="bg-video" autoplay muted playsinline>
+    <video id="bg-video" autoplay="" muted="" playsinline="">
       
         
     </video>
@@ -91,7 +94,7 @@
       <p>
         Este blog es mi camino personal para compartir lo que me inspira y apasiona. A través de estas páginas, busco mejorar mis habilidades mientras exploro temas que despiertan mi curiosidad. Espero que al acompañarme en este recorrido, encuentres inspiración para tu propio viaje de descubrimiento.
       </p>
-      <p id="love-message"  class="p1">
+      <p id="love-message" class="p1">
   <span id="lover-name">Carla</span>, <span id="love-text">Te quiero</span>
 </p>
         <br>
@@ -117,11 +120,12 @@
   <div class="cards-flex">
     <!-- Item 1 -->
     <div class="card-item">
-      <a href="/articulos/Caravaggio.html">
+      <a href="articulos/Caravaggio.html">
+
         <div class="blog-card caravaggio">
           <div class="title-content">
             <h3>Michelangelo Merisi da Caravaggio</h3>
-            <hr />
+            <hr>
             <div class="intro">El don divino que salvó al hombre caído</div>
           </div>
           <div class="card-info">
@@ -147,7 +151,7 @@
         <div class="blog-card spring-fever">
           <div class="title-content">
             <h3>Flexbox sin miedo</h3>
-            <hr />
+            <hr>
             <div class="intro">Domina tu primer layout con magia CSS.</div>
           </div>
           <div class="card-info">
@@ -171,7 +175,7 @@
         <div class="blog-card spring-fever">
           <div class="title-content">
             <h3>Mi primer error</h3>
-            <hr />
+            <hr>
             <div class="intro">Lección aprendida tras un bug fatal.</div>
           </div>
           <div class="card-info">
@@ -197,7 +201,7 @@
         <div class="blog-card spring-fever">
           <div class="title-content">
             <h3>Cómo empecé mi blog</h3>
-            <hr />
+            <hr>
             <div class="intro">El origen de este viaje místico en La Senda.</div>
           </div>
           <div class="card-info">
@@ -221,7 +225,7 @@
         <div class="blog-card spring-fever">
           <div class="title-content">
             <h3>Flexbox sin miedo</h3>
-            <hr />
+            <hr>
             <div class="intro">Domina tu primer layout con magia CSS.</div>
           </div>
           <div class="card-info">
@@ -245,7 +249,7 @@
         <div class="blog-card spring-fever">
           <div class="title-content">
             <h3>Mi primer error</h3>
-            <hr />
+            <hr>
             <div class="intro">Lección aprendida tras un bug fatal.</div>
           </div>
           <div class="card-info">
@@ -269,12 +273,12 @@
   <div class="text-center mt-3">
     <a href="/articulos.html" class="btn btn-outline-warning">Ver todos los artículos</a>
   </div>
-</section>
+</div></section>
 
-</section>
+</main></section>
 
 <!-- FIN ARTÍCULOS DESTACADOS EN FLEXBOX -->
- </main>
+ 
 
 <!-- Título y botón -->
         <div class="subscribe-box text-center mt-4">
@@ -290,17 +294,17 @@
         <div class="collapse" id="formSuscripcion">
           <form method="post" action="https://sendfox.com/form/1j0xrq/1kzvp9" class="sendfox-form" id="1kzvp9" data-async="true" data-recaptcha="true">
             <p><label for="sendfox_form_name">Nombre:</label>
-            <input type="text" id="sendfox_form_name" name="first_name" placeholder="Tu nombre" /></p>
+            <input type="text" id="sendfox_form_name" name="first_name" placeholder="Tu nombre"></p>
 
             <p><label for="sendfox_form_last_name">Apellido:</label>
-            <input type="text" id="sendfox_form_last_name" name="last_name" placeholder="Tu apellido" /></p>
+            <input type="text" id="sendfox_form_last_name" name="last_name" placeholder="Tu apellido"></p>
 
-            <p><label for="sendfox_form_birthday">Cumpleaños: </label><input type="date" id="sendfox_form_birthday" name="contact_fields[birthday]" placeholder="Birthday" /></p>
+            <p><label for="sendfox_form_birthday">Cumpleaños: </label><input type="date" id="sendfox_form_birthday" name="contact_fields[birthday]" placeholder="Birthday"></p>
 
             <p><label for="sendfox_form_email">Email:</label>
-            <input type="email" id="sendfox_form_email" name="email" placeholder="Tu correo" required /></p>
+            <input type="email" id="sendfox_form_email" name="email" placeholder="Tu correo" required=""></p>
 
-            <p><label><input type="checkbox" name="gdpr" value="1" required /> Acepto recibir novedades por correo.</label></p>
+            <p><label><input type="checkbox" name="gdpr" value="1" required=""> Acepto recibir novedades por correo.</label></p>
 
             <p><button type="submit" class="btn btn-warning w-100">Suscribirme</button></p>
           </form>
@@ -401,7 +405,7 @@
     </div>
     
    
-  </div>
+  
 </footer>
 
 </html>

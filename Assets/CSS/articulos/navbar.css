@@ -1,0 +1,117 @@
+/* ============================= */
+/* NAVBAR REUTILIZABLE           */
+/* ============================= */
+
+.navbar {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 1000;
+	background-color: rgba(0, 0, 0, 0.3);
+	backdrop-filter: blur(8px);
+	transition: top 1s ease, background-color 0.7s ease;
+	height: 60px;
+	padding: 0 !important;
+}
+
+.navbar.scrolled {
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Links navbar */
+.navbar .nav-link {
+	height: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0 !important;
+	margin: 0 0.4rem;
+	color: #fff !important;
+	transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+	color: #f0e68c !important;
+}
+
+.navbar .nav-link img {
+	width: auto;
+	height: 80px;
+	
+	max-width: 150px;
+	object-fit: contain;
+	display: block;
+	transition: transform 0.3s ease;
+}
+
+.navbar .nav-link:hover img {
+	transform: scale(1.2);
+	filter: brightness(1.2);
+}
+
+/* Logo */
+.navbar-brand img {
+	height: auto;
+	max-height: 93px;
+	width: auto;
+	object-fit: contain;
+	vertical-align: middle;
+	display: inline-block;
+	margin: 0;
+	transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.navbar-brand img:hover {
+	transform: scale(1.08) rotate(-1deg);
+	filter: drop-shadow(0 0 8px rgb(0, 0, 0));
+}
+
+/* === Menú colapsable: aplicar en tablets y móviles (<= xl-1) === */
+@media (max-width: 1199.98px) {
+  .navbar-collapse {
+    background-color: rgba(0, 0, 0, 0.65);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    max-width: 300px;
+    margin-top: 0.5rem;
+    z-index: 1090; /* por encima de overlays comunes */
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+  }
+
+  .navbar-collapse.show {
+    max-height: 500px;
+    opacity: 1;
+  }
+
+  /* Ajustes visuales para nav links en pantallas pequeñas */
+  .navbar .nav-link {
+    justify-content: flex-start;
+    padding-left: 0.25rem;
+  }
+
+  .navbar .nav-link img {
+    height: 40px;
+    max-height: 40px;
+    display: inline-block;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* Pequeños ajustes adicionales para móviles muy pequeños */
+@media (max-width: 575.98px) {
+  .navbar-collapse {
+    padding: 0.75rem;
+    max-width: 100%;
+    margin-top: 0.4rem;
+  }
+
+  .navbar .nav-link img {
+    height: 34px;
+    max-height: 34px;
+    max-width: 120px;
+  }
+}
