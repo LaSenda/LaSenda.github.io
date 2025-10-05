@@ -40,7 +40,7 @@ body {
     width: 100%;
      padding: 2rem var(--site-padding); /* agrega algo de espacio */
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)),
-                      url('/Assets/img/fondos/CAMINOMI2.1.PNG');
+                      url('/Assets/img/fondos/CAMINO22.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
