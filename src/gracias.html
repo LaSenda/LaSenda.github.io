@@ -14,6 +14,7 @@
 
   <!-- Tu CSS principal -->
   <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="/Assets/CSS/articulos/navbar.css">
   <style>
     /* Estilos mínimos por si esta página carga sin el hero */
     body {
@@ -64,51 +65,56 @@
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top" style="backdrop-filter: blur(8px);">
-    <div class="container">
-      <!-- Logo -->
-      <a class="navbar-brand" href="index.html">
-        <img src="Assets/img/navbar/intento 3.png" alt="Logo La Senda" width="120" class="d-inline-block align-text-top">
+  <!-- Responsive menu-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top"
+     style="backdrop-filter: blur(8px);">
+  <div class="container">
+
+    <!-- Logo -->
+    <a class="navbar-brand" href="index.html">
+      <img src="/Assets/img/navbar/intento 3.png"
+           alt="Logo La Senda"
+           width="120" height=auto;
+           class="d-inline-block align-text-top">
+      
+    </a>
+
+    <!-- Toggler bootsrapt-->
+    <button class="navbar-toggler" type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNav"
+        aria-controls="mainNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+    <!-- Links colapsables -->
+   <div class="collapse navbar-collapse" id="mainNav">
+<ul class="navbar-nav ms-auto me-0 mb-2 mb-lg-0">
+    <li class="nav-item">
+      <a class="nav-link nav-pag" href="/index.html">
+        <img src="/Assets/img/navbar/pagina.png" alt="Página principal">
       </a>
-
-      <!-- Botón hamburguesa -->
-      <button class="navbar-toggler" type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#mainNav"
-              aria-controls="mainNav"
-              aria-expanded="false"
-              aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <!-- Menú -->
-      <div class="collapse navbar-collapse" id="mainNav">
-        <ul class="navbar-nav ms-auto me-0 mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link nav-pag" href="index.html">
-              <img src="Assets/img/navbar/pagina.png" alt="Página principal">
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-sob" href="Sobremi.html">
-              <img src="Assets/img/navbar/sobre.png" alt="Sobre mí">
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-con" href="Contacto.html">
-              <img src="Assets/img/navbar/contacto.png" alt="Contacto">
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-art" href="articulos.html">
-              <img src="Assets/img/navbar/articulos_accento.png" alt="Artículos">
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link nav-sob" href="/Sobremi.html">
+        <img src="/Assets/img/navbar/sobre.png" alt="Sobre nosotros">
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link nav-con" href="/Contacto.html">
+        <img src="/Assets/img/navbar/contacto.png" alt="Contacto">
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link nav-art" href="/articulos.html">
+        <img src="/Assets/img/navbar/articulos_accento.png" alt="Artículos">
+      </a>
+    </li>
+  </ul>
+</div>
+  </div>
+</nav>
 
   <!-- Contenido de gracias -->
   <main class="thanks-wrap">

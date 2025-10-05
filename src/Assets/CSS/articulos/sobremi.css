@@ -1,33 +1,135 @@
-/* Contenedor principal flex */
-.d-flex {
+/* ========================================
+   SOBREMI.CSS - COMPLETO Y AUTÓNOMO
+   Incluye todo lo necesario del style.css
+   ======================================== */
+
+/* ============================= */
+/* FUENTES                       */
+/* ============================= */
+@import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap');
+
+/* Reset básico */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ============================= */
+/* BODY                          */
+/* ============================= */
+body {
+    font-family: 'Cormorant Garamond', system-ui, -apple-system, "Segoe UI", sans-serif, serif;
+    color: #eaeaea;
+    /* Compensa la navbar fija (ajusta si tu navbar cambia de altura) */
+    padding-top: 0 px;
+}
+
+/* ========================================
+   📐 CONTENEDOR PERSONALIZADO (NO BOOTSTRAP)
+   ======================================== */
+:root{
+  --site-max: 1200px;
+  --site-padding: clamp(0.75rem, 2vw, 1.5rem);
+}
+
+.site-container {
+    width: 100%;
+     padding: 2rem var(--site-padding); /* agrega algo de espacio */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)),
+                      url('/Assets/img/fondos/CAMINOMI2.1.PNG');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    box-sizing: border-box;
+}
+
+/* Header con imagen de fondo usando ::before */
+.header-senda {
+    position: relative;       /* necesario para ::before */
+    height: 600px;            /* ajusta la altura como quieras */
+    overflow: hidden;         /* que el fondo no se salga */
+}
+
+.header-senda::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    z-index: 0;
+}
+
+.header-senda .content-flex {
+    position: relative;
+     padding-top:200px; 
+    z-index: 1;                 /* contenido por encima de la imagen */
+    margin-top: 0;              /* quita padding o margin extra que empuje la imagen */
+    text-align: center;
+    display: flex !important;   /* respeta flex de Bootstrap */
+    flex-direction: column !important;
+    align-items: center   !important;
+    justify-content: center !important;
+}
+
+#video-fondo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Coloca el video detrás del contenido */
+}
+
+
+
+
+/* El contenedor interno no debe ocultar la imagen */
+header .site-container {
+
+  
+  padding: 2rem 1rem;
+  position: relative;
+  z-index: 2; /* contenido por encima del fondo */
+}
+
+/* ========================================
+   📝 CONTENEDOR PRINCIPAL FLEX (NO TOCAR .d-flex)
+   ======================================== */
+.content-flex {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: stretch;
     gap: 1rem;
-    padding: 2rem;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
 }
 
-/* Items flex individuales */
 .flex-fill {
     flex: 1 1 auto;
     min-width: 250px;
 }
 
-/* Cards personalizadas */
+/* ========================================
+   🎴 CARDS PERSONALIZADAS
+   ======================================== */
 .card {
-    background-image: url('/Assets/img/fondos/pruebanumeroouno.png');
-    background-size: contain;
+    background-image: url('/Assets/img/fondos/NUEVAPRUEBA.jpeg');
+    background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
     background-attachment: fixed;
-    background-color: rgba(0, 0, 0, 0.4) !important;
-    backdrop-filter: blur(5px);
-    /* Se ha quitado el borde rojo */
-    /* border: 3px solid #ff0000 !important; */
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
     border-radius: 0.5rem;
-    box-shadow: 0 2px 4px rgba(255, 0, 0, 0.5) !important;
+    box-shadow: 0 2px 4px rgba(255, 0, 0, 0.5);
     transition: box-shadow 0.3s ease;
     position: relative;
 }
@@ -38,7 +140,7 @@
 
 .card-body {
     padding: 1.5rem;
-    background-color: rgba(0, 0, 0, 0.5) !important;
+    background-color: rgba(250, 243, 243, 0);
     border-radius: 0.3rem;
     position: relative;
     z-index: 1;
@@ -51,107 +153,493 @@
 
 .card-title {
     margin-bottom: 1rem;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     font-weight: 600;
-    color: #ffffff !important;
+    color: #0c0808;
+    font-family: 'Cormorant', serif;
 }
 
 .card-text {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #ffffff !important;
+    font-size: 1.6rem;
+    line-height: 1.7;
+    color: #000000;
+    font-family: 'Cormorant', serif;
+    font-weight: 600;
+    text-shadow: 
+        0 0 5px rgba(88, 55, 4, 0.9),
+        0 0 10px rgba(216, 96, 10, 0.7); /* Efecto de brillo alrededor */
 }
+/* ========================================
+   📌 HEADER
+   ======================================== */
 
-/* Contenedor wrapper */
-.container {
-    max-width: 1140px;
-    margin: 0 auto;
-    /* Se ha quitado el padding lateral para que ocupe todo el ancho */
-    padding: 0;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                      url('/Assets/img/fondos/CAMINOMI2.1.PNG');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    /* Se ha quitado el borde rojo */
-    /* border: 3px solid #ff0000; */
-}
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .flex-fill {
-        min-width: 100%;
-    }
-    
-    .d-flex {
-        flex-direction: column;
-    }
-}
-
-/* Header flex container */
-header {
-    /* Se ha quitado el padding superior e inferior para eliminar espacios */
-    padding: 0;
-    background-color: #0e1013;
-    /* ⭐ CAMBIA LA IMAGEN AQUÍ 👇 */
-    background-image: url('/Assets/img/fondos/NUEVA-IMAGEN-HEADER.jpg');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    /* Se quita el borde inferior */
-    /* border-bottom: 1px solid #dee2e6; */
-    
-    position: relative;
-}
-
-header .d-flex {
-    display: flex;
+header .content-flex {
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    /* Aumentamos el padding para que el texto no quede pegado a los bordes */
-    padding: 5rem 1rem; 
-    margin: 0;
+    padding: 1rem;
 }
 
-header .container {
-    position: relative;
-    z-index: 2;
-}
-
-/* Título del header */
 header h1 {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #ffffff !important;
+    color: #ffffff;
     margin-bottom: 1rem;
 }
 
-/* Lead paragraph */
 header .lead {
     font-size: 1.25rem;
     font-weight: 300;
-    color: #ffffff !important;
+    color: #ffffff;
     margin-bottom: 0;
 }
 
-/* Párrafo normal */
 header p {
     font-size: 1rem;
-    color: #ffffff !important;
+    color: #ffffff;
     margin-top: 0.5rem;
 }
 
-/* Responsive */
+/* ========================================
+   📱 RESPONSIVE
+   ======================================== */
 @media (max-width: 768px) {
+    .flex-fill {
+        min-width: 100%;
+    }
+
+    .content-flex {
+        flex-direction: column;
+    }
+
     header h1 {
         font-size: 2rem;
     }
-    
+
     header .lead {
         font-size: 1.1rem;
     }
+
+    .site-container {
+        max-width: 98%;
+        padding: 0 0.5rem;
+    }
+}
+
+
+
+/* Fuente base */
+.modern-antiqua-regular {
+	font-family: "Modern Antiqua", serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+/* Texto hero */
+.hero-text {
+	position: relative;
+	z-index: 25;
+	max-width: 900px;
+	margin: 0 auto;
+	padding-top: 7rem;
+	text-align: center;
+	font-family: "Modern Antiqua", serif;
+	color: #fff;
+}
+
+.hero-text p:first-of-type {
+	font-family: "Modern Antiqua", serif;
+	font-size: 1.7rem;
+	/* 🔥 MÁS GRANDE */
+	font-weight: 500;
+	/* 🔥 MÁS PESO */
+	line-height: 1.5;
+	color: #ffffff;
+	/* 🔥 BEIGE CLARO */
+	text-shadow:
+		2px 2px 6px rgba(0, 0, 0, 0.95),
+		/* 🔥 SOMBRA FUERTE */
+		0 0 8px rgba(232, 213, 183, 0.4),
+		/* 🔥 BRILLO SUTIL */
+		4px 4px 12px rgba(235, 196, 135, 0.7);
+	/* 🔥 SOMBRA EXTRA */
+	margin-bottom: 2rem;
+	letter-spacing: 0.5px;
+	/* 🔥 ESPACIADO */
+}
+
+/* ============================= */
+/* HOVER PARA EL PÁRRAFO         */
+/* ============================= */
+.hero-text p:first-of-type:hover {
+	color: #F5F0E8;
+	/* 🔥 MÁS CLARO AL HOVER */
+	transform: translateY(-1px);
+	/* 🔥 LEVITA LIGERAMENTE */
+	text-shadow:
+		2px 2px 8px rgba(0, 0, 0, 1),
+		0 0 12px rgba(245, 240, 232, 0.6),
+		4px 4px 16px rgba(0, 0, 0, 0.8);
+}
+
+/* Tipografía hero optimizada usando :is */
+.hero-header :is(h1, h2, h3, h4, h5, h6) {
+	font-family: "Modern Antiqua", serif;
+	font-size: 4rem;
+	font-weight: 600;
+	/* 🔥 MENOS PESADO */
+	color: #060604;
+	/* 🔥 CREMA PERGAMINO */
+	text-shadow:
+		3px 3px 6px rgba(0, 0, 0, 0.8),
+		/* 🔥 SOMBRA NATURAL */
+		0 0 8px rgba(245, 240, 232, 0.2);
+	/* 🔥 BRILLO SUTIL */
+	margin-bottom: 2rem;
+	transition: all 0.3s ease;
+}
+
+.hero-header h1:hover {
+	color: #000000;
+	/* 🔥 BEIGE AL HOVER */
+	transform: scale(1.01);
+	/* 🔥 MUY SUTIL */
+}
+
+.hero-header p {
+	font-family: "Modern Antiqua", serif;
+	font-size: 2.5rem;
+	font-weight: 400;
+	/* 🔥 PESO NORMAL */
+	line-height: 1.6;
+	color: #040303;
+	/* 🔥 BEIGE CÁLIDO */
+	text-shadow: 2px 2px 4px rgba(254, 198, 165, 0.7);
+	/* 🔥 SOMBRA SIMPLE */
+	margin-bottom: 1rem;
+	transition: color 0.3s ease;
+}
+
+.hero-header p:hover {
+	color: #F5F0E8;
+	/* 🔥 MÁS CLARO AL HOVER */
+}
+
+/* ========== FOOTER BASE ========== */
+.footer-waves {
+  position: relative;
+  overflow: hidden;
+  min-height: 200px;
+  background: linear-gradient(135deg, #8B7355 0%, #6B5D4F 50%, #4A403A 100%);
+  padding: 25px 0 12px;
+  margin-top: 0px;
+}
+
+/* Ola decorativa superior */
+.wave-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.wave-top svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 40px;
+}
+
+/* Contenido del footer */
+.footer-content-waves {
+  position: relative;
+  z-index: 5;
+  color: #f5f5f5;
+}
+
+/* Grid de 3 columnas */
+.footer-visual-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+  padding: 0 20px;
+}
+
+.footer-main-content,
+.footer-widget {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.footer-main-content:hover,
+.footer-widget:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Títulos del footer */
+.footer-main-content h3,
+.footer-widget h3 {
+  color: #E8D5B7;
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+  font-family: 'Cormorant', serif;
+}
+
+.footer-main-content p {
+  color: #d4c4b0;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+/* ========== RELOJ DEL BOSQUE COMPACTO ========== */
+.forest-clock {
+  text-align: center;
+}
+
+.time-display {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #c9b89a;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  margin-bottom: 0.2rem;
+  font-family: 'Courier New', monospace;
+  opacity: 0.85;
+}
+
+.clock-decoration {
+  font-size: 0.9rem;
+  opacity: 0.6;
+}
+
+/* ========== ESTADÍSTICAS COMPACTAS ========== */
+.nature-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.stat-icon {
+  font-size: 1.3rem;
+  min-width: 25px;
+  text-align: center;
+  opacity: 0.7;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #8b9d87 0%, #6a7d65 100%);
+  border-radius: 6px;
+  transition: width 0.5s ease;
+  box-shadow: 0 0 6px rgba(107, 125, 101, 0.4);
+  opacity: 0.8;
+}
+
+.stat-label {
+  color: #a89679;
+  font-size: 0.7rem;
+  min-width: 60px;
+  text-align: right;
+  opacity: 0.8;
+}
+
+/* ========== FIRMA/COPYRIGHT ========== */
+.footer-signature {
+  text-align: center;
+  padding: 0.8rem 0 0.4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  margin-top: 0.8rem;
+}
+
+.footer-signature p {
+  color: #a89679;
+  font-size: 0.7rem;
+  margin: 0;
+  opacity: 0.7;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .footer-visual-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+  
+  .time-display {
+    font-size: 1.3rem;
+  }
+  
+  .footer-main-content h3 {
+    font-size: 0.9rem;
+  }
+}
+
+/* ========== HOJAS CAYENDO ========== */
+.leaf {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  font-size: 18px;
+  pointer-events: none;
+  z-index: 10;
+  top: -50px;
+  opacity: 0.7;
+}
+
+@keyframes falling {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate3d(-200px, 100vh, 0) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+@keyframes falling2 {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(90deg);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate3d(150px, 100vh, 0) rotate(270deg);
+    opacity: 0;
+  }
+}
+
+@keyframes falling3 {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(-20deg);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate3d(-100px, 100vh, 0) rotate(-200deg);
+    opacity: 0;
+  }
+}
+
+.leaf:nth-of-type(1) { left: 10%; animation: falling 8s 0s infinite linear; }
+.leaf:nth-of-type(2) { left: 20%; animation: falling2 7s 0.5s infinite linear; }
+.leaf:nth-of-type(3) { left: 30%; animation: falling3 9s 1s infinite linear; }
+.leaf:nth-of-type(4) { left: 40%; animation: falling 10s 1.5s infinite linear; }
+.leaf:nth-of-type(5) { left: 50%; animation: falling2 8.5s 2s infinite linear; }
+.leaf:nth-of-type(6) { left: 60%; animation: falling3 7.5s 2.5s infinite linear; }
+.leaf:nth-of-type(7) { left: 70%; animation: falling 9.5s 3s infinite linear; }
+.leaf:nth-of-type(8) { left: 80%; animation: falling2 8s 3.5s infinite linear; }
+.leaf:nth-of-type(9) { left: 15%; animation: falling3 10s 4s infinite linear; }
+.leaf:nth-of-type(10) { left: 25%; animation: falling 7s 4.5s infinite linear; }
+.leaf:nth-of-type(11) { left: 55%; animation: falling2 9s 5s infinite linear; }
+.leaf:nth-of-type(12) { left: 85%; animation: falling3 8.5s 5.5s infinite linear; }
+
+/* ========== LUCIÉRNAGAS ========== */
+.fireflies {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 15;
+}
+
+.firefly {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: rgba(255, 235, 150, 0.6);
+  box-shadow: 
+    0 0 6px 2px rgba(255, 235, 150, 0.5),
+    0 0 12px 5px rgba(255, 220, 100, 0.3);
+  animation: fireflyFloat 8s infinite ease-in-out;
+  opacity: 0;
+}
+
+@keyframes fireflyFloat {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  25% {
+    transform: translate(-30px, -40px) scale(1.2);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(20px, -80px) scale(0.9);
+    opacity: 0.7;
+  }
+  75% {
+    transform: translate(-10px, -120px) scale(1.1);
+    opacity: 0.4;
+  }
+  90% {
+    opacity: 0.2;
+  }
+  100% {
+    transform: translate(0, -160px) scale(1);
+    opacity: 0;
+  }
+}
+
+/* ========== CONTADOR DE DÍAS HORIZONTAL Y APAGADO ========== */
+.blog-counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  padding: 0.5rem;
+}
+
+.counter-icon {
+  font-size: 1.3rem;
+  opacity: 0.6;
+  filter: grayscale(30%);
+}
+
+.counter-number {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #060503;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  margin: 0;
+  font-family: 'Courier New', monospace;
+  display: inline-block;
+  opacity: 0.85;
+}
+
+.counter-label {
+  font-size: 1.75rem;
+  color: #000000;
+  font-family: 'Cormorant', serif;
+  display: inline-block;
+  margin-left: 0.3rem;
+  opacity: 0.8;
 }
