@@ -119,6 +119,6 @@ module.exports = async function(eleventyConfig) {
     templateFormats: ["md", "njk", "html"],
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk",
-    pathPrefix: ""
+    pathPrefix: "/"
   };
 };
