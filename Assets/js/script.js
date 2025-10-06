@@ -166,3 +166,57 @@ function updateForestClock() {
 
 setInterval(updateForestClock, 1000);
 updateForestClock();
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const input = document.getElementById("search-input");
+  const resultsContainer = document.getElementById("search-results");
+  let fuse;
+
+  if (!input || !resultsContainer) return; // prevenir errores si no existen los elementos
+
+  // Cargar JSON de búsqueda
+  fetch("/search/index.json")
+    .then(response => {
+      if (!response.ok) throw new Error("No se pudo cargar el JSON de búsqueda");
+      return response.json();
+    })
+    .then(posts => {
+      // Inicializar Fuse.js
+      fuse = new Fuse(posts, {
+        keys: ["title", "excerpt", "content", "categories"],
+        threshold: 0.4,
+        includeScore: true
+      });
+    })
+    .catch(err => {
+      console.error("Error al cargar search/index.json:", err);
+    });
+
+  // Función para renderizar resultados
+  function renderResults(results) {
+    if (!resultsContainer) return;
+    resultsContainer.innerHTML = results.length
+      ? results
+          .map(r => {
+            const item = r.item; // Fuse devuelve { item, score }
+            return `
+              <div class="mb-2">
+                <a href="${item.url}"><strong>${item.title}</strong></a>
+                <p class="small text-muted">${item.excerpt || ""}</p>
+              </div>
+            `;
+          })
+          .join("")
+      : '<p class="small text-muted">No hay resultados.</p>';
+  }
+
+  // Escuchar input y buscar
+  input.addEventListener("input", () => {
+    if (!fuse) return;
+    const query = input.value.trim();
+    const results = query ? fuse.search(query) : [];
+    renderResults(results);
+  });
+});

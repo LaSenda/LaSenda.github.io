@@ -1,0 +1,418 @@
+/* Reset básico */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ============================= */
+/* BODY                          */
+/* ============================= */
+body {
+      margin: 0;
+  padding: 0;
+    font-family: 'Cormorant Garamond', system-ui, -apple-system, "Segoe UI", sans-serif, serif;
+    color: #eaeaea;
+    /* Compensa la navbar fija (ajusta si tu navbar cambia de altura) */
+    padding-top: 0 px;
+}
+
+.card {
+    background-color: #2c2416;
+    color: #f4e4c1;
+    border-bottom: 2px solid #444;
+    font-family: 'Cinzel', serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 50px   ;
+}
+
+/* ========================================
+   📐 CONTENEDOR PERSONALIZADO (NO BOOTSTRAP)
+   ======================================== */
+:root{
+  --site-max: 1200px;
+  --site-padding: clamp(0.75rem, 2vw, 1.5rem);
+}
+
+.site_container {
+    width: 100%;
+     padding: 0;
+      margin: 0; 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)),
+                      url('/Assets/img/fondos/feo1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    box-sizing: border-box;
+}
+
+
+/* ====== HERO (Encabezado con imagen) ====== */
+.hero-header {
+  position: relative;
+  height: 600px;
+  overflow: hidden;
+    margin: 0;
+  padding: 0;
+  display: block;
+
+}
+
+.hero-video {
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Mantiene el video cubriendo todo el contenedor */
+  z-index: 0;
+}
+/* Imagen de fondo (la cambiarás tú más tarde) */
+.hero-img-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url('/Assets/img/fondos/barquito.png'); /* ← cámbiala aquí */
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+/* Capa oscura para mejorar el contraste */
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
+/* Texto del hero */
+.hero-text {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+
+}
+
+.hero-text h1 {
+  font-family: 'Cinzel', 'Crimson Text', Georgia, serif;
+  font-size: 88px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 
+    2px 2px 8px rgba(0, 0, 0, 0.9),
+    0 4px 20px rgba(0, 0, 0, 0.7);
+  color: #d4d0c8;
+  letter-spacing: 1px;
+  opacity: 0.95;
+  margin-top: 120px;
+  
+}
+
+.hero-text p {
+  font-family: 'Cinzel', 'Crimson Text', Georgia, serif;
+  max-width: 750px;
+  font-size: 27px;
+  font-weight: 600;
+  line-height: 1.7;
+  color: #c9c5bc;
+  background: rgba(20, 15, 12, 0.35);
+  padding: 24px 32px;
+  border-radius: 4px;
+  border-left: 3px solid rgba(80, 70, 60, 0.6);
+  border-right: 3px solid rgba(80, 70, 60, 0.6);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.8),
+    inset 0 1px 2px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  font-style: italic;
+  opacity: 0.92;
+    
+}
+
+
+/* ============================================
+   POST DESTACADO CON CARRUSEL DE IMÁGENES
+   ============================================ */
+
+/* --- Contenedor principal --- */
+#featured-post {
+  margin-bottom: 3rem;
+  margin-top: 50px;
+}
+
+/* --- Estructura de la tarjeta --- */
+#featured-post .featured-card {
+  position: relative;
+  height: 400px;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Contenedor del carrusel --- */
+#featured-post .carousel-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* --- Slider de imágenes --- */
+#featured-post .carousel-slider {
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* --- Cada slide individual --- */
+#featured-post .carousel-slide {
+  position: relative;
+  min-width: 100%;
+  height: 100%;
+}
+
+/* --- Imagen de cada slide --- */
+#featured-post .carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- Overlay de gradiente sobre las imágenes --- */
+#featured-post .featured-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.5) 60%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+  z-index: 1;
+}
+
+/* --- Controles del carrusel (flechas) --- */
+#featured-post .carousel-btn {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 3;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+#featured-post .carousel-btn:hover {
+  background: rgba(0, 0, 0, 0.7);
+  transform: translateY(-50%) scale(1.1);
+}
+
+#featured-post .carousel-btn.prev {
+  left: 15px;
+}
+
+#featured-post .carousel-btn.next {
+  right: 15px;
+}
+
+/* --- Indicadores (puntos) --- */
+#featured-post .carousel-indicators {
+  position: absolute;
+  bottom: 20px;
+  left: 80%;
+  transform: translateX(-52%);
+  display: flex;
+  gap: 8px;
+  z-index: 3;
+}
+
+#featured-post .carousel-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#featured-post .carousel-indicator.active {
+  background: white;
+  width: 20px;
+  border-radius: 4px;
+}
+
+/* --- Contenido de texto --- */
+#featured-post .featured-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  z-index: 2;
+  color: white;
+}
+
+/* --- Badge "Destacado" --- */
+#featured-post .featured-badge {
+  position: absolute;
+  top: -50%;
+  left: 85%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  color: #f4e4c1;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 0.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border: 1px solid rgba(244, 228, 193, 0.3);
+  font-family: 'Cinzel', serif;
+  z-index: 3;
+}
+
+/* --- Fecha --- */
+#featured-post .featured-date {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.5px;
+}
+
+/* --- Título --- */
+#featured-post .featured-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  font-family: 'Cinzel', serif;
+}
+
+/* --- Extracto --- */
+#featured-post .featured-excerpt {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  max-width: 650px;
+  font-family: 'Lora', serif;
+}
+
+/* --- Botón "Leer más" --- */
+#featured-post .featured-btn {
+  display: inline-block;
+  background: rgba(244, 228, 193, 0.95);
+  color: #2c2416;
+  padding: 10px 25px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  font-family: 'Cinzel', serif;
+  border: 1px solid rgba(139, 115, 85, 0.3);
+}
+
+#featured-post .featured-btn:hover {
+  background: #f4e4c1;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+  color: #2c2416;
+}
+
+/* ============================================
+   RESPONSIVE - Tablets
+   ============================================ */
+@media (max-width: 992px) {
+  #featured-post .featured-card {
+    height: 500px;
+  }
+  
+  #featured-post .featured-title {
+    font-size: 1.8rem;
+  }
+  
+  #featured-post .carousel-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+}
+
+/* ============================================
+   RESPONSIVE - Móviles
+   ============================================ */
+@media (max-width: 768px) {
+  #featured-post .featured-card {
+    height: 450px;
+  }
+  
+  #featured-post .featured-title {
+    font-size: 1.5rem;
+  }
+  
+  #featured-post .featured-excerpt {
+    font-size: 0.95rem;
+  }
+  
+  #featured-post .featured-content {
+    padding: 1.5rem;
+  }
+  
+  #featured-post .carousel-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+  
+  #featured-post .carousel-btn.prev {
+    left: 10px;
+  }
+  
+  #featured-post .carousel-btn.next {
+    right: 10px;
+  }
+  
+  #featured-post .carousel-indicators {
+    bottom: 80px;
+  }
+}
+
+
+
+
