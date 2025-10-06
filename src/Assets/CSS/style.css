@@ -42,8 +42,8 @@ body {
 /* ============================= */
 .hero-header {
 	position: relative;
-	min-height: 130vh;
-	height: auto;
+	
+	 height: 600px; 
 	overflow: hidden;
 	display: flex;
 	padding-bottom: 2rem;
