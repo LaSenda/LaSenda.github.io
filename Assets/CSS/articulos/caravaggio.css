@@ -222,7 +222,7 @@ body {
 }
 .btn-tema:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(139,115,85,.14); }
 
-/* -------------------- Separador / Navegación / Footer -------------------- */
+/* -------------------- Separador / Navegación -------------------- */
 .separador-tema { text-align: center; margin: 1.8rem 0; }
 .separador-tema::after { content: '🍂'; font-size: 1.6rem; display:block; margin: 0 auto; }
 
@@ -236,14 +236,6 @@ body {
 
 /* Alineación para tu d-flex justify-content-between flex-wrap */
 .d-flex.justify-content-between.flex-wrap { gap:.6rem; }
-
-.footer-tema {
-	background: linear-gradient(135deg, var(--tierra-oscura), var(--tierra-media));
-	color: var(--pergamino);
-	text-align: center;
-	padding: 1.25rem;
-	margin-top: 1.6rem;
-}
 
 /* -------------------- Popover -------------------- */
 .popover {
@@ -301,6 +293,7 @@ body {
 	.d-flex.flex-column.flex-md-row.gap-2,
 	.d-flex.flex-column.flex-md-row.gap-1 { gap: .7rem; }
 }
+
 /* =========================================
    ESTILOS PARA EL ASIDE DE CITAS (CORREGIDO)
    ========================================= */
@@ -353,7 +346,7 @@ aside.card-tema.card-citas.subtle-inline .blockquote-footer {
   font-size: 0.82rem;
   color: #9a948d;
   font-style: normal;
-  margin-bottom: 0.5rem; /* corregido: punto en vez de coma */
+  margin-bottom: 0.5rem;
 }
 
 /* Responsive pequeño ejemplo */
@@ -362,9 +355,6 @@ aside.card-tema.card-citas.subtle-inline .blockquote-footer {
   .gap-4 { gap: 1.25rem; }
   .card-tema { padding: 1.25rem; }
 }
-
-
-
 
 /* -------------------- NOTAS (no editar si no quieres) --------------------
   - Para usar aún más ancho: sube --page-max-width a 2000px o ponlo muy grande.
