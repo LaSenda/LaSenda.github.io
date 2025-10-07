@@ -1,4 +1,5 @@
 ---
+layout: base.njk
 title: "Caravaggio: El don divino que salvó al hombre caído"
 image: "/Assets/img/articulos/DSC_7324.JPG"
 date: 2025-09-21
@@ -9,272 +10,238 @@ categories:
 description: "Adentrémonos en la vida del pintor que revolucionó el arte encontrando lo sagrado en lo mundano."
 permalink: "/articulos/Caravaggio.html"
 featured: true   
+customCSS: "/Assets/CSS/articulos/caravaggio.css"
 ---
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Michelangelo Merisi da Caravaggio | La Senda</title>
-  <link rel="icon" type="image/x-icon" href="/Assets/img/logo/logo_rombo-removebg-preview.png" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- navbar.css AL FINAL para que sus reglas prevalezcan -->
-<link rel="stylesheet" href="/Assets/CSS/articulos/navbar.css">
-  <link rel="stylesheet" href="/Assets/CSS/style.css">
-  <link rel="stylesheet" href="/Assets/CSS/articulos/caravaggio.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Macondo&family=Droid+Serif:wght@400;700&display=swap" rel="stylesheet">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8996599155773658"
-     crossorigin="anonymous"></script>
-  <style>
-    /* Ajustes para el popover */
-   
-    /* Si usas las clases .articulo-container/.card-tema en tu CSS, se mantienen. */
-  </style>
-</head>
-<body>
+<!-- Espaciador para el menú fijo (si el navbar es fixed-top) -->
+<div style="height: 80px;"></div>
 
-  <!-- Menú de navegación -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top" style="backdrop-filter: blur(8px);">
-    <div class="container">
-      <a class="navbar-brand" href="../index.html">
-        <img src="../Assets/img/navbar/intento 3.png" alt="Logo La Senda" width="120" class="d-inline-block align-text-top">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="mainNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="../index.html"><img src="../Assets/img/navbar/pagina.png" alt="Inicio"></a></li>
-          <li class="nav-item"><a class="nav-link" href="../Sobremi.html"><img src="../Assets/img/navbar/sobre.png" alt="Sobre mí"></a></li>
-          <li class="nav-item"><a class="nav-link" href="../Contacto.html"><img src="../Assets/img/navbar/contacto.png" alt="Contacto"></a></li>
-          <li class="nav-item"><a class="nav-link" href="../articulos.html"><img src="../Assets/img/navbar/articulos_accento.png" alt="Artículos"></a></li>
-        </ul>
+<!-- Contenido del artículo -->
+<div class="container mt-4">
+  <div class="d-flex justify-content-center">
+    <div class="articulo-container" style="width: 100%;">
+      
+      <!-- Header del artículo -->
+      <div class="articulo-header">
+        <h1 class="articulo-titulo">Michelangelo Merisi da Caravaggio</h1>
+        <p class="articulo-subtitulo">El don divino que salvó al hombre caído</p>
+        <small class="articulo-fecha">Publicado el 21 de septiembre de 2025</small>
       </div>
-    </div>
-  </nav>
 
-  <!-- Espaciador para el menú fijo -->
-  <div style="height: 80px;"></div>
+      <!-- Contenido -->
+      <div class="articulo-contenido">
 
-  <!-- Contenido del artículo -->
-  <div class="container mt-4">
-    <!-- Usamos un contenedor flex para centrar el artículo y permitir que sea responsivo -->
-    <div class="d-flex justify-content-center">
-      <div class="articulo-container" style=" width: 100%;">
-        <!-- Header del artículo -->
-        <div class="articulo-header">
-          <h1 class="articulo-titulo">Michelangelo Merisi da Caravaggio</h1>
-          <p class="articulo-subtitulo">El don divino que salvó al hombre caído</p>
-          <small class="articulo-fecha">Publicado el 21 de septiembre de 2025</small>
+        <!-- Alert de introducción -->
+        <div class="alert-tema mb-4">
+          <h5 class="alert-heading">🎨 Una reflexión sobre genio y contradicción</h5>
+          <p class="mb-0">Adentrémonos en la vida del pintor que revolucionó el arte encontrando lo sagrado en lo mundano.</p>
         </div>
 
-        <!-- Contenido -->
-        <div class="articulo-contenido">
-
-          <!-- Alert de introducción -->
-          <div class="alert-tema mb-4">
-            <h5 class="alert-heading">🎨 Una reflexión sobre genio y contradicción</h5>
-            <p class="mb-0">Adentrémonos en la vida del pintor que revolucionó el arte encontrando lo sagrado en lo mundano.</p>
+        <!-- Sección: Infancia y formación -->
+        <div class="card-tema mb-4">
+          <div class="card-tema-header">
+            <h5>Infancia y formación previa a Roma</h5>
           </div>
-
-          <!-- Introducción -->
-          <div class="card-tema mb-4">
-            <div class="card-tema-header">
-              <h5>Infancia y formación previa a Roma</h5>
-            </div>
-            <div class="card-tema-body">
-              <p>
-                <span class="fw-bold">Michelangelo Merisi</span>, más conocido como
-                <span class="fw-bold">Caravaggio</span>, nació en 1571 en Milán, en el seno de una familia que contaba con cierto prestigio y vínculos con la nobleza local. Su padre, <span class="fw-bold">Fermo Merisi</span>, no era un simple obrero, sino un maestro de obras y administrador que trabajaba al servicio de familias nobles relacionadas con Caravaggio(localidad ). Entre ellas se encontraban ramas menores de los <span class="fw-bold">Sforza</span>, herederas de la poderosa casa ducal milanesa, y probablemente también los
-                <span class="fw-bold">Colleoni-Martinego</span>, titulares en ese tiempo del marquesado de Caravaggio. Este puesto proporcionaba a Fermo un estatus respetable y una proximidad a los círculos de poder lombardos que aseguraban a los Merisi cierta estabilidad económica.
-              </p>
-              <p>
-                La madre, <span class="fw-bold">Lucía Aratori</span>, procedía de una familia acomodada de la localidad de Caravaggio, propietaria de tierras y con una notable presencia en la vida social y religiosa del lugar, hasta el punto de encargarse de la administración de un santuario local. De esta unión nacieron cuatro hijos: <span class="fw-bold">Caterina</span>, <span class="fw-bold">Giovan Pietro</span>, <span class="fw-bold">Giovan Battista</span> y <span class="fw-bold">Michelangelo</span>, que creció en un entorno donde se entrelazaban el trabajo artesanal cualificado, la religiosidad cotidiana y la cercanía con los notables de la región.
-              </p>
-              <p>
-                Sin embargo, la estabilidad duró poco. En <span class="fw-bold">1576</span>, la peste bubónica, un azote constante en la Europa del siglo XVI, golpeó con fuerza a Milán. Como tantas familias, los Merisi huyeron a <span class="fw-bold">Caravaggio</span>, el pueblo de origen de Lucía y que acabaría dando su nombre artístico al pintor. Pero la enfermedad los alcanzó. En <span class="fw-bold">1577</span>, cuando Michelangelo tenía apenas seis años, perdió a su padre y a su abuelo a causa de la epidemia. La viuda quedó sola al frente de cuatro hijos y de la administración de las propiedades familiares. La infancia de Caravaggio quedó así marcada por la experiencia temprana de la muerte y la fragilidad de la vida, habituándolo desde niño al duelo, la precariedad y la conciencia de lo efímero. Ese trasfondo vital nutriría más tarde la intensidad emocional, el <span class="fw-bold">realismo descarnado</span> y el dramatismo lumínico de su pintura.
-              </p>
-              <p>
-                El historiador <span class="fw-bold">Andrew Graham-Dixon</span> lo sintetiza con claridad: “A los seis años, Caravaggio había perdido a casi todos los varones adultos de su familia. Su temperamento revoltoso y fogoso y su profundo sentimiento de abandono bien pueden tener su origen en aquellos traumáticos acontecimientos”.
-              </p>
-            </div>
-          </div>
-
-          <!-- Cards en fila convertidas a flex -->
-          <div class="d-flex flex-column flex-md-row gap-4 mb-4">
-            <div class="card-tema h-100 flex-fill flex-card">
-              <div class="card-tema-header">
-                <h5></h5>
-              </div>
-              <div class="card-tema-body">
-                <p>
-                  A los trece años, en <span class="fw-bold">1584</span>, fue enviado de nuevo a <span class="fw-bold">Milán</span> para aprender el oficio de pintor. Entró como aprendiz en el taller de <span class="fw-bold">Simone Peterzano</span>, discípulo del gran maestro veneciano <span class="fw-bold">Tiziano</span>. Durante cuatro años, aprendió técnicas de dibujo, pintura al óleo y la disciplina de la vida gremial. Allí entró en contacto con dos corrientes que marcarían profundamente su estilo. Por un lado, el <span class="fw-bold">manierismo tardío</span>, con su gusto por la elegancia artificiosa y las composiciones complejas. Por otro, el 
-                  <a href="javascript:void(0)" 
-                     id="naturalismoTrigger" 
-                     tabindex="0"
-                     role="button"
-                     data-bs-toggle="popover" 
-                     data-bs-trigger="focus"
-                     title="Naturalismo Lombardo">
-                    naturalismo lombardo
-                  </a>, una corriente más sobria y directa que rechazaba la idealización y buscaba representar la realidad tal como era, con sus rostros vulgares, sus arrugas y sus imperfecciones. Esa tensión entre lo artificioso y lo realista fue el germen de su lenguaje pictórico personal.
-                </p>
-
-                <!-- Plantilla oculta para el popover -->
-                <div class="popover-content-template d-none">
-                  <p>
-                    El naturalismo lombardo no es un movimiento formal, sino una tendencia pictórica del norte de Italia en el siglo XVI. Se caracteriza por la observación directa de la realidad, la atención a los detalles cotidianos y una representación sobria frente a la idealización manierista.
-                  </p>
-                  <p>
-                    Historiadores como Roberto Longhi y Mina Gregori destacan su influencia en Caravaggio: artistas como Savoldo, Moretto da Brescia, Lorenzo Lotto y su maestro Simone Peterzano transmitieron este enfoque realista, que Caravaggio llevó a un nivel completamente nuevo en Roma.
-                  </p>
-                 
-                  <img src="../Assets/img/articulos/niñoconcestadefrutas.jpg" alt="Bodegón de Caravaggio" class="img-fluid rounded shadow mt-2">
-                </div>
-
-                <div class="mt-3">
-                  <span class="badge-tema">Claroscuro</span>
-                  <span class="badge-tema">Realismo Barroco</span>
-                  <span class="badge-tema">Arte Sacro</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="card-tema h-100 flex-fill flex-card">
-              <div class="card-tema-header">
-                <h5></h5>
-              </div>
-              <div class="card-tema-body">
-                <p>En 1588, tras concluir su formación, Caravaggio regresó a vivir con su madre y hermanos en la localidad de Caravaggio. Aceptaba pequeños encargos para iglesias y particulares, lo que le permitió experimentar con los conocimientos adquiridos y empezar a perfilar su propio estilo. Pero la relativa calma se rompió pronto. En torno a 1590, falleció su madre, Lucía Aratori. Con su muerte, Michelangelo, que todavía no había cumplido los veinte años, quedó huérfano de ambos padres. Como hijo varón mayor, heredó las propiedades agrícolas y el modesto patrimonio familiar, pero también una pesada carga emocional que reforzó su carácter solitario e introspectivo.</p>
-                <p>Los siguientes años estuvieron marcados por decisiones prácticas. Entre 1590 y 1592, Caravaggio vendió gran parte de las tierras heredadas. No lo hizo por capricho, sino para hacer frente a impuestos de herencia, gastos de mantenimiento de las fincas e incluso deudas derivadas de su formación, como materiales de trabajo o libros. Esta liquidación de bienes le permitió reunir el dinero necesario para preparar un viaje que cambiaría para siempre su destino: Roma, el epicentro artístico y espiritual de la Italia de finales del siglo XVI.</p>
-                
-                <p class="mt-2"><small>Murió en 1610, a los 38 años, en circunstancias misteriosas.</small></p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Obras destacadas (flex en lugar de row/cols) -->
-          <div class="card-tema mb-4">
-            <div class="card-tema-header">
-              <h5> Obras que Cambiaron el Arte</h5>
-            </div>
-            <div class="card-tema-body">
-              <div class="d-flex flex-column flex-md-row gap-3">
-                <div class="obra-destaca flex-fill">
-                  <h6>Virgen de los Peregrinos</h6>
-                  <small>Escándalo por mostrar pies sucios de la Virgen</small>
-                </div>
-                <div class="obra-destaca flex-fill">
-                  <h6>Muerte de la Virgen</h6>
-                  <small>Rechazada por usar modelo "inapropiada"</small>
-                </div>
-                <div class="obra-destaca flex-fill">
-                  <h6>La Vocación de San Mateo</h6>
-                  <small>Revolucionario uso del claroscuro</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-       <!-- card individual -->
-  <div class="d-flex flex-column flex-md-row gap-4 mb-4">
-    <div class="card-tema h-100 flex-fill flex-card">
-      <div class="card-tema-header">
-        <h5>Roma: El Teatro de la Gloria y la Perdición</h5>
-      </div>
-      <div class="card-tema-body">
-        <p>En la <span class="fw-bold">primavera de 1592</span>, con veintiún años, <span class="fw-bold">Caravaggio</span> llegó a <span class="fw-bold">Roma</span>. Había vendido las tierras heredadas para costear el viaje, su instalación y la compra de materiales. Sin <span class="fw-bold">mecenas</span> que lo amparara, pero con una sólida formación, se lanzó a la búsqueda de encargos menores que le permitieran sobrevivir en la capital artística de <span class="fw-bold">Italia</span>. Durante esos primeros años trabajó en <span class="fw-bold">talleres</span> pintando <span class="fw-bold">flores</span>, <span class="fw-bold">naturalezas muertas</span> y <span class="fw-bold">retratos</span> de poco valor, pero su talento no pasó desapercibido. Su manera de representar la realidad sin embellecimientos, con rostros comunes y escenas que parecían arrancadas de la vida diaria, sorprendió en un ambiente aún dominado por la idealización <span class="fw-bold">manierista</span>.</p>
-
-        <p>Mientras iba ganando prestigio en el circuito artístico, su vida personal se volvía objeto de rumores. La ciudad comentaba sus noches en tabernas y barrios bajos, su hábito de beber hasta el amanecer y su costumbre de portar siempre una <span class="fw-bold">daga oculta</span>. Lo describían como un hombre de <span class="fw-bold">genio volcánico</span>, capaz de <span class="fw-bold">buscar pelea</span> por una mirada o una palabra, rodeado de <span class="fw-bold">prostitutas</span> y <span class="fw-bold">maleantes</span>. Para algunos clérigos y diplomáticos era un joven prometedor, pero también alguien “capaz de matar por un agravio menor”. Así, al mismo tiempo que impresionaba con su arte, empezaba a ser temido por su carácter.</p>
-
-        <p>El año <span class="fw-bold">1600</span> marcó el cruce entre ambas facetas. Ese año, <span class="fw-bold">Caravaggio</span> atacó a un joven con un <span class="fw-bold">estoque</span> y fue <span class="fw-bold">detenido</span>, saliendo en libertad tras pagar una <span class="fw-bold">fianza</span>: su primer <span class="fw-bold">choque documentado con la justicia</span>. Pero esos mismos meses su nombre resonaba con fuerza en <span class="fw-bold">Roma</span>. Los encargos importantes llegaban y los lienzos que realizaba para iglesias despertaban comentarios asombrados entre fieles y <span class="fw-bold">mecenas</span>. Se hablaba de un pintor capaz de transformar el <span class="fw-bold">dramatismo</span> en <span class="fw-bold">luz y sombra</span>, de un estilo que no dejaba indiferente a nadie. Era celebrado como una revelación y señalado al mismo tiempo como un <span class="fw-bold">alborotador peligroso</span>.</p>
-
-        <p>A partir de entonces, su biografía se convirtió en una oscilación constante entre la <span class="fw-bold">gloria</span> y el <span class="fw-bold">escándalo</span>. En <span class="fw-bold">diciembre de 1600</span> fue acusado de un <span class="fw-bold">atraco</span>, aunque <span class="fw-bold">absuelto</span>; en <span class="fw-bold">1601</span> fue arrestado por <span class="fw-bold">herir</span> al soldado <span class="fw-bold">Flavio Canonico</span> en el <span class="fw-bold">castillo de Sant’Angelo</span>, escapando gracias al perdón del herido. En <span class="fw-bold">1603</span> un <span class="fw-bold">pleito</span> con <span class="fw-bold">Orazio Gentileschi</span> por <span class="fw-bold">difamación</span> lo llevó a <span class="fw-bold">prisión</span>, de donde salió por <span class="fw-bold">intervención diplomática</span>. Y sin embargo, cada conflicto parecía no restarle <span class="fw-bold">fama</span>: al contrario, su figura crecía envuelta en un aura de <span class="fw-bold">artista genial y turbulento</span>.</p>
-
-        <!-- Testimonios de la época -->
-        <aside class="card-tema card-citas subtle-inline my-4" role="note" aria-label="Testimonios de la época">
           <div class="card-tema-body">
-            <h6 class="card-subtitle mb-3 text-muted">Testimonios de la época</h6>
-
-            <blockquote class="blockquote fs-6 border-0 p-0 mb-0">
-              <p class="mb-1 fst-italic">“Ya famoso por golpear meseros y huronear en las tabernas hasta el alba, cubierto de manchas de vino y carbón de candil. Su genio se encendía y apagaba con sus riñas.”</p>
-              <footer class="blockquote-footer small">Giulio Mancini, <cite>Considerazioni sulla pittura</cite> (c. 1620)</footer>
-            </blockquote>
-
-            <blockquote class="blockquote fs-6 border-0 p-0 mb-0">
-              <p class="mb-1 fst-italic">“Hostigaba con su daga a discípulos y modelos, retándolos a resolver los contenciosos a puñetazo limpio, pues confiaba más en el acero que en la ley.”</p>
-              <footer class="blockquote-footer small">Giovanni Baglione, <cite>Le Vite de’ Pittori...</cite> (1642)</footer>
-            </blockquote>
+            <p>
+              <span class="fw-bold">Michelangelo Merisi</span>, más conocido como
+              <span class="fw-bold">Caravaggio</span>, nació en 1571 en Milán, en el seno de una familia que contaba con cierto prestigio y vínculos con la nobleza local. Su padre, <span class="fw-bold">Fermo Merisi</span>, no era un simple obrero, sino un maestro de obras y administrador que trabajaba al servicio de familias nobles relacionadas con Caravaggio(localidad). Entre ellas se encontraban ramas menores de los <span class="fw-bold">Sforza</span>, herederas de la poderosa casa ducal milanesa, y probablemente también los
+              <span class="fw-bold">Colleoni-Martinego</span>, titulares en ese tiempo del marquesado de Caravaggio. Este puesto proporcionaba a Fermo un estatus respetable y una proximidad a los círculos de poder lombardos que aseguraban a los Merisi cierta estabilidad económica.
+            </p>
+            <p>
+              La madre, <span class="fw-bold">Lucía Aratori</span>, procedía de una familia acomodada de la localidad de Caravaggio, propietaria de tierras y con una notable presencia en la vida social y religiosa del lugar, hasta el punto de encargarse de la administración de un santuario local. De esta unión nacieron cuatro hijos: <span class="fw-bold">Caterina</span>, <span class="fw-bold">Giovan Pietro</span>, <span class="fw-bold">Giovan Battista</span> y <span class="fw-bold">Michelangelo</span>, que creció en un entorno donde se entrelazaban el trabajo artesanal cualificado, la religiosidad cotidiana y la cercanía con los notables de la región.
+            </p>
+            <p>
+              Sin embargo, la estabilidad duró poco. En <span class="fw-bold">1576</span>, la peste bubónica, un azote constante en la Europa del siglo XVI, golpeó con fuerza a Milán. Como tantas familias, los Merisi huyeron a <span class="fw-bold">Caravaggio</span>, el pueblo de origen de Lucía y que acabaría dando su nombre artístico al pintor. Pero la enfermedad los alcanzó. En <span class="fw-bold">1577</span>, cuando Michelangelo tenía apenas seis años, perdió a su padre y a su abuelo a causa de la epidemia. La viuda quedó sola al frente de cuatro hijos y de la administración de las propiedades familiares. La infancia de Caravaggio quedó así marcada por la experiencia temprana de la muerte y la fragilidad de la vida, habituándolo desde niño al duelo, la precariedad y la conciencia de lo efímero. Ese trasfondo vital nutriría más tarde la intensidad emocional, el <span class="fw-bold">realismo descarnado</span> y el dramatismo lumínico de su pintura.
+            </p>
+            <p>
+              El historiador <span class="fw-bold">Andrew Graham-Dixon</span> lo sintetiza con claridad: "A los seis años, Caravaggio había perdido a casi todos los varones adultos de su familia. Su temperamento revoltoso y fogoso y su profundo sentimiento de abandono bien pueden tener su origen en aquellos traumáticos acontecimientos".
+            </p>
           </div>
-        </aside>
-        <!-- Fin testimonios -->
+        </div>
 
-        <p>Mientras su leyenda como el <span class="fw-bold">pintor más revolucionario</span> de Roma alcanzaba su <span class="fw-bold">cénit</span>, la vida de Caravaggio se desmoronaba en una <span class="fw-bold">espiral de violencia</span>. Era la encarnación del <span class="fw-bold">doble rostro</span> de la ciudad: por un lado, la <span class="fw-bold">gloria del reconocimiento artístico</span>, un genio admirado cuyo estilo único transformaba el arte sacro y profano; por otro, la <span class="fw-bold">perdición</span> de un hombre que vivía al <span class="fw-bold">filo de la ley</span>, incapaz de controlar sus impulsos.</p>
+        <!-- Cards en fila (formación en Milán + biografía) -->
+        <div class="d-flex flex-column flex-md-row gap-4 mb-4">
+          
+          <!-- Card: Formación con Peterzano -->
+          <div class="card-tema h-100 flex-fill flex-card">
+            <div class="card-tema-header">
+              <h5></h5>
+            </div>
+            <div class="card-tema-body">
+              <p>
+                A los trece años, en <span class="fw-bold">1584</span>, fue enviado de nuevo a <span class="fw-bold">Milán</span> para aprender el oficio de pintor. Entró como aprendiz en el taller de <span class="fw-bold">Simone Peterzano</span>, discípulo del gran maestro veneciano <span class="fw-bold">Tiziano</span>. Durante cuatro años, aprendió técnicas de dibujo, pintura al óleo y la disciplina de la vida gremial. Allí entró en contacto con dos corrientes que marcarían profundamente su estilo. Por un lado, el <span class="fw-bold">manierismo tardío</span>, con su gusto por la elegancia artificiosa y las composiciones complejas. Por otro, el 
+                <a href="javascript:void(0)" 
+                   id="naturalismoTrigger" 
+                   tabindex="0"
+                   role="button"
+                   data-bs-toggle="popover" 
+                   data-bs-trigger="focus"
+                   title="Naturalismo Lombardo">
+                  naturalismo lombardo
+                </a>, una corriente más sobria y directa que rechazaba la idealización y buscaba representar la realidad tal como era, con sus rostros vulgares, sus arrugas y sus imperfecciones. Esa tensión entre lo artificioso y lo realista fue el germen de su lenguaje pictórico personal.
+              </p>
 
-        <p>Esta sombra creció hasta devorarlo todo. Los <span class="fw-bold">altercados</span> se volvieron su rutina: en 1604, en la Ostrería del Moro, un plato de alcachofas arrojado a un camarero fue el preludio de una <span class="fw-bold">espada desenvainada</span>. Ese mismo año, fue <span class="fw-bold">arrestado</span> por injuriar a un alguacil y lanzar piedras contra los soldados. Su temperamento lo llevaba de un conflicto a otro: en 1605 le confiscaron armas que portaba sin permiso y agredió a un notario, mientras las denuncias de su casera por impagos y destrozos se apilaban como testimonios de su <span class="fw-bold">caos personal</span>.</p>
+              <!-- Plantilla oculta para el popover -->
+              <div class="popover-content-template d-none">
+                <p>
+                  El naturalismo lombardo no es un movimiento formal, sino una tendencia pictórica del norte de Italia en el siglo XVI. Se caracteriza por la observación directa de la realidad, la atención a los detalles cotidianos y una representación sobria frente a la idealización manierista.
+                </p>
+                <p>
+                  Historiadores como Roberto Longhi y Mina Gregori destacan su influencia en Caravaggio: artistas como Savoldo, Moretto da Brescia, Lorenzo Lotto y su maestro Simone Peterzano transmitieron este enfoque realista, que Caravaggio llevó a un nivel completamente nuevo en Roma.
+                </p>
+                <img src="/Assets/img/articulos/niñoconcestadefrutas.jpg" alt="Bodegón de Caravaggio" class="img-fluid rounded shadow mt-2">
+              </div>
 
-        <p>La tensión acumulada alcanzó su <span class="fw-bold">punto de no retorno</span> el <span class="fw-bold">29 de mayo de 1606</span>. Aquel día, tras una disputa originada en un partido de <span class="fw-bold">pallacorda</span>, se batió en <span class="fw-bold">duelo</span> con <span class="fw-bold">Ranuccio Tomassoni</span> en la Vía Apia. El enfrentamiento culminó con una <span class="fw-bold">estocada brutal</span> y deliberada de Caravaggio: la hoja, dirigida a la ingle, seccionó la <span class="fw-bold">arteria femoral</span> de Tomassoni, quien <span class="fw-bold">murió desangrado</span> en plena calle. Con un hombre muerto a sus pies y una <span class="fw-bold">orden de captura papal</span> sobre su cabeza, Caravaggio, también herido, tuvo que <span class="fw-bold">huir</span>. Así, la misma Roma que fue testigo de su <span class="fw-bold">ascenso fulgurante</span> se convirtió en el escenario de su <span class="fw-bold">caída inevitable</span>, grabando a fuego su leyenda como el <span class="fw-bold">genio que se hizo fugitivo</span>.</p>
-      </div>
-    </div>
-  </div>
-
-          <!-- Separador decorativo -->
-          <div class="separador-tema"></div>
-
-          <!-- Reflexión final -->
-          <h2>El Legado Eterno</h2>
-          <p>Cuatro siglos después, Caravaggio sigue enseñándonos que la belleza no está en la perfección, sino en la verdad. Que lo sagrado puede encontrarse en los lugares más inesperados. Y que a veces, los artistas más quebrados son los que crean la luz más brillante.</p>
-          <p>En un mundo obsesionado con las apariencias, Caravaggio nos recuerda que la autenticidad es revolucionaria. Su don divino no fue solo técnico, sino moral: nos enseñó a mirar más allá de las máscaras y encontrar la humanidad en todos nosotros.</p>
-
-          <!-- Cita final -->
-          <blockquote class="cita-especial">
-            La luz que busco no está en los cielos, sino en los rostros de quienes caminan conmigo por las sombras.
-          </blockquote>
-
-          <!-- Navegación -->
-          <div class="navegacion-articulos">
-            <div class="d-flex justify-content-between flex-wrap">
-              <a href="#" class="btn-tema mb-2">← Artículo anterior</a>
-              <a href="/articulos.html" class="btn btn-outline-secondary mb-2">Volver a artículos</a>
-              <a href="#" class="btn-tema mb-2">Siguiente artículo →</a>
+              <div class="mt-3">
+                <span class="badge-tema">Claroscuro</span>
+                <span class="badge-tema">Realismo Barroco</span>
+                <span class="badge-tema">Arte Sacro</span>
+              </div>
             </div>
           </div>
 
+          <!-- Card: Muerte de la madre y viaje a Roma -->
+          <div class="card-tema h-100 flex-fill flex-card">
+            <div class="card-tema-header">
+              <h5></h5>
+            </div>
+            <div class="card-tema-body">
+              <p>
+                En 1588, tras concluir su formación, Caravaggio regresó a vivir con su madre y hermanos en la localidad de Caravaggio. Aceptaba pequeños encargos para iglesias y particulares, lo que le permitió experimentar con los conocimientos adquiridos y empezar a perfilar su propio estilo. Pero la relativa calma se rompió pronto. En torno a 1590, falleció su madre, Lucía Aratori. Con su muerte, Michelangelo, que todavía no había cumplido los veinte años, quedó huérfano de ambos padres. Como hijo varón mayor, heredó las propiedades agrícolas y el modesto patrimonio familiar, pero también una pesada carga emocional que reforzó su carácter solitario e introspectivo.
+              </p>
+              <p>
+                Los siguientes años estuvieron marcados por decisiones prácticas. Entre 1590 y 1592, Caravaggio vendió gran parte de las tierras heredadas. No lo hizo por capricho, sino para hacer frente a impuestos de herencia, gastos de mantenimiento de las fincas e incluso deudas derivadas de su formación, como materiales de trabajo o libros. Esta liquidación de bienes le permitió reunir el dinero necesario para preparar un viaje que cambiaría para siempre su destino: Roma, el epicentro artístico y espiritual de la Italia de finales del siglo XVI.
+              </p>
+              <p class="mt-2"><small>Murió en 1610, a los 38 años, en circunstancias misteriosas.</small></p>
+            </div>
+          </div>
         </div>
+
+        <!-- Obras destacadas -->
+        <div class="card-tema mb-4">
+          <div class="card-tema-header">
+            <h5>Obras que Cambiaron el Arte</h5>
+          </div>
+          <div class="card-tema-body">
+            <div class="d-flex flex-column flex-md-row gap-3">
+              <div class="obra-destaca flex-fill">
+                <h6>Virgen de los Peregrinos</h6>
+                <small>Escándalo por mostrar pies sucios de la Virgen</small>
+              </div>
+              <div class="obra-destaca flex-fill">
+                <h6>Muerte de la Virgen</h6>
+                <small>Rechazada por usar modelo "inapropiada"</small>
+              </div>
+              <div class="obra-destaca flex-fill">
+                <h6>La Vocación de San Mateo</h6>
+                <small>Revolucionario uso del claroscuro</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Sección: Roma -->
+        <div class="card-tema mb-4">
+          <div class="card-tema-header">
+            <h5>Roma: El Teatro de la Gloria y la Perdición</h5>
+          </div>
+          <div class="card-tema-body">
+            <p>
+              En la <span class="fw-bold">primavera de 1592</span>, con veintiún años, <span class="fw-bold">Caravaggio</span> llegó a <span class="fw-bold">Roma</span>. Había vendido las tierras heredadas para costear el viaje, su instalación y la compra de materiales. Sin <span class="fw-bold">mecenas</span> que lo amparara, pero con una sólida formación, se lanzó a la búsqueda de encargos menores que le permitieran sobrevivir en la capital artística de <span class="fw-bold">Italia</span>. Durante esos primeros años trabajó en <span class="fw-bold">talleres</span> pintando <span class="fw-bold">flores</span>, <span class="fw-bold">naturalezas muertas</span> y <span class="fw-bold">retratos</span> de poco valor, pero su talento no pasó desapercibido. Su manera de representar la realidad sin embellecimientos, con rostros comunes y escenas que parecían arrancadas de la vida diaria, sorprendió en un ambiente aún dominado por la idealización <span class="fw-bold">manierista</span>.
+            </p>
+
+            <p>
+              Mientras iba ganando prestigio en el circuito artístico, su vida personal se volvía objeto de rumores. La ciudad comentaba sus noches en tabernas y barrios bajos, su hábito de beber hasta el amanecer y su costumbre de portar siempre una <span class="fw-bold">daga oculta</span>. Lo describían como un hombre de <span class="fw-bold">genio volcánico</span>, capaz de <span class="fw-bold">buscar pelea</span> por una mirada o una palabra, rodeado de <span class="fw-bold">prostitutas</span> y <span class="fw-bold">maleantes</span>. Para algunos clérigos y diplomáticos era un joven prometedor, pero también alguien "capaz de matar por un agravio menor". Así, al mismo tiempo que impresionaba con su arte, empezaba a ser temido por su carácter.
+            </p>
+
+            <p>
+              El año <span class="fw-bold">1600</span> marcó el cruce entre ambas facetas. Ese año, <span class="fw-bold">Caravaggio</span> atacó a un joven con un <span class="fw-bold">estoque</span> y fue <span class="fw-bold">detenido</span>, saliendo en libertad tras pagar una <span class="fw-bold">fianza</span>: su primer <span class="fw-bold">choque documentado con la justicia</span>. Pero esos mismos meses su nombre resonaba con fuerza en <span class="fw-bold">Roma</span>. Los encargos importantes llegaban y los lienzos que realizaba para iglesias despertaban comentarios asombrados entre fieles y <span class="fw-bold">mecenas</span>. Se hablaba de un pintor capaz de transformar el <span class="fw-bold">dramatismo</span> en <span class="fw-bold">luz y sombra</span>, de un estilo que no dejaba indiferente a nadie. Era celebrado como una revelación y señalado al mismo tiempo como un <span class="fw-bold">alborotador peligroso</span>.
+            </p>
+
+            <p>
+              A partir de entonces, su biografía se convirtió en una oscilación constante entre la <span class="fw-bold">gloria</span> y el <span class="fw-bold">escándalo</span>. En <span class="fw-bold">diciembre de 1600</span> fue acusado de un <span class="fw-bold">atraco</span>, aunque <span class="fw-bold">absuelto</span>; en <span class="fw-bold">1601</span> fue arrestado por <span class="fw-bold">herir</span> al soldado <span class="fw-bold">Flavio Canonico</span> en el <span class="fw-bold">castillo de Sant'Angelo</span>, escapando gracias al perdón del herido. En <span class="fw-bold">1603</span> un <span class="fw-bold">pleito</span> con <span class="fw-bold">Orazio Gentileschi</span> por <span class="fw-bold">difamación</span> lo llevó a <span class="fw-bold">prisión</span>, de donde salió por <span class="fw-bold">intervención diplomática</span>. Y sin embargo, cada conflicto parecía no restarle <span class="fw-bold">fama</span>: al contrario, su figura crecía envuelta en un aura de <span class="fw-bold">artista genial y turbulento</span>.
+            </p>
+
+            <!-- Testimonios de la época -->
+            <aside class="card-tema card-citas subtle-inline my-4" role="note" aria-label="Testimonios de la época">
+              <div class="card-tema-body">
+                <h6 class="card-subtitle mb-3 text-muted">Testimonios de la época</h6>
+
+                <blockquote class="blockquote fs-6 border-0 p-0 mb-3">
+                  <p class="mb-1 fst-italic">"Ya famoso por golpear meseros y huronear en las tabernas hasta el alba, cubierto de manchas de vino y carbón de candil. Su genio se encendía y apagaba con sus riñas."</p>
+                  <footer class="blockquote-footer small">Giulio Mancini, <cite>Considerazioni sulla pittura</cite> (c. 1620)</footer>
+                </blockquote>
+
+                <blockquote class="blockquote fs-6 border-0 p-0 mb-0">
+                  <p class="mb-1 fst-italic">"Hostigaba con su daga a discípulos y modelos, retándolos a resolver los contenciosos a puñetazo limpio, pues confiaba más en el acero que en la ley."</p>
+                  <footer class="blockquote-footer small">Giovanni Baglione, <cite>Le Vite de' Pittori...</cite> (1642)</footer>
+                </blockquote>
+              </div>
+            </aside>
+
+            <p>
+              Mientras su leyenda como el <span class="fw-bold">pintor más revolucionario</span> de Roma alcanzaba su <span class="fw-bold">cénit</span>, la vida de Caravaggio se desmoronaba en una <span class="fw-bold">espiral de violencia</span>. Era la encarnación del <span class="fw-bold">doble rostro</span> de la ciudad: por un lado, la <span class="fw-bold">gloria del reconocimiento artístico</span>, un genio admirado cuyo estilo único transformaba el arte sacro y profano; por otro, la <span class="fw-bold">perdición</span> de un hombre que vivía al <span class="fw-bold">filo de la ley</span>, incapaz de controlar sus impulsos.
+            </p>
+
+            <p>
+              Esta sombra creció hasta devorarlo todo. Los <span class="fw-bold">altercados</span> se volvieron su rutina: en 1604, en la Ostrería del Moro, un plato de alcachofas arrojado a un camarero fue el preludio de una <span class="fw-bold">espada desenvainada</span>. Ese mismo año, fue <span class="fw-bold">arrestado</span> por injuriar a un alguacil y lanzar piedras contra los soldados. Su temperamento lo llevaba de un conflicto a otro: en 1605 le confiscaron armas que portaba sin permiso y agredió a un notario, mientras las denuncias de su casera por impagos y destrozos se apilaban como testimonios de su <span class="fw-bold">caos personal</span>.
+            </p>
+
+            <p>
+              La tensión acumulada alcanzó su <span class="fw-bold">punto de no retorno</span> el <span class="fw-bold">29 de mayo de 1606</span>. Aquel día, tras una disputa originada en un partido de <span class="fw-bold">pallacorda</span>, se batió en <span class="fw-bold">duelo</span> con <span class="fw-bold">Ranuccio Tomassoni</span> en la Vía Apia. El enfrentamiento culminó con una <span class="fw-bold">estocada brutal</span> y deliberada de Caravaggio: la hoja, dirigida a la ingle, seccionó la <span class="fw-bold">arteria femoral</span> de Tomassoni, quien <span class="fw-bold">murió desangrado</span> en plena calle. Con un hombre muerto a sus pies y una <span class="fw-bold">orden de captura papal</span> sobre su cabeza, Caravaggio, también herido, tuvo que <span class="fw-bold">huir</span>. Así, la misma Roma que fue testigo de su <span class="fw-bold">ascenso fulgurante</span> se convirtió en el escenario de su <span class="fw-bold">caída inevitable</span>, grabando a fuego su leyenda como el <span class="fw-bold">genio que se hizo fugitivo</span>.
+            </p>
+          </div>
+        </div>
+
+        <!-- Separador decorativo -->
+        <div class="separador-tema"></div>
+
+        <!-- Reflexión final -->
+        <h2>El Legado Eterno</h2>
+        <p>
+          Cuatro siglos después, Caravaggio sigue enseñándonos que la belleza no está en la perfección, sino en la verdad. Que lo sagrado puede encontrarse en los lugares más inesperados. Y que a veces, los artistas más quebrados son los que crean la luz más brillante.
+        </p>
+        <p>
+          En un mundo obsesionado con las apariencias, Caravaggio nos recuerda que la autenticidad es revolucionaria. Su don divino no fue solo técnico, sino moral: nos enseñó a mirar más allá de las máscaras y encontrar la humanidad en todos nosotros.
+        </p>
+
+        <!-- Cita final -->
+        <blockquote class="cita-especial">
+          La luz que busco no está en los cielos, sino en los rostros de quienes caminan conmigo por las sombras.
+        </blockquote>
+
+        <!-- Navegación entre artículos -->
+        <div class="navegacion-articulos">
+          <div class="d-flex justify-content-between flex-wrap">
+            <a href="#" class="btn-tema mb-2">← Artículo anterior</a>
+            <a href="/articulos.html" class="btn btn-outline-secondary mb-2">Volver a artículos</a>
+            <a href="#" class="btn-tema mb-2">Siguiente artículo →</a>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
+</div>
 
-  <!-- Footer -->
-  <footer class="footer-tema">
-    <div class="container">
-      <p class="mb-0">&copy; 2025 La Senda. Todos los derechos reservados.</p>
-    </div>
-  </footer>
-
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const trigger = document.getElementById('naturalismoTrigger');
-      if (trigger) {
-        trigger.addEventListener('click', e => e.preventDefault());
-        new bootstrap.Popover(trigger, {
-          container: 'body',
-          placement: 'right',
-          html: true,
-          sanitize: false,
-          content: () => {
-            return trigger.closest('.card-tema-body')
-                          .querySelector('.popover-content-template')
-                          .innerHTML;
-          }
-        });
-      }
-    });
-  </script>
-</body>
-</html>
+<!-- Script específico para el popover de naturalismo lombardo -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const trigger = document.getElementById('naturalismoTrigger');
+    if (trigger) {
+      trigger.addEventListener('click', e => e.preventDefault());
+      new bootstrap.Popover(trigger, {
+        container: 'body',
+        placement: 'right',
+        html: true,
+        sanitize: false,
+        content: () => {
+          return trigger.closest('.card-tema-body')
+                        .querySelector('.popover-content-template')
+                        .innerHTML;
+        }
+      });
+    }
+  });
+</script>

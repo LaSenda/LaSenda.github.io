@@ -1,6 +1,9 @@
 // .eleventy.js
 const rssPlugin = require("@11ty/eleventy-plugin-rss");
 const { DateTime } = require("luxon");
+const markdownIt = require('markdown-it');
+const markdownItAnchor = require('markdown-it-anchor');
+const pluginTOC = require('eleventy-plugin-toc');
 
 module.exports = async function(eleventyConfig) {
   // ————— Helper para cargar plugins (soporta ESM dynamic import o require)
@@ -17,6 +20,39 @@ module.exports = async function(eleventyConfig) {
       }
     }
   }
+
+  // Configurar Markdown con anclajes para TOC
+  eleventyConfig.setLibrary(
+    'md',
+    markdownIt({ html: true }).use(markdownItAnchor)
+  );
+  
+  // Plugin TOC
+  eleventyConfig.addPlugin(pluginTOC, {
+    tags: ['h2', 'h3'],
+    wrapper: 'nav',
+    wrapperClass: 'toc'
+  });
+
+  // ————— Helper para cargar plugins (soporta ESM dynamic import o require)
+  async function loadModule(name) {
+    try {
+      const mod = await import(name);
+      return mod.default ?? mod;
+    } catch (e) {
+      try {
+        return require(name);
+      } catch (e2) {
+        console.warn(`No se pudo cargar ${name}:`, e2.message);
+        return null;
+      }
+    }
+  }
+
+
+
+
+  
 
   // Plugin RSS
   eleventyConfig.addPlugin(rssPlugin);
@@ -57,6 +93,37 @@ module.exports = async function(eleventyConfig) {
       try { eleventyConfig.addPlugin(sitemapPlugin); } catch (_) {}
     }
   }
+
+    // --- PLUGIN DE OPTIMIZACIÓN DE IMÁGENES ---
+  const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
+  
+  eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+    formats: ["avif", "webp", "jpeg"],
+    widths: ["auto"],
+    outputDir: ".cache/@11ty/img/",
+    urlPath: "/img/built/",
+    htmlOptions: {
+      imgAttributes: {
+        loading: "lazy",
+        decoding: "async"
+      }
+    },
+    svgShortCircuit: true,
+    failOnError: false
+  });
+
+  // Copiar imágenes al directorio final
+  eleventyConfig.on("eleventy.after", () => {
+    const fs = require("fs");
+    const path = require("path");
+    
+    if (fs.existsSync(".cache/@11ty/img/")) {
+      fs.cpSync(".cache/@11ty/img/", "_site/img/built/", { recursive: true });
+    }
+  });
+
+
+  
 
   // ————— Copiar Assets —————
   eleventyConfig.addPassthroughCopy({ "src/Assets": "Assets" });

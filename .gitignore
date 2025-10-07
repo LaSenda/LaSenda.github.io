@@ -16,3 +16,6 @@ Thumbs.db
 # IDEs / editores
 .vscode/
 .idea/
+
+# Caché de Eleventy Image
+.cache/
