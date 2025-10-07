@@ -217,15 +217,104 @@
             </div>
         </div>
     </div>
-    <footer class="py-5 bg-dark">
-        <div class="container">
-            <p class="m-0 text-center text-white">&copy; 2025 La Senda. Todos los derechos reservados.</p>
+    
+  <!-- Footer -->
+  <footer class="footer-waves">
+  <div class="wave-top">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M0,60 C150,120 350,0 600,60 C850,120 1050,0 1200,60 L1200,120 L0,120 Z" fill="rgba(139, 115, 85, 0.3)"></path>
+    </svg>
+  </div>
+  
+    
+    <div class="container">
+      <!-- Grid de 3 columnas -->
+      <div class="footer-visual-grid">
+        
+     <div class="footer-widget">
+  <div class="blog-counter">
+    <div class="counter-icon">📚</div>
+    <div class="counter-number" id="totalArticles">0</div>
+    <div class="counter-label">artículos publicados</div>
+  </div>
+</div>
+
+
+        
+        <!-- COLUMNA 2: Reloj del bosque -->
+        <div class="footer-widget">
+          <div class="forest-clock">
+            <div class="time-display" id="forestTime"></div>
+           
+
+            <div class="clock-decoration" aria-hidden="true">
+  <svg xmlns="http://www.w3.org/2000/svg" width="38" height="20" viewBox="0 0 120 60" role="img" focusable="false">
+    <g fill="none" stroke="none">
+      <circle cx="48" cy="30" r="16" fill="#fff8ec" stroke="#7f5f3b" stroke-width="3"/>
+      <path d="M48 28 v-8" stroke="#7f5f3b" stroke-width="2" stroke-linecap="round"/>
+      <path d="M48 30 h8" stroke="#7f5f3b" stroke-width="2" stroke-linecap="round"/>
+      <path d="M80 22 c-8 4-18 2-22-2 6 6 10 14 6 20 8-6 18-18 16-18z" fill="#9aa998" stroke="#6f7d63" stroke-width="1.5"/>
+    </g>
+  </svg>
+</div>
+            
+          </div>
         </div>
-    </footer>
+        
+       
+        
+        
+      </div>
+      
+      <!-- Fila inferior con copyright -->
+      <div class="footer-signature">
+        <p>© 2025 La Senda</p>
+        
+      </div>
+    </div>
+    
+   
+  </div>
+</footer>
     <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     
     <script src="/Assets/js/script.js"></script>
+   <script>
+function animateCounter(elementId, targetValue, duration) {
+  const element = document.getElementById(elementId);
+  if (!element) return;
+  
+  let currentValue = 0;
+  const increment = targetValue / (duration / 16);
+  
+  const timer = setInterval(function() {
+    currentValue += increment;
+    if (currentValue >= targetValue) {
+      currentValue = targetValue;
+      clearInterval(timer);
+    }
+    element.textContent = Math.floor(currentValue);
+  }, 16);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Contador de artículos
+  if (document.getElementById('totalArticles')) {
+    animateCounter('totalArticles', 1, 1500);
+  }
+  
+  // Contador de días
+  const startDate = new Date('2025-01-01');
+  const today = new Date();
+  const days = Math.floor((today - startDate) / (1000 * 60 * 60 * 24));
+  if (document.getElementById('daysSinceStart')) {
+    animateCounter('daysSinceStart', days, 2000);
+  }
+});
+</script>
+
+
 <script>
 // Cargar el post destacado con carrusel
 fetch('/search/index.json')
