@@ -93,34 +93,44 @@ module.exports = async function(eleventyConfig) {
       try { eleventyConfig.addPlugin(sitemapPlugin); } catch (_) {}
     }
   }
+const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
 
-    // --- PLUGIN DE OPTIMIZACIÓN DE IMÁGENES ---
-  const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
+module.exports = function(eleventyConfig) {
   
+  // 1. PRIMERO: Copiar las imágenes originales para que el plugin las encuentre
+  eleventyConfig.addPassthroughCopy("src/Assets");
+  
+  // 2. PLUGIN DE OPTIMIZACIÓN con rutas corregidas
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
     formats: ["avif", "webp", "jpeg"],
     widths: ["auto"],
-    outputDir: ".cache/@11ty/img/",
-    urlPath: "/img/built/",
+    
+    // Las imágenes optimizadas se guardan aquí
+    outputDir: "./_site/Assets/img/optimized/",
+    
+    // Esta es la URL donde estarán disponibles en el navegador
+    urlPath: "/Assets/img/optimized/",
+    
     htmlOptions: {
       imgAttributes: {
         loading: "lazy",
         decoding: "async"
       }
     },
+    
     svgShortCircuit: true,
     failOnError: false
   });
 
-  // Copiar imágenes al directorio final
-  eleventyConfig.on("eleventy.after", () => {
-    const fs = require("fs");
-    const path = require("path");
-    
-    if (fs.existsSync(".cache/@11ty/img/")) {
-      fs.cpSync(".cache/@11ty/img/", "_site/img/built/", { recursive: true });
+  // 3. Configuración del directorio
+  return {
+    dir: {
+      input: "src",
+      output: "_site"
     }
-  });
+  };
+};
+
 
 
   
