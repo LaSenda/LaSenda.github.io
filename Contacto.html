@@ -28,6 +28,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+
 <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8996599155773658" crossorigin="anonymous"></script>
 
 </head>
@@ -142,7 +144,7 @@
 </div>
 
 <!-- Footer -->
-  <footer class="footer-waves">
+  <footer class="footer-waves  ">
   <div class="wave-top">
     <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
       <path d="M0,60 C150,120 350,0 600,60 C850,120 1050,0 1200,60 L1200,120 L0,120 Z" fill="rgba(139, 115, 85, 0.3)"></path>
@@ -150,7 +152,7 @@
   </div>
   
   <div class="footer-content-waves">
-    
+   <div class="effects-layer">
     
   <div class="leaf leaf-1">🍂</div>
   <div class="leaf leaf-2">🍃</div>
@@ -172,19 +174,22 @@
       <div class="firefly"></div>
       <div class="firefly"></div>
     </div>
+    </div> 
+     
+    
     
     <div class="container">
       <!-- Grid de 3 columnas -->
       <div class="footer-visual-grid">
         
-     <div class="footer-widget">
-  <div class="blog-counter">
-    <div class="counter-icon">📅</div>
-    <div class="counter-number" id="daysSinceStart">0</div>
-    <div class="counter-label">días recorriendo la senda</div>
+  <!-- WIDGET 2: Palabras escritas -->
+<div class="footer-widget">
+  <div class="blog-counter quote-widget">
+    <div class="counter-icon">💭</div>
+    <div class="quote-text" id="dailyQuote">"El camino se hace al andar"</div>
+    <div class="counter-label" id="quoteAuthor">— Antonio Machado</div>
   </div>
 </div>
-
 
         
         <!-- COLUMNA 2: Reloj del bosque -->
@@ -293,9 +298,92 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
 }); // fin DOMContentLoaded
+
+
+
+  
 </script>
 
 
+
+<script>
+// Array con todas las frases
+const quotes = [
+  // Antonio Machado
+  { text: '"Caminante, no hay camino, se hace camino al andar"', author: 'Antonio Machado' },
+  { text: '"Caminante, son tus huellas el camino y nada más"', author: 'Antonio Machado' },
+  { text: '"Todo pasa y todo queda, pero lo nuestro es pasar, pasar haciendo caminos"', author: 'Antonio Machado' },
+  
+  // Clásicos de viajes
+  { text: '"No todos los que vagan están perdidos"', author: 'J.R.R. Tolkien' },
+  { text: '"Un viaje de mil millas comienza con un solo paso"', author: 'Lao Tzu' },
+  { text: '"Las montañas me llaman y debo ir"', author: 'John Muir' },
+  { text: '"Entre cada dos pinos hay una puerta a un mundo nuevo"', author: 'John Muir' },
+  { text: '"En cada paseo con la naturaleza, uno recibe mucho más de lo que busca"', author: 'John Muir' },
+  { text: '"Al bosque voy, para perder mi mente y encontrar mi alma"', author: 'John Muir' },
+  
+  // Filosofía del camino
+  { text: '"No hay camino para la paz, la paz es el camino"', author: 'Gandhi' },
+  { text: '"El destino no es un lugar, es una nueva forma de ver"', author: 'Henry Miller' },
+  { text: '"La vida o es una aventura atrevida o no es nada"', author: 'Helen Keller' },
+  { text: '"Di un paseo por el bosque y salí más alto que los árboles"', author: 'Henry David Thoreau' },
+  
+  // Montañas y naturaleza
+  { text: '"El camino de la montaña, como el de la vida, no se recorre con las piernas sino con el corazón"', author: 'Andrés Nadal' },
+  { text: '"Cerca de la cima siempre hay mil excusas para bajarse y una sola para subir"', author: 'Ramón Portilla' },
+  { text: '"Nunca midas la altura de una montaña hasta que no hayas llegado a la cumbre"', author: 'John Lubbock' },
+  { text: '"Las montañas ayudan a los hombres a despertar sueños dormidos"', author: 'Haroun Tazieff' },
+  { text: '"Quien ha escuchado alguna vez la voz de las montañas, nunca la podrá olvidar"', author: 'Proverbio Tibetano' },
+  
+  // Sabiduría viajera
+  { text: '"Un viaje se vive 3 veces: cuando lo soñamos, cuando lo vivimos y cuando lo recordamos"', author: 'Anónimo' },
+  { text: '"Piérdete en el mundo y encuéntrate contigo mismo"', author: 'Anónimo' },
+  { text: '"De todos los caminos que tomes en la vida, asegúrate de que unos pocos sean de tierra"', author: 'John Muir' },
+  { text: '"No dejamos de hacer senderismo porque envejecemos. Envejecemos porque dejamos de hacer senderismo"', author: 'Finis Mitchell' },
+  
+  // Reflexión y aprendizaje
+  { text: '"Cada nueva cima ascendida enseña algo"', author: 'Sir Martin Conway' },
+  { text: '"La aventura vale la pena por sí misma"', author: 'Amelia Earhart' },
+  { text: '"Sin nuevas experiencias, algo dentro de nosotros duerme. El durmiente debe despertar"', author: 'Frank Herbert' },
+  { text: '"Si buscas ideas creativas, sal a caminar. Los ángeles susurran a un hombre cuando sale a pasear"', author: 'Raymond Inmon' },
+  
+  // Perseverancia
+  { text: '"Vas a muy buenos lugares, hoy es tu día. Tu montaña te espera, así que ponte en camino"', author: 'Dr. Seuss' },
+  { text: '"No hay atajos a la cumbre. Debemos subir la montaña paso a paso"', author: 'Anónimo' },
+  { text: '"Las montañas tienen una forma de tratar el exceso de confianza"', author: 'Hermann Buhl' },
+  { text: '"Regresad vivos, regresad como amigos, llegad a la cumbre. Por este orden"', author: 'Roger Baxter-Jones' },
+  
+  // Libertad y descubrimiento
+  { text: '"Que tus senderos sean retorcidos, sinuosos, solitarios, peligrosos, que lleven a la vista más asombrosa"', author: 'Edward Abbey' },
+  { text: '"El senderismo y la felicidad van de la mano como el pie y la bota"', author: 'Diane Spicer' },
+  { text: '"Miles de personas cansadas empiezan a descubrir que ir a la montaña es volver a casa"', author: 'John Muir' },
+  { text: '"Persigo la felicidad. Y la montaña responde a mi búsqueda"', author: 'Chantal Maudit' },
+  
+  // Adicionales
+  { text: '"Antes que el esfuerzo, las rocas y el viento, la amistad es el componente esencial en la montaña"', author: 'Geyson Millar' },
+  { text: '"El senderismo significa una experiencia de viaje con una emoción trepidante"', author: 'Amit Kalantri' },
+  { text: '"Nuestro camino no es por fáciles prados de hierba, sino un sendero de montaña escarpado"', author: 'Ruth Westheimer' },
+  { text: '"Envejecer es como escalar una montaña: la vista es más libre, más amplia y serena"', author: 'Ingmar Bergman' },
+  
+  // Cortas e impactantes
+  { text: '"La cima es la mitad del camino"', author: 'Ed Viesturs' },
+  { text: '"¿Por qué subir montañas? Porque están ahí"', author: 'George Mallory' },
+  { text: '"No existe el mal tiempo, solo la ropa no adecuada"', author: 'Sir Ranulph Fiennes' },
+  { text: '"Lleva lo menos posible, pero elige ese poco con cuidado"', author: 'Earl Shaffer' }
+];
+
+// Función para mostrar una frase aleatoria
+function displayRandomQuote() {
+  const randomIndex = Math.floor(Math.random() * quotes.length);
+  const selectedQuote = quotes[randomIndex];
+  
+  document.getElementById('dailyQuote').textContent = selectedQuote.text;
+  document.getElementById('quoteAuthor').textContent = '— ' + selectedQuote.author;
+}
+
+// Ejecutar cuando carga la página
+displayRandomQuote();
+</script>
 
 </body>
 </html>
