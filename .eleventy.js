@@ -97,19 +97,19 @@ const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
 
 module.exports = function(eleventyConfig) {
   
-  // 1. PRIMERO: Copiar las imágenes originales para que el plugin las encuentre
-  eleventyConfig.addPassthroughCopy("src/Assets");
+
   
   // 2. PLUGIN DE OPTIMIZACIÓN con rutas corregidas
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+    extensions: "html",
     formats: ["avif", "webp", "jpeg"],
     widths: ["auto"],
     
     // Las imágenes optimizadas se guardan aquí
-    outputDir: "./_site/Assets/img/optimized/",
+    outputDir: "./_site/Assets/img/",
     
     // Esta es la URL donde estarán disponibles en el navegador
-    urlPath: "/Assets/img/optimized/",
+    urlPath: "/Assets/img/",
     
     htmlOptions: {
       imgAttributes: {
